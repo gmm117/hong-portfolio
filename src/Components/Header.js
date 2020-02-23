@@ -6,6 +6,7 @@ const HeaderDiv = styled.div`
     display : flex;
     padding : 10px;
     background : #00A287;
+    height: 33px;
 `;
 
 const NavDiv = styled.div`
