@@ -26,14 +26,14 @@ class App extends Component {
           <Header />
           <ul>
             <li>
-              <Link to="/">Home</Link> 
+              <Link to="/hong-portfolio">Home</Link> 
             </li>
             <li>
-              <Link to="/about">About</Link> 
+              <Link to="/hong-portfolio/about">About</Link> 
             </li>
           </ul>
-          <Route path="/" component={Home} exact />
-          <Route path="/about" component={About} />
+          <Route path="/hong-portfolio" component={Home} exact />
+          <Route path="/hong-portfolio/about" component={About} />
         </Container>
       );
   }
