@@ -3,6 +3,8 @@ import '../assets/index.scss';
 import Header from './Components/Header';
 import Home from './Components/Home';
 import styled from 'styled-components';
+import { Route, Link } from 'react-router-dom';
+import About from './Components/About';
 
 const Container = styled.div`
     height : 100%;
@@ -22,9 +24,17 @@ class App extends Component {
       return (
         <Container>
           <Header />
-          <Home />
+          <ul>
+            <li>
+              <Link to="/">Home</Link> 
+            </li>
+            <li>
+              <Link to="/about">About</Link> 
+            </li>
+          </ul>
+          <Route path="/" component={Home} exact />
+          <Route path="/about" component={About} />
         </Container>
-          
       );
   }
 };
