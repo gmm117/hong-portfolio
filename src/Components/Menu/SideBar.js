@@ -9,15 +9,16 @@ import facebook from '../../../imgs/facebook.svg';
 import instagram from '../../../imgs/instagram.svg';
 
 const SideBarDiv = styled.div`
-    width : 220px; !important;
-    opacity: ${props => (props.isSidebarOpen ? 1 : 0)};
-    display: ${props => (props.isSidebarOpen ? "block" : "none")};
+    width : ${props => (props.isSidebarOpen ? '220px' : '0px')} !important;
     background : #3F4651;
     position : relative;
-    padding : 10px 20px 20px 20px;
     box-shadow: 0 1px 4px rgba(0,21,41,0.08);
     box-sizing: border-box;
-    transition: opacity 1s ease;
+    opacity : ${props => (props.isSidebarOpen ? 1 : 0)} ;
+    padding : ${props => (props.isSidebarOpen ? '10px 20px 20px 20px' : '0px')} ;
+    -webkit-transition: width 0.5s ease;
+    -moz-transition: width 0.5s ease;
+    transition: width 0.5s ease;
 `;
 
 const SideBarSection = styled.div`
@@ -65,6 +66,7 @@ const SideBarLinkDiv = styled.div`
     width : 20px;
     height : 20px;
     padding : 0 5px 0 0;
+    cursor: pointer;
 `;
 
 const SideBarLinkImg = styled.img`
@@ -121,26 +123,17 @@ class SideBar extends Component {
                 </AvatarContentDiv>
                 <SidebarMenu onNavChange={this.props.onNavChange} onNavItemClick={onNavItemClick}/>
                 <SideBarLink>
-                    <SideBarLinkDiv className="tooltip">
-                        <Link style={LinkStyle} to="/GitHub">
-                            <span className="tooltiptext">GitHub</span>
-                            <SideBarLinkImg src={github} alt="GitHub Link" />
-                        </Link>
-                        <Route path='/GitHub' target="_blank" component={() => { window.open('https://github.com/gmm117', '_blank'); return null;} }/>
+                    <SideBarLinkDiv className="tooltip" onClick={(e) => { window.open('https://github.com/gmm117', '_blank'); }}>
+                        <span className="tooltiptext">GitHub</span>
+                        <SideBarLinkImg src={github} alt="GitHub Link" />
                     </SideBarLinkDiv> 
-                    <SideBarLinkDiv className="tooltip">
-                        <Link style={LinkStyle} to="/FaceBook">
-                            <span className="tooltiptext">FaceBook</span>
-                            <SideBarLinkImg src={facebook} alt="FaceBook Link" />
-                        </Link>
-                        <Route path='/FaceBook' target="_blank" component={() => { window.open('https://www.facebook.com/profile.php?id=100002349562000', '_blank'); return null;} }/>
+                    <SideBarLinkDiv className="tooltip" onClick={(e) => { window.open('https://www.facebook.com/profile.php?id=100002349562000', '_blank'); }}>
+                        <span className="tooltiptext">FaceBook</span>
+                        <SideBarLinkImg src={facebook} alt="FaceBook Link" />
                     </SideBarLinkDiv>
-                    <SideBarLinkDiv className="tooltip">
-                        <Link style={LinkStyle} to="/Instagram">
-                            <span className="tooltiptext">Instagram</span>
-                            <SideBarLinkImg src={instagram} alt="Instagram Link" />
-                        </Link>
-                        <Route path='/Instagram' target="_blank" component={() => { window.open('https://www.instagram.com/hongseunga/', '_blank'); return null;} }/>
+                    <SideBarLinkDiv className="tooltip" onClick={(e) => { window.open('https://www.instagram.com/hongseunga/', '_blank'); }}>
+                        <span className="tooltiptext">Instagram</span>
+                        <SideBarLinkImg src={instagram} alt="Instagram Link" />
                     </SideBarLinkDiv>
                 </SideBarLink>
             </SideBarDiv>

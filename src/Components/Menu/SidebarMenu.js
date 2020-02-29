@@ -34,6 +34,9 @@ const LinkImg = styled.img`
 
 const LinkDesDiv = styled.span`
     color: #8493A5;
+    &:hover {
+        color : white;
+    }
 `;
 
 class SidebarMenu extends Component {
