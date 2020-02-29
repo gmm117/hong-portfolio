@@ -17,10 +17,10 @@ class Content extends Component {
     render() {
         return(
             <ContentDiv>
-                <Route path="/" component={Home} exact />
-                <Route path="/About" component={About} />
-                <Route path="/Company" component={About} />
-                <Route path="/Apps" component={About} />
+                <Route path="/hong-portfolio/" component={Home} exact />
+                <Route path="/hong-portfolio/About" component={About} />
+                <Route path="/hong-portfolio/Company" component={About} />
+                <Route path="/hong-portfolio/Apps" component={About} />
             </ContentDiv>
         );
     }
