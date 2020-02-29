@@ -109,7 +109,7 @@ class SideBar extends Component {
         return (
             <SideBarDiv isSidebarOpen={this.props.isSidebarOpen} >
                 <SideBarSection>
-                    <Link style={LinkStyle} to="/" onClick={onNavItemClick}>
+                    <Link style={LinkStyle} to="/hong-portfolio/" onClick={onNavItemClick}>
                         <span>Hong's Portfolio</span>
                     </Link>
                 </SideBarSection>
