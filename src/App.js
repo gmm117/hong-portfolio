@@ -1,41 +1,69 @@
-import React, {Component, Fragment} from 'react';
-import '../assets/index.scss';
-import Header from './Components/Header';
-import Home from './Components/Home';
+import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Route, Link } from 'react-router-dom';
-import About from './Components/About';
+import '../assets/index.scss';
 
-const Container = styled.div`
+import Header from './Components/Header';
+import SideBar from './Components/Menu/SideBar';
+import Content from './Components/Content';
+
+const ContainerDiv = styled.div`
+    display: flex;  
+    width: 100%;
     height : 100%;
-    background-color: #4686a0;
-    color: rgba(255, 255, 255, 0.75);
-    background-attachment: fixed, fixed, fixed;
-    background-image: url(imgs/overlay2.png), url(imgs/overlay3.svg), linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
-    background-position: top left, center center, center center;
-    background-size: auto, cover, cover;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
+    color: rgba(100, 100, 100, 0.75);
+`;
+
+const ContentDiv = styled.div`
+  width: 100%;
+  height : 100%;
+  position: relative;
+  overflow: auto;
 `;
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { navName : "Home", isSidebarOpen : true };
+    this.setNavName = this.setNavName.bind(this);
+    this.setSideBarOpen = this.setSideBarOpen.bind(this);
+  }
+  setSideBarOpen() {
+    this.setState({
+      ...this.state,
+      isSidebarOpen: !this.state.isSidebarOpen
+    });
+  }
+
+  setNavName(name) {
+    this.setState({
+      ...this.state,
+      navName: name
+    });
+  }
   render() {
-      return (
-        <Container>
-          <Header />
-          <ul>
-            <li>
-              <Link to="/hong-portfolio">Home</Link> 
-            </li>
-            <li>
-              <Link to="/hong-portfolio/about">About</Link> 
-            </li>
-          </ul>
-          <Route path="/hong-portfolio" component={Home} exact />
-          <Route path="/hong-portfolio/about" component={About} />
-        </Container>
-      );
+    const onNavChange = (name) => {
+      this.setNavName(name);
+    };
+
+    const onSidebarChnage = () => {
+      this.setSideBarOpen();
+    };
+
+    return (
+      <ContainerDiv>
+        <SideBar 
+          onNavChange={onNavChange}
+          isSidebarOpen={this.state.isSidebarOpen}
+        />
+        <ContentDiv>
+          <Header 
+            navName={this.state.navName} 
+            onSidebarChange={onSidebarChnage}
+          />
+          <Content/>
+        </ContentDiv>
+      </ContainerDiv>
+    );
   }
 };
 
