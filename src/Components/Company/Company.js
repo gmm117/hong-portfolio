@@ -8,6 +8,11 @@ import bluebirdlogo from '../../../imgs/bluebirdsoft_logo.png';
 import hancom_logo from '../../../imgs/hancom_logo.png';
 import osstem_logo from '../../../imgs/osstem_logo.png';
 
+const CompanyDiv = styled.div`
+    display : flex;
+    flex: 1;
+    height : 100%;
+`;
 
 const ListUl = styled.ul`
     display: flex;
@@ -38,6 +43,7 @@ const ThumbDiv = styled.div`
     padding : ${props => (props.padding ? props.padding : '0px')};
     box-sizing: border-box;
     box-shadow: 0 1px 15px rgba(0,21,41,0.08);
+    position: relative;
 `;
 
 const ThumbItemDiv = styled.div`
@@ -48,7 +54,7 @@ const ThumbItemDiv = styled.div`
 
 const ThumbImg = styled.img`
     width: 100%;
-    height : 100%;
+    height: 100%;
 `;
 
 class Company extends Component {
@@ -61,32 +67,34 @@ class Company extends Component {
 
     render() {
         return (
-            <ListUl>
-                <ListItemLi>
-                    <ThumbDiv>
-                        <Link style={LinkStyle} to={`${BaseURL}/Company/Hancom`}>
-                            <ThumbImg src={hancom_logo} alt="Hancom Group Logo" />
-                        </Link>
-                    </ThumbDiv>
-                    <ThumbItemDiv>한글과컴퓨터</ThumbItemDiv>
-                </ListItemLi>
-                <ListItemLi>
-                    <ThumbDiv padding={'35px'}>
-                        <Link style={LinkStyle} to={`${BaseURL}/Company/OsstemImplant`}>
-                            <ThumbImg src={osstem_logo} alt="Osstem Implant Logo" />
-                        </Link>
-                    </ThumbDiv>
-                    <ThumbItemDiv>오스템임플란트</ThumbItemDiv>
-                </ListItemLi>
-                <ListItemLi>
-                    <ThumbDiv padding={'45px'}>
-                        <Link style={LinkStyle} to={`${BaseURL}/Company/Bluebird`}>
-                            <ThumbImg src={bluebirdlogo} alt="Bluebird Logo" />
-                        </Link>
-                    </ThumbDiv>
-                    <ThumbItemDiv>블루버드소프트</ThumbItemDiv>
-                </ListItemLi>
-            </ListUl>
+            <CompanyDiv>
+                <ListUl>
+                    <ListItemLi>
+                        <ThumbDiv>
+                            <Link style={LinkStyle} to={`${BaseURL}/Company/Hancom`}>
+                                <ThumbImg src={hancom_logo} alt="Hancom Group Logo" />
+                            </Link>
+                        </ThumbDiv>
+                        <ThumbItemDiv>한글과컴퓨터</ThumbItemDiv>
+                    </ListItemLi>
+                    <ListItemLi>
+                        <ThumbDiv padding={'35px'}>
+                            <Link style={LinkStyle} to={`${BaseURL}/Company/OsstemImplant`}>
+                                <ThumbImg src={osstem_logo} alt="Osstem Implant Logo" />
+                            </Link>
+                        </ThumbDiv>
+                        <ThumbItemDiv>오스템임플란트</ThumbItemDiv>
+                    </ListItemLi>
+                    <ListItemLi>
+                        <ThumbDiv padding={'45px'}>
+                            <Link style={LinkStyle} to={`${BaseURL}/Company/Bluebird`}>
+                                <ThumbImg src={bluebirdlogo} alt="Bluebird Logo" />
+                            </Link>
+                        </ThumbDiv>
+                        <ThumbItemDiv>블루버드소프트</ThumbItemDiv>
+                    </ListItemLi>
+                </ListUl>
+            </CompanyDiv>
         );
     }
 };

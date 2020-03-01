@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Profile from '../../imgs/profile.jpg';
+import AboutImg from '../../imgs/bg-about.jpg';
 
 const AbountBody = styled.div`
     font-size: 20px; 
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif;
+    display : flex;
+    flex-direction: row;
+    flex: 1;
+    height : 100%;
+    color : black;
+    font-weight : 600;
+    line-height : 1.3;
+    padding : 30px;
 `;
 
 const ProfileImage = styled.img`
-    width: 200px; 
+    width: 350px;
+    height: 300px; 
     float: left; 
     margin: 0px 15px 5px 0px;
 `;

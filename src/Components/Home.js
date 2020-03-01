@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import HomeImg from '../../imgs/bg-home.jpg';
+
 const HomeBody = styled.div`
     display : flex;
     justify-content : center;
@@ -9,6 +11,7 @@ const HomeBody = styled.div`
     font-size : 50px;
     color : black;
     height : 100%;
+    background-image: url(${HomeImg});
 `;
  
 class Home extends Component {
