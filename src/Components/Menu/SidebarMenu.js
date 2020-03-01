@@ -41,25 +41,25 @@ class SidebarMenu extends Component {
             <>
                 <ul>
                     <SideBarMenuList>
-                        <Link style={LinkStyle} to="/hong-portfolio/">
+                        <Link style={LinkStyle} to={`${BaseURL}/`}>
                             <LinkImg src={home} alt="Home" />
                             <LinkDesDiv>Home</LinkDesDiv>
                         </Link> 
                     </SideBarMenuList>
                     <SideBarMenuList>
-                        <Link style={LinkStyle} to="/hong-portfolio/About">
+                        <Link style={LinkStyle} to={`${BaseURL}/About`}>
                             <LinkImg src={user} alt="About" />
                             <LinkDesDiv>About</LinkDesDiv>
                         </Link>
                     </SideBarMenuList>
                     <SideBarMenuList>
-                        <Link style={LinkStyle} to="/hong-portfolio/Company">
+                        <Link style={LinkStyle} to={`${BaseURL}/Company`}>
                             <LinkImg src={cube} alt="Company Projects" />
                             <LinkDesDiv>Company</LinkDesDiv>
                         </Link>
                     </SideBarMenuList>
                     <SideBarMenuList>
-                        <Link style={LinkStyle} to="/hong-portfolio/Apps">
+                        <Link style={LinkStyle} to={`${BaseURL}/Apps`}>
                             <LinkImg src={cube} alt="Individaul Apps" />
                             <LinkDesDiv>Apps</LinkDesDiv>
                         </Link>
