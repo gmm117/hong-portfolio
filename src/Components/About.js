@@ -17,8 +17,8 @@ const AbountBody = styled.div`
 `;
 
 const ProfileImage = styled.img`
-    width: 350px;
-    height: 300px; 
+    width: 250px;
+    height: 250px; 
     float: left; 
     margin: 0px 15px 5px 0px;
 `;
