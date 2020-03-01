@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 
 
 import Home from './Home';
 import About from './About';
+
+import { BaseURL } from './Utils/Define';
+import Company from './Company/Company';
+import CompProject from './Company/CompProject';
 
 const ContentDiv = styled.div`
     width: 100%;
@@ -14,13 +18,20 @@ const ContentDiv = styled.div`
 `;
 
 class Content extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return(
             <ContentDiv>
-                <Route path="/hong-portfolio/" component={Home} exact />
-                <Route path="/hong-portfolio/About" component={About} />
-                <Route path="/hong-portfolio/Company" component={About} />
-                <Route path="/hong-portfolio/Apps" component={About} />
+                <Route path={`${BaseURL}/`} component={( {location, match, history} ) => <Home onLocationChange={this.props.onLocationChange} location={location} match={match} history={history} />} exact />
+                <Route path={`${BaseURL}/About`} component={( {location, match, history} ) => <About onLocationChange={this.props.onLocationChange} location={location} match={match} history={history} />} />
+                <Switch>
+                    <Route path={`${BaseURL}/Company/:name`} component={( {location, match, history} ) => <CompProject onLocationChange={this.props.onLocationChange} location={location} match={match} history={history} />} />
+                    <Route path={`${BaseURL}/Company`} component={( {location, match, history} ) => <Company onLocationChange={this.props.onLocationChange} location={location} match={match} history={history} />} />
+                </Switch>
+                <Route path={`${BaseURL}/Apps`} component={( {location, match, history} ) => <About onLocationChange={this.props.onLocationChange} location={location} match={match} history={history} />} />
             </ContentDiv>
         );
     }

@@ -44,6 +44,7 @@ class Header extends Component {
         const onSideClick = () => {
             this.onSidebarChange();
         }
+        
         return (
             <HeaderDiv>
                 <NavDiv onClick={onSideClick}>

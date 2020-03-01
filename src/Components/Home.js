@@ -10,8 +10,14 @@ const HomeBody = styled.div`
     color : black;
     height : 100%;
 `;
-
+ 
 class Home extends Component {
+    constructor(props) {
+        super(props);
+
+        const { location } = this.props;
+        this.props.onLocationChange(location);
+    }
     render() {
         return (
             <HomeBody>

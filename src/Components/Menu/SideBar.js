@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled, { withTheme } from 'styled-components';
 import { Link, Route } from 'react-router-dom';
 import SidebarMenu from './SidebarMenu';
+import { BaseURL } from '../Utils/Define';
 
 import avatar_profile from '../../../imgs/avatar_profile.png';
 import github from '../../../imgs/github.svg';
@@ -74,7 +75,7 @@ const SideBarLinkImg = styled.img`
     height : 100%;
 `;
 
-const LinkStyle = {
+const SideBarLinkStyle = {
     display : 'flex',
     alignItems: 'center',
     width : '100%',
@@ -91,25 +92,10 @@ class SideBar extends Component {
     }
 
     render() {
-        const onNavItemClick = (e) => {
-            let {textContent} = e.target;
-            switch(textContent) {
-                case "Home":
-                case "About":
-                case "Company":
-                case "Apps":
-                    break;
-                default:
-                    textContent = "Home";
-                    break;
-            }
-            
-            this.props.onNavChange(textContent);
-        }
         return (
             <SideBarDiv isSidebarOpen={this.props.isSidebarOpen} >
                 <SideBarSection>
-                    <Link style={LinkStyle} to="/hong-portfolio/" onClick={onNavItemClick}>
+                    <Link style={SideBarLinkStyle} to={`${BaseURL}/`}>
                         <span>Hong's Portfolio</span>
                     </Link>
                 </SideBarSection>
@@ -121,7 +107,7 @@ class SideBar extends Component {
                     <AvatarOccupation>Front End Developer</AvatarOccupation>
                     <AvatarOccupation>010-7118-2519</AvatarOccupation>
                 </AvatarContentDiv>
-                <SidebarMenu onNavChange={this.props.onNavChange} onNavItemClick={onNavItemClick}/>
+                <SidebarMenu/>
                 <SideBarLink>
                     <SideBarLinkDiv className="tooltip" onClick={(e) => { window.open('https://github.com/gmm117', '_blank'); }}>
                         <span className="tooltiptext">GitHub</span>

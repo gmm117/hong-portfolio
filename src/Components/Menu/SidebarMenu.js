@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { BaseURL } from '../Utils/Define';
+import { LinkStyle } from '../Utils/CommonStyle';
 import home from '../../../imgs/home.svg';
 import cube from '../../../imgs/cube.svg';
 import user from '../../../imgs/user.svg';
@@ -16,15 +18,6 @@ const SideBarMenuList = styled.li`
     cursor : pointer;
     height : 25px;
 `;
-
-const LinkStyle = {
-    display : 'flex',
-    alignItems: 'center',
-    width : '100%',
-    height : '100%',
-    textDecoration: 'none',
-
-};
 
 const LinkImg = styled.img`
     width : 13px;
@@ -48,25 +41,25 @@ class SidebarMenu extends Component {
             <>
                 <ul>
                     <SideBarMenuList>
-                        <Link style={LinkStyle} to="/hong-portfolio/" onClick={this.props.onNavItemClick}>
+                        <Link style={LinkStyle} to="/hong-portfolio/">
                             <LinkImg src={home} alt="Home" />
                             <LinkDesDiv>Home</LinkDesDiv>
                         </Link> 
                     </SideBarMenuList>
                     <SideBarMenuList>
-                        <Link style={LinkStyle} to="/hong-portfolio/About" onClick={this.props.onNavItemClick}>
+                        <Link style={LinkStyle} to="/hong-portfolio/About">
                             <LinkImg src={user} alt="About" />
                             <LinkDesDiv>About</LinkDesDiv>
                         </Link>
                     </SideBarMenuList>
                     <SideBarMenuList>
-                        <Link style={LinkStyle} to="/hong-portfolio/Company" onClick={this.props.onNavItemClick}>
+                        <Link style={LinkStyle} to="/hong-portfolio/Company">
                             <LinkImg src={cube} alt="Company Projects" />
                             <LinkDesDiv>Company</LinkDesDiv>
                         </Link>
                     </SideBarMenuList>
                     <SideBarMenuList>
-                        <Link style={LinkStyle} to="/hong-portfolio/Apps" onClick={this.props.onNavItemClick}>
+                        <Link style={LinkStyle} to="/hong-portfolio/Apps">
                             <LinkImg src={cube} alt="Individaul Apps" />
                             <LinkDesDiv>Apps</LinkDesDiv>
                         </Link>

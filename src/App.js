@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import '../assets/index.scss';
 
+import { GetLinkName } from './Components/Utils/Utils';
 import Header from './Components/Header';
 import SideBar from './Components/Menu/SideBar';
 import Content from './Components/Content';
@@ -40,19 +41,22 @@ class App extends Component {
       navName: name
     });
   }
-  render() {
-    const onNavChange = (name) => {
-      this.setNavName(name);
-    };
 
+  render() {
     const onSidebarChnage = () => {
       this.setSideBarOpen();
     };
 
+    const onLocationChange = (location) => {
+      var name = GetLinkName(location.pathname);
+      if(name !== this.state.navName) {
+        this.setNavName(name);
+      }
+    }
+
     return (
       <ContainerDiv>
         <SideBar 
-          onNavChange={onNavChange}
           isSidebarOpen={this.state.isSidebarOpen}
         />
         <ContentDiv>
@@ -60,7 +64,7 @@ class App extends Component {
             navName={this.state.navName} 
             onSidebarChange={onSidebarChnage}
           />
-          <Content/>
+          <Content onLocationChange={onLocationChange}/>
         </ContentDiv>
       </ContainerDiv>
     );

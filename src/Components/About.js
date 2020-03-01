@@ -14,6 +14,12 @@ const ProfileImage = styled.img`
 `;
 
 class Abount extends Component {
+    constructor(props) {
+        super(props);
+
+        const { location } = this.props;
+        this.props.onLocationChange(location);
+    }
     render() {
         return (
             <AbountBody>
