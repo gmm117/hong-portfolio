@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import '../assets/index.scss';
 
 import { GetLinkName } from './Components/Utils/Utils';
+import { BaseURL } from './Components/Utils/Define';
+
 import Header from './Components/Header';
 import SideBar from './Components/Menu/SideBar';
 import Content from './Components/Content';
@@ -49,6 +51,7 @@ class App extends Component {
 
     const onLocationChange = (location) => {
       var name = GetLinkName(location.pathname);
+      name = name.replace(BaseURL, "");
       if(name !== this.state.navName) {
         this.setNavName(name);
       }

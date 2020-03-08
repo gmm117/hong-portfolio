@@ -14,21 +14,61 @@ const SideBarMenuList = styled.li`
     color: #8493A5;
     padding-top: 0.5rem;
     padding-right: 1.5rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1.5rem;
     cursor : pointer;
     height : 25px;
+
+    /* Mobile Device */
+    @media screen and (max-width : 767px) {
+        justify-content : flex-start;
+        padding-right: 0;
+    }
+`;
+
+const LinkImgDiv = styled.div`
+    width : 20px;
+    min-width : 20px;
+    height : 20px;
+    min-height : 20px;
+    margin-right: 0.5rem;
+
+    /* Mobile Device */
+    @media screen and (max-width : 767px) {
+        width : 30px;
+        min-width : 30px;
+        height : 30px;
+        min-height : 30px;
+        margin-right: 0;
+    }
 `;
 
 const LinkImg = styled.img`
-    width : 13px;
-    height : 13px;
-    margin-right: 0.5rem;
+    width : 100%;
+    height : 100%;
 `;
 
 const LinkDesDiv = styled.span`
     color: #8493A5;
+    font-size: 18px;
     &:hover {
         color : white;
+    }
+
+    /* Mobile Device */
+    @media screen and (max-width : 767px) {
+        display: none;
+    }
+`;
+
+const LinkSubDiv = styled.div`
+    display: flex;
+    align-items: center;
+    width : 100%;
+    height : 100%;
+
+    /* Mobile Device */
+    @media screen and (max-width : 767px) {
+        justify-content : center;
     }
 `;
 
@@ -37,35 +77,53 @@ class SidebarMenu extends Component {
         super(props);
     }
     render() {
-        return (
-            <>
-                <ul>
-                    <SideBarMenuList>
-                        <Link style={LinkStyle} to={`${BaseURL}/`}>
-                            <LinkImg src={home} alt="Home" />
+    return (
+            <ul>
+                <SideBarMenuList>
+                    <Link style={LinkStyle} to={`${BaseURL}/`}>
+                        <LinkSubDiv>
+                            <LinkImgDiv className="tooltip">
+                                <span className="tooltiptext">Home</span>
+                                <LinkImg src={home} alt="Home" />
+                            </LinkImgDiv>
                             <LinkDesDiv>Home</LinkDesDiv>
-                        </Link> 
-                    </SideBarMenuList>
-                    <SideBarMenuList>
-                        <Link style={LinkStyle} to={`${BaseURL}/About`}>
-                            <LinkImg src={user} alt="About" />
+                        </LinkSubDiv>
+                    </Link> 
+                </SideBarMenuList>
+                <SideBarMenuList>
+                    <Link style={LinkStyle} to={`${BaseURL}/About`}>
+                        <LinkSubDiv>
+                            <LinkImgDiv className="tooltip">
+                                <span className="tooltiptext">About</span>
+                                <LinkImg src={user} alt="About" />
+                            </LinkImgDiv>
                             <LinkDesDiv>About</LinkDesDiv>
-                        </Link>
-                    </SideBarMenuList>
-                    <SideBarMenuList>
-                        <Link style={LinkStyle} to={`${BaseURL}/Company`}>
-                            <LinkImg src={cube} alt="Company Projects" />
+                        </LinkSubDiv>
+                    </Link>
+                </SideBarMenuList>
+                <SideBarMenuList>
+                    <Link style={LinkStyle} to={`${BaseURL}/Company`}>
+                        <LinkSubDiv>
+                            <LinkImgDiv className="tooltip">
+                                <span className="tooltiptext">Company</span>
+                                <LinkImg src={cube} alt="Company Projects" />
+                            </LinkImgDiv>
                             <LinkDesDiv>Company</LinkDesDiv>
-                        </Link>
-                    </SideBarMenuList>
-                    <SideBarMenuList>
-                        <Link style={LinkStyle} to={`${BaseURL}/Apps`}>
-                            <LinkImg src={cube} alt="Individaul Apps" />
+                        </LinkSubDiv>
+                    </Link>
+                </SideBarMenuList>
+                <SideBarMenuList>
+                    <Link style={LinkStyle} to={`${BaseURL}/Apps`}>
+                        <LinkSubDiv>
+                            <LinkImgDiv className="tooltip">
+                                <span className="tooltiptext">Apps</span>
+                                <LinkImg src={cube} alt="Individaul Apps" />
+                            </LinkImgDiv>
                             <LinkDesDiv>Apps</LinkDesDiv>
-                        </Link>
-                    </SideBarMenuList>
-                </ul>
-            </>
+                        </LinkSubDiv>
+                    </Link>
+                </SideBarMenuList>
+            </ul>
         );
     }
 };

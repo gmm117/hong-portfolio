@@ -22,6 +22,12 @@ const SideBarDiv = styled.div`
     -webkit-transition: width 0.5s ease;
     -moz-transition: width 0.5s ease;
     transition: width 0.5s ease;
+
+    @media screen and (max-width : 767px) {
+        min-width : ${props => (props.isSidebarOpen ? '80px' : '0px')};
+        max-width : ${props => (props.isSidebarOpen ? '80px' : '0px')};
+        padding : ${props => (props.isSidebarOpen ? '10px 5px 10px 5px' : '0px')} ;
+    }
 `;
 
 const SideBarSection = styled.div`
@@ -31,10 +37,16 @@ const SideBarSection = styled.div`
     margin : 0 0 30px 0;
 `;
 
-
 const AvatarImgDiv = styled.div`
     width: 60px;
     height: 60px;
+
+    /* Mobile Device */
+    @media screen and (max-width : 767px) {
+        width: 45px;
+        height: 45px;
+        margin: 0 0 10px 0;
+    }
 `;
 
 const AvatarImg = styled.img`
@@ -45,6 +57,11 @@ const AvatarImg = styled.img`
 
 const AvatarContentDiv = styled.div`
     margin : 10px 0 20px 0;
+
+    /* Mobile Device */
+    @media screen and (max-width : 767px) {
+        display: none;
+    }
 `; 
 
 const AvatarName = styled.div`
@@ -63,12 +80,24 @@ const SideBarLink = styled.div`
     position : absolute;
     bottom : 15px;
     display : flex;
+
+    div + div {
+        padding : 0 0 0 5px;
+    }
+
+    /* Mobile Device */
+    @media screen and (max-width : 767px) {
+        flex-direction: column;
+
+        div + div {
+            padding : 5px 0 0 0;
+        }
+    }
 `;
 
 const SideBarLinkDiv = styled.div`
     width : 20px;
     height : 20px;
-    padding : 0 5px 0 0;
     cursor: pointer;
 `;
 
@@ -81,8 +110,39 @@ const SideBarLinkStyle = {
     width : '100%',
     height : '100%',
     textDecoration: 'none',
-    color : 'white'
+    color : 'white',
 };
+
+const SideBarSubDiv = styled.div`
+    display: flex;
+    justify-content : flex-start;
+    align-items : stretch;
+    flex-direction: column;
+
+    /* Mobile Device */
+    @media screen and (max-width : 767px) {
+        justify-content : center;
+        align-items : center;
+    }
+`;
+
+const SideBarSectionLinkDiv = styled.div`
+    display: flex;
+
+    /* Mobile Device */
+    @media screen and (max-width : 767px) {
+        display: block;
+
+        div + div {
+            margin-top : 4px;
+        }
+
+        div:nth-child(2) {
+            display: none;
+        }
+    }
+`;
+
 
 class SideBar extends Component {
     constructor(props) {
@@ -94,20 +154,26 @@ class SideBar extends Component {
     render() {
         return (
             <SideBarDiv isSidebarOpen={this.props.isSidebarOpen} >
-                <SideBarSection>
-                    <Link style={SideBarLinkStyle} to={`${BaseURL}/`}>
-                        <span>Hong's Portfolio</span>
-                    </Link>
-                </SideBarSection>
-                 <AvatarImgDiv >
-                    <AvatarImg src={avatar_profile} alt="Hong's Image" />
-                </AvatarImgDiv>
-                <AvatarContentDiv>
-                    <AvatarName>홍 승 아</AvatarName>
-                    <AvatarOccupation>Front End Developer</AvatarOccupation>
-                    <AvatarOccupation>010-7118-2519</AvatarOccupation>
-                </AvatarContentDiv>
-                <SidebarMenu/>
+                <SideBarSubDiv>
+                    <SideBarSection>
+                        <Link style={SideBarLinkStyle} to={`${BaseURL}/`}>
+                            <SideBarSectionLinkDiv>
+                                <div>Hong's</div>
+                                <div>{'\u00A0'}</div>
+                                <div> Portfolio</div>
+                            </SideBarSectionLinkDiv>
+                        </Link>
+                    </SideBarSection>
+                    <AvatarImgDiv >
+                        <AvatarImg src={avatar_profile} alt="Hong's Image" />
+                    </AvatarImgDiv>
+                    <AvatarContentDiv>
+                        <AvatarName>홍 승 아</AvatarName>
+                        <AvatarOccupation>Front End Developer</AvatarOccupation>
+                        <AvatarOccupation>010-7118-2519</AvatarOccupation>
+                    </AvatarContentDiv>
+                    <SidebarMenu/>
+                </SideBarSubDiv>
                 <SideBarLink>
                     <SideBarLinkDiv className="tooltip" onClick={(e) => { window.open('https://github.com/gmm117', '_blank'); }}>
                         <span className="tooltiptext">GitHub</span>

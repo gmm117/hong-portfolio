@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+// const CompDiv = styled.div`
+    
+// `;
+
 class CompProject extends Component {
     constructor(props) {
         super(props);

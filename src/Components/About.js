@@ -4,24 +4,54 @@ import Profile from '../../imgs/profile.jpg';
 import AboutImg from '../../imgs/bg-about.jpg';
 
 const AbountBody = styled.div`
-    font-size: 20px; 
+    font-size: 14px; 
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif;
     display : flex;
-    flex-direction: row;
+    flex-direction: column;
     flex: 1;
     height : 100%;
     color : black;
     font-weight : 600;
-    line-height : 1.3;
+    line-height : 1.0;
     padding : 30px;
+    align-items : center;
+
+    /* Tablet Device */
+    @media screen and (min-width : 768px) and (max-width : 991px) {
+        font-size: 17px; 
+        flex-direction: row;
+        line-height : 1.3;
+        align-items: stretch;
+    }
+
+    /* Desktop Device */
+    @media screen and (min-width : 992px) {
+        font-size: 20px; 
+        flex-direction: row;
+        line-height : 1.3;
+        align-items: stretch;
+    }
 `;
 
 const ProfileImage = styled.img`
     width: 220px;
     min-width : 220px;
-    height: 250px; 
-    float: left; 
-    margin: 0px 15px 5px 0px;
+    height: 250px;
+    border-radius : 10%;
+
+    /* Mobile Device */
+    @media screen and (max-width : 767px) {
+        width: 180px;
+        min-width : 180px;
+        height: 210px;
+        margin: 0px 0px 15px 0px; 
+    }
+
+    /* Desktop Device */
+    @media screen and (min-width : 768px) {
+        float: left; 
+        margin: 0px 15px 5px 0px;
+    }
 `;
 
 class Abount extends Component {

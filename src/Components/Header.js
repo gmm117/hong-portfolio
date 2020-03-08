@@ -19,7 +19,9 @@ const NavDiv = styled.div`
     justify-content: center;
     align-items: center;
     width : 20px;
+    min-width : 20px;
     height : 20px;
+    min-height : 20px;
     cursor : pointer;
     margin : 0 15px 0 5px;
 `;
