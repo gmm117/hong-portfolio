@@ -28,27 +28,26 @@ const ListItemLi = styled.li`
     flex-direction: column;
     align-items: center;
     width: 280px;
+    height: 220px;
+    min-height: 220px;
     padding: 76px 14px 0;
     text-align: center;
+    margin: 0 auto;
 `;
 
 const ThumbDiv = styled.div`
-    display : flex;
-    align-items: center;
-    flex: 1 0 0%;
     width: 100%;
     height: 210px;
+    min-height: 210px;
     margin: 10px 0px;
     cursor: pointer;
     padding : ${props => (props.padding ? props.padding : '0px')};
     box-sizing: border-box;
     box-shadow: 0 1px 15px rgba(0,21,41,0.08);
-    position: relative;
 `;
 
 const ThumbItemDiv = styled.div`
     width: 100%;
-    height: 100%;
     font-weight: 600;
 `;
 

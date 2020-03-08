@@ -10,7 +10,9 @@ import facebook from '../../../imgs/facebook.svg';
 import instagram from '../../../imgs/instagram.svg';
 
 const SideBarDiv = styled.div`
-    width : ${props => (props.isSidebarOpen ? '220px' : '0px')} !important;
+    min-width : ${props => (props.isSidebarOpen ? '170px' : '0px')};
+    max-width : ${props => (props.isSidebarOpen ? '170px' : '0px')};
+    width : 100%;
     background : #3F4651;
     position : relative;
     box-shadow: 0 1px 4px rgba(0,21,41,0.08);
@@ -76,8 +78,6 @@ const SideBarLinkImg = styled.img`
 `;
 
 const SideBarLinkStyle = {
-    display : 'flex',
-    alignItems: 'center',
     width : '100%',
     height : '100%',
     textDecoration: 'none',
