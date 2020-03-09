@@ -139,7 +139,7 @@ class Company extends Component {
                         <ThumbDiv>
                             <ThumbImg src={hancom_logo} alt="Hancom Group Logo" />
                             <ThumbHoverDiv>
-                                <Link style={LinkStyle} to={`${BaseURL}/Company/Hancom`} >
+                                <Link style={LinkStyle} to={`${BaseURL}/Company-Hancom`} >
                                     <ThumbHoverDivItem>
                                         <div>한글과컴퓨터</div>
                                         <div>웹한글/웹한글기안기</div>
@@ -154,7 +154,7 @@ class Company extends Component {
                         <ThumbDiv padding={'35px'}>
                             <ThumbImg src={osstem_logo} alt="Osstem Implant Logo" />
                             <ThumbHoverDiv>
-                                <Link style={LinkStyle} to={`${BaseURL}/Company/OsstemImplant`} >
+                                <Link style={LinkStyle} to={`${BaseURL}/Company-OsstemImplant`} >
                                     <ThumbHoverDivItem>
                                         <div>오스템임플란트</div>
                                         <div>치과용 프로그램</div>
@@ -169,7 +169,7 @@ class Company extends Component {
                         <ThumbDiv padding={'45px'}>
                             <ThumbImg src={bluebirdlogo} alt="Bluebird Logo" />
                             <ThumbHoverDiv>
-                                <Link style={LinkStyle} to={`${BaseURL}/Company/Bluebird`} >
+                                <Link style={LinkStyle} to={`${BaseURL}/Company-Bluebird`} >
                                     <ThumbHoverDivItem>
                                         <div>블루버드소프트</div>
                                         <div>산업용 PDA개발</div>
