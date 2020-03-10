@@ -1,15 +1,23 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-// import {GetWebHwpImage} from './Hancom/CompHancom';
-import webhwp_main from '../../../imgs/webhwp_main.png';
+import { BaseURL } from '../Utils/Define';
+import { GetCompInfo } from './Info/CompInfo';
 
 const CompUl = styled.ul`
     width : 100%;
+    max-width : 1000px;  
     height : 100%;
     display : flex;
-    padding : 35px;
+    justify-content : center;
+    margin: 0 auto;
+    align-items: center;
     box-sizing: border-box;
+
+    /* Mobile Device */
+    @media screen and (max-width : 767px) {
+        max-width : 400px;  
+    }
 `;
 
 const CompLi = styled.li`
@@ -20,6 +28,7 @@ const CompLi = styled.li`
 const CompTitleDiv = styled.div`
     font-size : 20px;
     font-weight : 600;
+    color : black;
     margin-bottom: 10px;
 `;
 
@@ -27,6 +36,11 @@ const CompContentDiv = styled.div`
     width : 100%;
     height : 100%;
     display : flex;
+
+    /* Mobile Device */
+    @media screen and (max-width : 767px) {
+        display : block;
+    }
 `;
 
 const CompImgDiv = styled.div`
@@ -37,6 +51,29 @@ const CompImgDiv = styled.div`
 
     div + div {
         margin-top : 10px;
+    }
+
+    /* Desktop Device */
+    @media screen and (min-width : 992px) {
+        margin-right : 10px;
+    }
+
+    /* Tablet Device */
+    @media screen and (min-width : 768px) and (max-width : 991px) {
+        width : 400px;
+        min-width : 400px;
+        height : 400px;
+        min-height : 400px;
+        margin-right : 10px;
+    }
+
+    /* Mobile Device */
+    @media screen and (max-width : 767px) {
+        width : 300px;
+        min-width : 300px;
+        height : 300px;
+        min-height : 300px;
+        margin-bottom : 10px;
     }
 `;
 
@@ -67,7 +104,13 @@ const CompDetailDiv = styled.div`
 
 const CompDetailTop = styled.div`
     width : 100%;
-    height : 350px;
+    height : 500px;
+`;
+
+const CompDetailTopDetail = styled.div`
+    width : 100%;
+    color : black;
+    font-weight : 600;
 `;
 
 const CompDetailBottom = styled.div`
@@ -76,41 +119,77 @@ const CompDetailBottom = styled.div`
 `;
 
 
-class CompProject extends Component {
-    constructor(props) {
-        super(props);
+function CompProject({location, onLocationChange}) {
+    const {pathname} = location;
+    let newpathname = pathname.replace(BaseURL, "");
+    const [CompInfo, setCompInfo] = useState({
+        title : "",
+        sublist : {
+            date : "", 
+            type : "",
+            role : "", 
+            skills : "", 
+            url : {
+                href : "",
+                value : ""
+            }, 
+            contents : {
+                content1 : "", 
+                content2 : ""
+            }
+        },
+        desc : "",
+        image : {
+            title : {
+                src : null, 
+                alt : ""
+            },
+            thumnail1 : {
+                src : null, 
+                alt : ""
+            }
+        }
+    });
 
-        const { location } = this.props;
-        this.props.onLocationChange(location);
-    }
-
-    render() {
-        return(
-            <CompUl>
-                <CompLi>
-                    <CompTitleDiv>웹한글/웹한글기안기</CompTitleDiv>
-                    <CompContentDiv>
-                        <CompImgDiv>
-                            <CompImgTitleDiv>
-                                <CompImgTitleImg src={webhwp_main} alt="웹한글 메인화면" />
-                            </CompImgTitleDiv>
-                            <CompImgThumDiv>
-
-                            </CompImgThumDiv>
-                        </CompImgDiv>
-                        <CompDetailDiv>
-                            <CompDetailTop>
-
-                            </CompDetailTop>
-                            <CompDetailBottom>
-
-                            </CompDetailBottom>
-                        </CompDetailDiv>
-                    </CompContentDiv>
-                </CompLi>
-            </CompUl>
+    useEffect(() => {
+        setCompInfo(
+            GetCompInfo(newpathname.substr(1))
         );
-    }
+     }, []);
+
+    
+    onLocationChange(location);
+
+    
+
+    return(
+        <CompUl>
+            <CompLi>
+                <CompTitleDiv>{CompInfo.title}</CompTitleDiv>
+                <CompContentDiv>
+                    <CompImgDiv>
+                        <CompImgTitleDiv>
+                            <CompImgTitleImg src={CompInfo.image.title.src} alt={CompInfo.image.title.alt} />
+                        </CompImgTitleDiv>
+                        <CompImgThumDiv>
+  
+                        </CompImgThumDiv>
+                    </CompImgDiv>
+                    <CompDetailDiv>
+                        <CompDetailTop>
+                            <CompDetailTopDetail>{CompInfo.sublist.date}</CompDetailTopDetail>
+                            <CompDetailTopDetail>{CompInfo.sublist.type}</CompDetailTopDetail>
+                            <CompDetailTopDetail>{CompInfo.sublist.role}</CompDetailTopDetail>
+                            <CompDetailTopDetail>{CompInfo.sublist.skills}</CompDetailTopDetail>
+                        </CompDetailTop>
+                        <CompDetailBottom>
+
+                        </CompDetailBottom>
+                    </CompDetailDiv>
+                </CompContentDiv>
+            </CompLi>
+        </CompUl>
+    );
 };
 
 export default CompProject;
