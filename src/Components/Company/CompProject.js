@@ -118,43 +118,50 @@ const CompDetailBottom = styled.div`
     height : 30px;
 `;
 
+const DefaultCompInfo = {
+    title : "준비중입니다.",
+    sublist : {
+        date : "", 
+        type : "",
+        role : "", 
+        skills : "", 
+        url : {
+            href : "",
+            value : ""
+        }, 
+        contents : {
+            content1 : "", 
+            content2 : ""
+        }
+    },
+    desc : "",
+    image : {
+        title : {
+            src : null, 
+            alt : ""
+        },
+        thumnail1 : {
+            src : null, 
+            alt : ""
+        }
+    }
+};
 
 function CompProject({location, onLocationChange}) {
     const {pathname} = location;
     let newpathname = pathname.replace(BaseURL, "");
-    const [CompInfo, setCompInfo] = useState({
-        title : "",
-        sublist : {
-            date : "", 
-            type : "",
-            role : "", 
-            skills : "", 
-            url : {
-                href : "",
-                value : ""
-            }, 
-            contents : {
-                content1 : "", 
-                content2 : ""
-            }
-        },
-        desc : "",
-        image : {
-            title : {
-                src : null, 
-                alt : ""
-            },
-            thumnail1 : {
-                src : null, 
-                alt : ""
-            }
-        }
-    });
+    const [CompInfo, setCompInfo] = useState(DefaultCompInfo);
 
     useEffect(() => {
+        let info = GetCompInfo(newpathname.substr(1));
+        if(!info) {
+            info = DefaultCompInfo;
+        } 
+
         setCompInfo(
-            GetCompInfo(newpathname.substr(1))
+            info
         );
+        
      }, []);
 
     
