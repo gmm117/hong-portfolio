@@ -32,7 +32,15 @@ const ListItemLi = styled.li`
     margin: 0 auto;
 
     /* Mobile Device */
-    @media screen and (max-width : 767px) {
+    @media screen and (min-width : 320px) {
+        height: 100px;
+        min-height: 100px;
+        width: 150px;
+        min-width: 150px;
+    }
+
+    /* Mobile Device */
+    @media screen and (min-width : 321px) and (max-width : 767px) {
         height: 150px;
         min-height: 150px;
         width: 220px;
@@ -66,7 +74,13 @@ const ThumbDiv = styled.div`
     box-shadow: 0 1px 15px rgba(0,21,41,0.08);
 
     /* Mobile Device */
-    @media screen and (max-width : 767px) {
+    @media screen and (min-width : 320px) {
+        height: 100px;
+        min-height: 100px;
+    }
+
+    /* Mobile Device */
+    @media screen and (min-width : 321px) and (max-width : 767px) {
         height: 150px;
         min-height: 150px;
     }

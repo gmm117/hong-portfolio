@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import menu from '../../imgs/menu.png';
 
@@ -36,26 +36,19 @@ const NavImg = styled.img`
     height : 100%;
 `;
 
-class Header extends Component {
-    constructor(props) {
-        super(props);
-        this.onSidebarChange = this.props.onSidebarChange;
-    }
+function Header( { navName, onSidebarChange } ) {
+    const onSideClick = useCallback(() => {
+        onSidebarChange();
+    }, [onSidebarChange]);
 
-    render() {
-        const onSideClick = () => {
-            this.onSidebarChange();
-        }
-        
-        return (
-            <HeaderDiv>
-                <NavDiv onClick={onSideClick}>
-                    <NavImg src={menu} alt="Navigator" />
-                </NavDiv>
-                <NavTitle>{this.props.navName}</NavTitle>
-            </HeaderDiv>
-        );
-    }
-};
+    return (
+        <HeaderDiv>
+            <NavDiv onClick={onSideClick}>
+                <NavImg src={menu} alt="Navigator" />
+            </NavDiv>
+            <NavTitle>{navName}</NavTitle>
+        </HeaderDiv>
+    );
+}
 
 export default Header;

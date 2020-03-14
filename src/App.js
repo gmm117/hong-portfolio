@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import '../assets/index.scss';
 
@@ -23,55 +23,54 @@ const ContentDiv = styled.div`
   overflow: auto;
 `;
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { navName : "Home", isSidebarOpen : true };
-    this.setNavName = this.setNavName.bind(this);
-    this.setSideBarOpen = this.setSideBarOpen.bind(this);
-  }
-  setSideBarOpen() {
-    this.setState({
-      ...this.state,
-      isSidebarOpen: !this.state.isSidebarOpen
-    });
-  }
+function App() {
+  const [appState, setAppState] = useState({
+    navName : "Home", 
+    isSidebarOpen : true
+  });
 
-  setNavName(name) {
-    this.setState({
-      ...this.state,
+  const {navName, isSidebarOpen} = appState;
+
+  const setSideBarOpen = useCallback(() => {
+    setAppState(prevState => ({
+      ...prevState,
+      isSidebarOpen: !prevState.isSidebarOpen
+    }));
+  }, [isSidebarOpen]);
+
+  const setNavName = useCallback((name) => {
+    setAppState(prevState => ({
+      ...prevState,
       navName: name
-    });
-  }
+    }));
+  }, [navName]);
 
-  render() {
-    const onSidebarChnage = () => {
-      this.setSideBarOpen();
-    };
+  const onSidebarChnage = useCallback(() => {
+    setSideBarOpen();
+  }, []);
 
-    const onLocationChange = (location) => {
-      var name = GetLinkName(location.pathname);
-      name = name.replace(BaseURL, "");
-      if(name !== this.state.navName) {
-        this.setNavName(name);
-      }
+  const onLocationChange = useCallback((location) => {
+    var name = GetLinkName(location.pathname);
+    name = name.replace(BaseURL, "");
+    if(name !== navName) {
+      setNavName(name);
     }
+  }, [navName]);
 
-    return (
-      <ContainerDiv>
-        <SideBar 
-          isSidebarOpen={this.state.isSidebarOpen}
+  return (
+    <ContainerDiv>
+      <SideBar 
+        isSidebarOpen={isSidebarOpen}
+      />
+      <ContentDiv>
+        <Header 
+          navName={navName} 
+          onSidebarChange={onSidebarChnage}
         />
-        <ContentDiv>
-          <Header 
-            navName={this.state.navName} 
-            onSidebarChange={onSidebarChnage}
-          />
-          <Content onLocationChange={onLocationChange}/>
-        </ContentDiv>
-      </ContainerDiv>
-    );
-  }
+        <Content onLocationChange={onLocationChange}/>
+      </ContentDiv>
+    </ContainerDiv>
+  );
 };
 
 export default App;

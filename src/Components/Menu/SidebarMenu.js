@@ -77,7 +77,7 @@ class SidebarMenu extends Component {
         super(props);
     }
     render() {
-    return (
+        return (
             <ul>
                 <SideBarMenuList>
                     <Link style={LinkStyle} to={`${BaseURL}/`}>

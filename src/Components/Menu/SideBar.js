@@ -143,54 +143,46 @@ const SideBarSectionLinkDiv = styled.div`
     }
 `;
 
+function SideBar( {isSidebarOpen} ) {
 
-class SideBar extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { isSidebarOpen : true };
-    }
-
-    render() {
-        return (
-            <SideBarDiv isSidebarOpen={this.props.isSidebarOpen} >
-                <SideBarSubDiv>
-                    <SideBarSection>
-                        <Link style={SideBarLinkStyle} to={`${BaseURL}/`}>
-                            <SideBarSectionLinkDiv>
-                                <div>Hong's</div>
-                                <div>{'\u00A0'}</div>
-                                <div> Portfolio</div>
-                            </SideBarSectionLinkDiv>
-                        </Link>
-                    </SideBarSection>
-                    <AvatarImgDiv >
-                        <AvatarImg src={avatar_profile} alt="Hong's Image" />
-                    </AvatarImgDiv>
-                    <AvatarContentDiv>
-                        <AvatarName>홍 승 아</AvatarName>
-                        <AvatarOccupation>Front End Developer</AvatarOccupation>
-                        <AvatarOccupation>010-7118-2519</AvatarOccupation>
-                    </AvatarContentDiv>
-                    <SidebarMenu/>
-                </SideBarSubDiv>
-                <SideBarLink>
-                    <SideBarLinkDiv className="tooltip" onClick={(e) => { window.open('https://github.com/gmm117', '_blank'); }}>
-                        <span className="tooltiptext">GitHub</span>
-                        <SideBarLinkImg src={github} alt="GitHub Link" />
-                    </SideBarLinkDiv> 
-                    <SideBarLinkDiv className="tooltip" onClick={(e) => { window.open('https://www.facebook.com/profile.php?id=100002349562000', '_blank'); }}>
-                        <span className="tooltiptext">FaceBook</span>
-                        <SideBarLinkImg src={facebook} alt="FaceBook Link" />
-                    </SideBarLinkDiv>
-                    <SideBarLinkDiv className="tooltip" onClick={(e) => { window.open('https://www.instagram.com/hongseunga/', '_blank'); }}>
-                        <span className="tooltiptext">Instagram</span>
-                        <SideBarLinkImg src={instagram} alt="Instagram Link" />
-                    </SideBarLinkDiv>
-                </SideBarLink>
-            </SideBarDiv>
-        );
-    }
-}
+    return (
+        <SideBarDiv isSidebarOpen={isSidebarOpen} >
+            <SideBarSubDiv>
+                <SideBarSection>
+                    <Link style={SideBarLinkStyle} to={`${BaseURL}/`}>
+                        <SideBarSectionLinkDiv>
+                            <div>Hong's</div>
+                            <div>{'\u00A0'}</div>
+                            <div> Portfolio</div>
+                        </SideBarSectionLinkDiv>
+                    </Link>
+                </SideBarSection>
+                <AvatarImgDiv >
+                    <AvatarImg src={avatar_profile} alt="Hong's Image" />
+                </AvatarImgDiv>
+                <AvatarContentDiv>
+                    <AvatarName>홍 승 아</AvatarName>
+                    <AvatarOccupation>Front End Developer</AvatarOccupation>
+                    <AvatarOccupation>010-7118-2519</AvatarOccupation>
+                </AvatarContentDiv>
+                <SidebarMenu/>
+            </SideBarSubDiv>
+            <SideBarLink>
+                <SideBarLinkDiv className="tooltip" onClick={(e) => { window.open('https://github.com/gmm117', '_blank'); }}>
+                    <span className="tooltiptext">GitHub</span>
+                    <SideBarLinkImg src={github} alt="GitHub Link" />
+                </SideBarLinkDiv> 
+                <SideBarLinkDiv className="tooltip" onClick={(e) => { window.open('https://www.facebook.com/profile.php?id=100002349562000', '_blank'); }}>
+                    <span className="tooltiptext">FaceBook</span>
+                    <SideBarLinkImg src={facebook} alt="FaceBook Link" />
+                </SideBarLinkDiv>
+                <SideBarLinkDiv className="tooltip" onClick={(e) => { window.open('https://www.instagram.com/hongseunga/', '_blank'); }}>
+                    <span className="tooltiptext">Instagram</span>
+                    <SideBarLinkImg src={instagram} alt="Instagram Link" />
+                </SideBarLinkDiv>
+            </SideBarLink>
+        </SideBarDiv>
+    );
+};
 
 export default SideBar;

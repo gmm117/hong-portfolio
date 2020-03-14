@@ -17,24 +17,18 @@ const ContentDiv = styled.div`
     bottom: 0;
 `;
 
-class Content extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return(
-            <ContentDiv>
-                <Route exact path={`${BaseURL}/About`} component={( {location, match, history} ) => <About onLocationChange={this.props.onLocationChange} location={location} match={match} history={history} />} />
-                <Switch>
-                    <Route exact path={`${BaseURL}/Company-:name`} component={( {location, match, history} ) => <CompProject onLocationChange={this.props.onLocationChange} location={location} match={match} history={history} />} />
-                    <Route exact path={`${BaseURL}/Company`} component={( {location, match, history} ) => <Company onLocationChange={this.props.onLocationChange} location={location} match={match} history={history} />} />
-                </Switch>
-                <Route exact path={`${BaseURL}/Apps`} component={( {location, match, history} ) => <About onLocationChange={this.props.onLocationChange} location={location} match={match} history={history} />} />
-                <Route exact path={`${BaseURL}/`} component={( {location, match, history} ) => <Home onLocationChange={this.props.onLocationChange} location={location} match={match} history={history} />} />
-            </ContentDiv>
-        );
-    }
-};
+function Content( {onLocationChange}) {
+    return(
+        <ContentDiv>
+            <Route exact path={`${BaseURL}/About`} component={( {location, match, history} ) => <About onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+            <Switch>
+                <Route exact path={`${BaseURL}/Company-:name`} component={( {location, match, history} ) => <CompProject onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+                <Route exact path={`${BaseURL}/Company`} component={( {location, match, history} ) => <Company onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+            </Switch>
+            <Route exact path={`${BaseURL}/Apps`} component={( {location, match, history} ) => <About onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+            <Route exact path={`${BaseURL}/`} component={( {location, match, history} ) => <Home onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+        </ContentDiv>
+    );
+}
 
 export default Content;
