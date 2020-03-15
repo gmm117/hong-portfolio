@@ -84,15 +84,6 @@ const SideBarLink = styled.div`
     div + div {
         padding : 0 0 0 5px;
     }
-
-    /* Mobile Device */
-    @media screen and (max-width : 767px) {
-        flex-direction: column;
-
-        div + div {
-            padding : 5px 0 0 0;
-        }
-    }
 `;
 
 const SideBarLinkDiv = styled.div`

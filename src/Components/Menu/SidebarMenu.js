@@ -4,24 +4,27 @@ import styled from 'styled-components';
 
 import { BaseURL } from '../Utils/Define';
 import { LinkStyle } from '../Utils/CommonStyle';
-import home from '../../../imgs/home.svg';
-import cube from '../../../imgs/cube.svg';
-import user from '../../../imgs/user.svg';
+import homeImg from '../../../imgs/home.svg';
+import cubeImg from '../../../imgs/cube.svg';
+import userImg from '../../../imgs/user.svg';
+import appImg from '../../../imgs/app.svg';
 
 const SideBarMenuList = styled.li`
     display: flex;
     align-items: center;
     color: #8493A5;
-    padding-top: 0.5rem;
-    padding-right: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding : 1.0rem 1.5rem 1.0rem 0;
     cursor : pointer;
     height : 25px;
 
     /* Mobile Device */
     @media screen and (max-width : 767px) {
-        justify-content : flex-start;
-        padding-right: 0;
+        padding : 1.0rem 0 1.0rem 0;
+    }
+
+    /* Mobile Device */
+    @media screen and (max-height : 640px) {
+        padding : 1.0rem 0 1.0rem 0;
     }
 `;
 
@@ -84,7 +87,7 @@ class SidebarMenu extends Component {
                         <LinkSubDiv>
                             <LinkImgDiv className="tooltip">
                                 <span className="tooltiptext">Home</span>
-                                <LinkImg src={home} alt="Home" />
+                                <LinkImg src={homeImg} alt="Home" />
                             </LinkImgDiv>
                             <LinkDesDiv>Home</LinkDesDiv>
                         </LinkSubDiv>
@@ -95,7 +98,7 @@ class SidebarMenu extends Component {
                         <LinkSubDiv>
                             <LinkImgDiv className="tooltip">
                                 <span className="tooltiptext">About</span>
-                                <LinkImg src={user} alt="About" />
+                                <LinkImg src={userImg} alt="About" />
                             </LinkImgDiv>
                             <LinkDesDiv>About</LinkDesDiv>
                         </LinkSubDiv>
@@ -106,7 +109,7 @@ class SidebarMenu extends Component {
                         <LinkSubDiv>
                             <LinkImgDiv className="tooltip">
                                 <span className="tooltiptext">Company</span>
-                                <LinkImg src={cube} alt="Company Projects" />
+                                <LinkImg src={cubeImg} alt="Company Projects" />
                             </LinkImgDiv>
                             <LinkDesDiv>Company</LinkDesDiv>
                         </LinkSubDiv>
@@ -117,7 +120,7 @@ class SidebarMenu extends Component {
                         <LinkSubDiv>
                             <LinkImgDiv className="tooltip">
                                 <span className="tooltiptext">Apps</span>
-                                <LinkImg src={cube} alt="Individaul Apps" />
+                                <LinkImg src={appImg} alt="Individaul Apps" />
                             </LinkImgDiv>
                             <LinkDesDiv>Apps</LinkDesDiv>
                         </LinkSubDiv>

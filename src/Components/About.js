@@ -36,6 +36,7 @@ const ProfileImage = styled.img`
     width: 220px;
     min-width : 220px;
     height: 250px;
+    min-height : 250px;
     border-radius : 10%;
 
     /* Mobile Device */
@@ -43,6 +44,7 @@ const ProfileImage = styled.img`
         width: 180px;
         min-width : 180px;
         height: 210px;
+        min-height : 210px;
         margin: 0px 0px 15px 0px; 
     }
 

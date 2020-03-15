@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { LinkButtonStyle } from '../../Utils/CommonStyle';
 import circle from '../../../../imgs/circle.svg';
 
 const CompLi = styled.li`
@@ -51,21 +52,38 @@ const CompContentDiv = styled.div`
 `;
 
 const CompBottomDiv = styled.div`
-    width : 100%;
-    height : 320px;
+    height : 400px;
+    min-height : 400px;
     display : flex;
 
     /* Mobile Device */
     @media screen and (max-width : 767px) {
         display : block;
     }
+
+    /* Tablet Device */
+    @media screen and (min-width : 768px) and (max-width : 991px) {
+        height : 270px;
+        min-height : 270px;
+    }
+
+    /* Mobile Device */
+    @media screen and (max-width : 767px) {
+        height : 200px;
+        min-height : 200px;
+    }
+
+    /* Mobile Device */
+    @media screen and (max-width : 320px) {
+        height : 180px;
+        min-height : 180px;
+    }
 `;
 
 const CompImgDiv = styled.div`
-    width : 320px;
-    min-width : 320px;
-    height : 320px;
-    min-height : 320px;
+    width : 400px;
+    min-width : 400px;
+    height : 100%;
     box-shadow: 0 1px 10px rgba(0,21,41,0.08);
 
     div + div {
@@ -138,22 +156,44 @@ const CompDetailDiv = styled.div`
 
     /* Tablet Device */
     @media screen and (min-width : 768px) and (max-width : 991px) {
-        font-size : 13px;
+        font-size : 14px;
         justify-content : center;
     }
 
     /* Mobile Device */
     @media screen and (max-width : 767px) {
-        font-size : 10px;
+        font-size : 12px;
         justify-content : flex-start;
     }
 `;
 
 
 const CompDetailDetail = styled.div`
-    width : 100%;
     display : flex;
     align-items : center;
+`;
+
+const CompDetailContent = styled.div`
+    width : 100%;
+`;
+
+const CompDetailDetailContent = styled.div`
+    padding-left : 20px;
+
+    /* Desktop Device */
+    @media screen and (min-width : 992px) {
+        font-size : 14px;
+    }
+
+    /* Tablet Device */
+    @media screen and (min-width : 768px) and (max-width : 991px) {
+        font-size : 12px;
+    }
+
+    /* Mobile Device */
+    @media screen and (max-width : 767px) {
+        font-size : 10px;
+    }
 `;
 
 const CompDetailDetailImg = styled.img`
@@ -194,7 +234,12 @@ const CompDetailDetailHr = styled.hr`
     width : 100%;
     border : none;
     background: rgba(0, 0, 0, .1);
-    margin : 20px 0;
+    margin : 10px 0;
+
+    /* Mobile Device */
+    @media screen and (max-width : 767px) {
+        margin : 5px 0;
+    }
 `;
 
 function CompItem( {compInfo} ) {
@@ -233,15 +278,20 @@ function CompItem( {compInfo} ) {
                             <CompDetailDetailImg src={circle} alt="" />Tools : {tools}
                         </CompDetailDetail>
                         <CompDetailDetailHr />
+                        <CompDetailContent>
+                            <CompDetailDetail>
+                                <CompDetailDetailImg src={circle} alt="" /> Contents :{'\u00A0'}
+                            </CompDetailDetail>
+                            <CompDetailDetailContent>
+                                {( content1 != null ? <div> - {content1}</div> : null )}
+                                {( content2 != null ? <div> - {content2}</div> : null )}
+                            </CompDetailDetailContent>
+                        </CompDetailContent>
                         <CompDetailDetail>
-                            <CompDetailDetailImg src={circle} alt="" />{content1}
-                        </CompDetailDetail>
-                        <CompDetailDetail>
-                            <CompDetailDetailImg src={circle} alt="" />{content2}
-                        </CompDetailDetail>
-                        <CompDetailDetail>
-                            <CompDetailDetailImg src={circle} alt="" />URL :{'\u00A0'}
-                            <CompDetailDetailLink href={url.href} target="_blank">{url.value}</CompDetailDetailLink>
+                            <LinkButtonStyle className="tooltip" onClick={() => window.open(url.href,"_blank" )}>
+                                <span className="tooltiptext">{url.value}</span>
+                                <span>Link</span>
+                            </LinkButtonStyle>
                         </CompDetailDetail>
                     </CompDetailDiv>
                 </CompBottomDiv>

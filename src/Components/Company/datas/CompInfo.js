@@ -30,8 +30,8 @@ const DefaultCompInfos =
                 value : ""
             }, 
             contents : {
-                content1 : "", 
-                content2 : ""
+                content1 : null, 
+                content2 : null
             }
         },
         desc : "",
@@ -60,7 +60,7 @@ const HancomInfos =
             tools : "intellij, git",
             url : {
                 href : "http://m.etnews.com/20190228000187",
-                value : "웹한글/웹한글기안기 링크"
+                value : "웹한글/웹한글기안기"
             }, 
             contents : {
                 content1 : "웹한글/웹한글기안기 관련 본문/프레임기능 중 UI/액션 기능 개발", 
