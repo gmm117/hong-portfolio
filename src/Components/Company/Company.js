@@ -11,7 +11,6 @@ import osstem_logo from '../../../imgs/osstem_logo.png';
 const CompanyDiv = styled.div`
     display : flex;
     flex: 1;
-    height : 100%;
 `;
 
 const ListUl = styled.ul`

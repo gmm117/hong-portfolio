@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 
-
 import Home from './Home';
 import About from './About';
 
@@ -12,9 +11,8 @@ import CompProject from './Company/CompProject';
 
 const ContentDiv = styled.div`
     width: 100%;
-    position: absolute;
-    top: 50px;
-    bottom: 0;
+    height : 100%;
+    background: white;
 `;
 
 function Content( {onLocationChange}) {

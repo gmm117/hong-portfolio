@@ -17,10 +17,9 @@ const ContainerDiv = styled.div`
 `;
 
 const ContentDiv = styled.div`
-  width: 100%;
-  height : 100%;
-  position: relative;
-  overflow: auto;
+    width: 100%;
+    height : 100%;
+    position: relative;
 `;
 
 function App() {

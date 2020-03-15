@@ -13,6 +13,7 @@ const SideBarDiv = styled.div`
     min-width : ${props => (props.isSidebarOpen ? '170px' : '0px')};
     max-width : ${props => (props.isSidebarOpen ? '170px' : '0px')};
     width : 100%;
+    height : 100%;
     background : #3F4651;
     position : relative;
     box-shadow: 0 1px 4px rgba(0,21,41,0.08);

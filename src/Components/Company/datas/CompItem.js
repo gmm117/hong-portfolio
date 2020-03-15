@@ -6,17 +6,16 @@ import circle from '../../../../imgs/circle.svg';
 
 const CompLi = styled.li`
     width : 100%;
-    height : 450px;
+    height : 100%;
     display : flex;
+    align-items: center;
     justify-content : center;
     flex-direction: column;
-    box-sizing : border-box;
+    margin : 0 auto;
 `;
 
 const CompTitleDiv = styled.div`
     font-weight : 600;
-    margin-bottom: 60px;
-    position : relative;
     color : black;
 
     /* Desktop Device */
@@ -33,17 +32,6 @@ const CompTitleDiv = styled.div`
     @media screen and (max-width : 767px) {
         font-size : 15x;
     }
-
-    &:after {
-        content: '';
-        position: absolute;
-        top: 45px;
-        left: 17px;
-        width: 30px;
-        height: 2px;
-        transform: translate(-50%, -50%);
-        background-color: rgba(0, 0, 0, 0.75);
-    }
 `;
 
 const CompContentDiv = styled.div`
@@ -55,6 +43,7 @@ const CompBottomDiv = styled.div`
     height : 400px;
     min-height : 400px;
     display : flex;
+    margin-top : 15px;
 
     /* Mobile Device */
     @media screen and (max-width : 767px) {
@@ -69,14 +58,8 @@ const CompBottomDiv = styled.div`
 
     /* Mobile Device */
     @media screen and (max-width : 767px) {
-        height : 200px;
-        min-height : 200px;
-    }
-
-    /* Mobile Device */
-    @media screen and (max-width : 320px) {
-        height : 180px;
-        min-height : 180px;
+        height : 440px;
+        min-height : 440px;
     }
 `;
 
@@ -84,6 +67,7 @@ const CompImgDiv = styled.div`
     width : 400px;
     min-width : 400px;
     height : 100%;
+    min-height : 400px;
     box-shadow: 0 1px 10px rgba(0,21,41,0.08);
 
     div + div {
@@ -223,12 +207,6 @@ const CompDetailDetailImg = styled.img`
     }
 `;
 
-const CompDetailDetailLink = styled.a`
-    text-decoration: none;
-    cursor : position;
-    color: rgba(100, 100, 100, 0.75);
-`;
-
 const CompDetailDetailHr = styled.hr`
     height : 1px;
     width : 100%;
@@ -243,9 +221,9 @@ const CompDetailDetailHr = styled.hr`
 `;
 
 function CompItem( {compInfo} ) {
-    const {title, image, sublist} = compInfo;
-    const {main_src, main_alt} = image.main;
-    const {date, type, role, skills, tools, url, contents} = sublist;
+    const { title, image, sublist } = compInfo;
+    const { main_src, main_alt } = image.main;
+    const { date, type, role, skills, tools, url, contents } = sublist;
     const { content1, content2 } = contents;
 
     return (
