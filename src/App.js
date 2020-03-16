@@ -14,11 +14,13 @@ const ContainerDiv = styled.div`
     width: 100%;
     height : 100%;
     color: rgba(100, 100, 100, 0.75);
+    overflow : hidden;
 `;
 
 const ContentDiv = styled.div`
     width: 100%;
     height : 100%;
+    overflow : auto;
     position: relative;
 `;
 

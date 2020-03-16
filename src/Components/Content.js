@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -11,13 +11,23 @@ import CompProject from './Company/CompProject';
 
 const ContentDiv = styled.div`
     width: 100%;
-    height : 100%;
+    height : ${props => (props.cheight + "px")} ;
     background: white;
 `;
 
-function Content( {onLocationChange}) {
+function Content( { onLocationChange }) {
+    const [cheight, setCHeight] = useState(0);
+
+    useEffect(() => {
+        setCHeight(window.innerHeight - 50);
+    }, []); 
+
+    window.addEventListener('resize', function(event){
+        setCHeight(window.innerHeight - 50);
+    });
+
     return(
-        <ContentDiv>
+        <ContentDiv cheight={cheight}>
             <Route exact path={`${BaseURL}/About`} component={( {location, match, history} ) => <About onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
             <Switch>
                 <Route exact path={`${BaseURL}/Company-:name`} component={( {location, match, history} ) => <CompProject onLocationChange={onLocationChange} location={location} match={match} history={history} />} />

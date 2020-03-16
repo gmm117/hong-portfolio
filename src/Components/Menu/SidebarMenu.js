@@ -24,7 +24,7 @@ const SideBarMenuList = styled.li`
 
     /* Mobile Device */
     @media screen and (max-height : 640px) {
-        padding : 1.0rem 0 1.0rem 0;
+        padding : 0.5rem 0 0.5rem 0;
     }
 `;
 

@@ -7,7 +7,6 @@ const HomeBody = styled.div`
     display : flex;
     justify-content : center;
     align-items : center;
-    flex: 1;
     font-size : 50px;
     color : black;
     height : 100%;
@@ -16,6 +15,7 @@ const HomeBody = styled.div`
 `;
 
 function Home( { location, onLocationChange } ) {
+    
     useEffect(() => {
         onLocationChange(location);
     }, []);
@@ -26,5 +26,6 @@ function Home( { location, onLocationChange } ) {
         </HomeBody>
     );
 }
+
  
 export default Home;

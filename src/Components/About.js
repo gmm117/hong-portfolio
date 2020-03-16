@@ -8,7 +8,6 @@ const AboutBody = styled.div`
     display : flex;
     flex-direction: column;
     
-    height : 100%;
     color : black;
     font-weight : 600;
     line-height : 1.0;

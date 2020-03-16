@@ -10,7 +10,6 @@ import facebook from '../../../imgs/facebook.svg';
 import instagram from '../../../imgs/instagram.svg';
 
 const SideBarDiv = styled.div`
-    min-width : ${props => (props.isSidebarOpen ? '170px' : '0px')};
     max-width : ${props => (props.isSidebarOpen ? '170px' : '0px')};
     width : 100%;
     height : 100%;
@@ -20,9 +19,10 @@ const SideBarDiv = styled.div`
     box-sizing: border-box;
     opacity : ${props => (props.isSidebarOpen ? 1 : 0)} ;
     padding : ${props => (props.isSidebarOpen ? '10px 20px 20px 20px' : '0px')} ;
-    -webkit-transition: width 0.5s ease;
-    -moz-transition: width 0.5s ease;
-    transition: width 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 
     @media screen and (max-width : 767px) {
         min-width : ${props => (props.isSidebarOpen ? '80px' : '0px')};

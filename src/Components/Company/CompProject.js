@@ -18,7 +18,7 @@ const CompUl = styled.ul`
     box-sizing: border-box;  
 
     li + li {
-        margin-top : 20px;
+        padding-top : 20px;
     }
 `;
 
