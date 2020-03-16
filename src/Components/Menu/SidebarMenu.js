@@ -23,7 +23,7 @@ const SideBarMenuList = styled.li`
     }
 
     /* Mobile Device */
-    @media screen and (max-height : 640px) {
+    @media screen and (max-height : 480px) {
         padding : 0.5rem 0 0.5rem 0;
     }
 `;
