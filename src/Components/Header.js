@@ -2,7 +2,7 @@ import React, { useCallback, useContext } from 'react';
 import styled from 'styled-components';
 import menu from '../../imgs/menu.png';
 
-import { SideBarContext } from '../App';
+import { DispatchContext } from '../App';
 
 const HeaderDiv = styled.div`
     display: flex;
@@ -39,11 +39,13 @@ const NavImg = styled.img`
 `;
 
 function Header( { navName } ) {
-    const sidebarChange = useContext(SideBarContext);
+    const dispatch = useContext(DispatchContext);
 
     const onSideClick = useCallback(() => {
-        sidebarChange();
-    }, [sidebarChange]);
+        dispatch({
+            type : "OPEN_SIDEBAR"
+        });
+    }, [dispatch]);
 
     return (
         <HeaderDiv>

@@ -16,7 +16,7 @@ function Process({ location, onLocationChange }) {
         <TileDiv>
             <TileUl>
                 <TileItemLi>
-                    <TileThumbDiv style={{background: '#f6f6f6', border: '2px solid gray'}}  padding={'60px'}>
+                    <TileThumbDiv background={'#f6f6f6'} padding={'60px'}>
                         <TileThumbImg src={apps_logo} alt="My Apps Image" />
                         <TileThumbHoverDiv>
                             <Link style={LinkStyle} to={`${BaseURL}/Process-Apps`} >
@@ -30,7 +30,7 @@ function Process({ location, onLocationChange }) {
                     <TileThumbItemDiv>Apps</TileThumbItemDiv>
                 </TileItemLi>
                 <TileItemLi>
-                    <TileThumbDiv style={{background: '#f6f6f6', border: '2px solid gray'}} padding={'60px'}>
+                    <TileThumbDiv background={'#f6f6f6'} padding={'60px'}>
                         <TileThumbImg src={study_logo} alt="My Study Image" />
                         <TileThumbHoverDiv>
                             <Link style={LinkStyle} to={`${BaseURL}/Process-Study`} >
@@ -44,7 +44,7 @@ function Process({ location, onLocationChange }) {
                     <TileThumbItemDiv>Study</TileThumbItemDiv>
                 </TileItemLi>
                 <TileItemLi>
-                    <TileThumbDiv style={{background: '#f6f6f6', border: '2px solid gray'}} padding={'60px'}>
+                    <TileThumbDiv background={'#f6f6f6'} padding={'60px'}>
                         <TileThumbImg src={work_logo} alt="My Work Image" />
                         <TileThumbHoverDiv>
                             <Link style={LinkStyle} to={`${BaseURL}/Process-Work`} >

@@ -45,13 +45,16 @@ I'd like you send me an email at <gmm117@naver.com> about anything you'd want to
 ## Credits
 
 This software uses the following open source packages:
-
-- [Node.js](https://nodejs.org/)
 - [webpack](https://webpack.js.org/)
 - [babel](https://babeljs.io/)
 - [npm](https://www.npmjs.com/)
 - [node-sass](https://github.com/sass/node-sass)
+- [eslint](https://eslint.org/)
 - [react](https://ko.reactjs.org/)
+- [react-dom](https://www.npmjs.com/package/react-dom)
+- [react-icons](https://react-icons.netlify.com/#/)
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+- [styled-components](https://styled-components.com/)
 
 ## Support
 

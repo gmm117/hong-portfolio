@@ -42,7 +42,7 @@ function reducer(state, action) {
   }
 }
 
-export const SideBarContext = createContext(null);
+export const DispatchContext = createContext(null);
 
 function App() {
   const [appState, dispatch] = useReducer(reducer, {
@@ -51,12 +51,6 @@ function App() {
   });
 
   const {navName, isSidebarOpen} = appState;
-
-  const onSidebarChange = useCallback(() => {
-    dispatch({
-      type : "OPEN_SIDEBAR"
-    });
-  }, []);
 
   const onLocationChange = useCallback((location) => {
     var name = GetLinkName(location.pathname);
@@ -73,11 +67,11 @@ function App() {
         isSidebarOpen={isSidebarOpen}
       />
       <ContentDiv>
-        <SideBarContext.Provider value={onSidebarChange}>
+        <DispatchContext.Provider value={dispatch}>
           <Header 
             navName={navName}
           />
-        </SideBarContext.Provider>
+        </DispatchContext.Provider>
         <Content onLocationChange={onLocationChange}/>
       </ContentDiv>
     </ContainerDiv>

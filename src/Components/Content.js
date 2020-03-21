@@ -8,9 +8,10 @@ import Home from './Home';
 import About from './About';
 
 import Company from './Company/Company';
-import CompProject from './Company/CompProject';
+import CompanyItem from './Company/CompanyItem';
 
 import Process from './Process/Process';
+import ProcessItem from './Process/ProcessItem';
 
 
 const ContentDiv = styled.div`
@@ -34,10 +35,13 @@ function Content( { onLocationChange }) {
         <ContentDiv cheight={cheight}>
             <Route exact path={`${BaseURL}/About`} component={( {location, match, history} ) => <About onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
             <Switch>
-                <Route exact path={`${BaseURL}/Company-:name`} component={( {location, match, history} ) => <CompProject onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+                <Route exact path={`${BaseURL}/Company-:name`} component={( {location, match, history} ) => <CompanyItem onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
                 <Route exact path={`${BaseURL}/Company`} component={( {location, match, history} ) => <Company onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
             </Switch>
-            <Route exact path={`${BaseURL}/Process`} component={( {location, match, history} ) => <Process onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+            <Switch>
+                <Route exact path={`${BaseURL}/Process-:name`} component={( {location, match, history} ) => <ProcessItem onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+                <Route exact path={`${BaseURL}/Process`} component={( {location, match, history} ) => <Process onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+            </Switch>
             <Route exact path={`${BaseURL}/`} component={( {location, match, history} ) => <Home onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
         </ContentDiv>
     );

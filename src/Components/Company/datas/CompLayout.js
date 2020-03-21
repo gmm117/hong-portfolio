@@ -197,7 +197,7 @@ const CompDetailDetailHr = styled.hr`
     }
 `;
 
-function CompItem( {compInfo} ) {
+function CompLayout( {compInfo} ) {
     const { title, image, sublist } = compInfo;
     const { main_src, main_alt } = image.main;
     const { date, type, role, skills, tools, url, contents } = sublist;
@@ -251,5 +251,5 @@ function CompItem( {compInfo} ) {
     );
 };
 
-export default CompItem;
+export default CompLayout;
 

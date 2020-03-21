@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { BaseURL } from '../Utils/Define';
 import { GetCompInfo } from './datas/CompInfo';
-import CompItem from './datas/CompItem';
-
+import CompLayout from './datas/CompLayout';
 
 const CompUl = styled.ul`
     width : 100%;
@@ -22,19 +21,21 @@ const CompUl = styled.ul`
     }
 `;
 
-function CompProject( {location, onLocationChange} ) {
+function CompanyItem( {location, onLocationChange} ) {
     let newpathname = location.pathname.replace(BaseURL, "");
     const [compInfos, setCompInfos] = useState(GetCompInfo(newpathname.substr(1)));
     
-    onLocationChange(location);
+    useEffect(() => {
+        onLocationChange(location);
+    }, []);
 
     return(
         <CompUl>
             {
-                compInfos.map((compInfo, index) => <CompItem key={index} compInfo={compInfo} /> )
+                compInfos.map((compInfo, index) => <CompLayout key={index} compInfo={compInfo} /> )
             }
         </CompUl>
     );
 };
 
-export default CompProject;
+export default CompanyItem;
