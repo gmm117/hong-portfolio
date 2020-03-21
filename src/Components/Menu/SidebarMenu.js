@@ -7,7 +7,7 @@ import { LinkStyle } from '../Utils/CommonStyle';
 import homeImg from '../../../imgs/home.svg';
 import cubeImg from '../../../imgs/cube.svg';
 import userImg from '../../../imgs/user.svg';
-import appImg from '../../../imgs/app.svg';
+import processImg from '../../../imgs/process.svg';
 
 const SideBarMenuList = styled.li`
     display: flex;
@@ -116,13 +116,13 @@ class SidebarMenu extends Component {
                     </Link>
                 </SideBarMenuList>
                 <SideBarMenuList>
-                    <Link style={LinkStyle} to={`${BaseURL}/Apps`}>
+                    <Link style={LinkStyle} to={`${BaseURL}/Process`}>
                         <LinkSubDiv>
                             <LinkImgDiv className="tooltip">
-                                <span className="tooltiptext">Apps</span>
-                                <LinkImg src={appImg} alt="Individaul Apps" />
+                                <span className="tooltiptext">Process</span>
+                                <LinkImg src={processImg} alt="Process" />
                             </LinkImgDiv>
-                            <LinkDesDiv>Apps</LinkDesDiv>
+                            <LinkDesDiv>Process</LinkDesDiv>
                         </LinkSubDiv>
                     </Link>
                 </SideBarMenuList>
