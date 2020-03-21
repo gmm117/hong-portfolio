@@ -8,8 +8,6 @@ const CompLi = styled.li`
     width : 100%;
     height : 100%;
     display : flex;
-    align-items: center;
-    justify-content : center;
     flex-direction: column;
     margin : 0 auto;
 `;
@@ -34,14 +32,7 @@ const CompTitleDiv = styled.div`
     }
 `;
 
-const CompContentDiv = styled.div`
-    width : 100%;
-    height : 100%;
-`;
-
 const CompBottomDiv = styled.div`
-    height : 400px;
-    min-height : 400px;
     display : flex;
     margin-top : 15px;
 
@@ -49,25 +40,14 @@ const CompBottomDiv = styled.div`
     @media screen and (max-width : 767px) {
         display : block;
     }
-
-    /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
-        height : 270px;
-        min-height : 270px;
-    }
-
-    /* Mobile Device */
-    @media screen and (max-width : 767px) {
-        height : 440px;
-        min-height : 440px;
-    }
 `;
 
 const CompImgDiv = styled.div`
-    width : 400px;
-    min-width : 400px;
-    height : 100%;
-    min-height : 400px;
+    width : 500px;
+    min-width : 500px;
+    height : 500px;
+    min-height : 500px;
+    margin-right : 15px;
     box-shadow: 0 1px 10px rgba(0,21,41,0.08);
 
     div + div {
@@ -75,16 +55,20 @@ const CompImgDiv = styled.div`
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    @media screen and (min-width : 992px) and (max-width : 1023px) {
+        width : 400px;
+        min-width : 400px;
+        height : 400px;
+        min-height : 400px;
         margin-right : 10px;
     }
 
     /* Tablet Device */
     @media screen and (min-width : 768px) and (max-width : 991px) {
-        width : 270px;
-        min-width : 270px;
-        height : 270px;
-        min-height : 270px;
+        width : 300px;
+        min-width : 300px;
+        height : 300px;
+        min-height : 300px;
         margin-right : 10px;
     }
 
@@ -107,11 +91,6 @@ const CompImgDiv = styled.div`
     }
 `;
 
-const CompImgTitleDiv = styled.div`
-    width : 100%;
-    height : 100%;
-`;
-
 const CompImgTitleImg = styled.img`
     width : 100%;
     height : 100%;
@@ -125,8 +104,6 @@ const CompImgThumDiv = styled.div`
 const CompDetailDiv = styled.div`
     width : 100%;
     height : 100%;
-    display : flex;
-    flex-direction: column;
  
     div + div {
         margin-top : 10px;
@@ -182,6 +159,7 @@ const CompDetailDetailContent = styled.div`
 
 const CompDetailDetailImg = styled.img`
     margin-right : 5px;
+
     /* Desktop Device */
     @media screen and (min-width : 992px) {
         width: 5px;
@@ -228,52 +206,48 @@ function CompItem( {compInfo} ) {
 
     return (
         <CompLi>
-            <CompContentDiv>
-                <CompTitleDiv>{title}</CompTitleDiv>
-                <CompBottomDiv>
-                    <CompImgDiv>
-                        <CompImgTitleDiv>
-                            <CompImgTitleImg src={main_src} alt={main_alt} />
-                        </CompImgTitleDiv>
-                        {/* <CompImgThumDiv>
+            <CompTitleDiv>{title}</CompTitleDiv>
+            <CompBottomDiv>
+                <CompImgDiv>
+                    <CompImgTitleImg src={main_src} alt={main_alt} />
+                    {/* <CompImgThumDiv>
 
-                        </CompImgThumDiv> */}
-                    </CompImgDiv>
-                    <CompDetailDiv>
+                    </CompImgThumDiv> */}
+                </CompImgDiv>
+                <CompDetailDiv>
+                    <CompDetailDetail>
+                        <CompDetailDetailImg src={circle} alt="" />Date : {date}
+                    </CompDetailDetail>
+                    <CompDetailDetail>
+                        <CompDetailDetailImg src={circle} alt="" />Type : {type}
+                    </CompDetailDetail>
+                    <CompDetailDetail>
+                        <CompDetailDetailImg src={circle} alt="" />Role : {role}
+                    </CompDetailDetail>
+                    <CompDetailDetail>
+                        <CompDetailDetailImg src={circle} alt="" />Skills : {skills}
+                    </CompDetailDetail>
+                    <CompDetailDetail>
+                        <CompDetailDetailImg src={circle} alt="" />Tools : {tools}
+                    </CompDetailDetail>
+                    <CompDetailDetailHr />
+                    <CompDetailContent>
                         <CompDetailDetail>
-                            <CompDetailDetailImg src={circle} alt="" />Date : {date}
+                            <CompDetailDetailImg src={circle} alt="" /> Contents :{'\u00A0'}
                         </CompDetailDetail>
-                        <CompDetailDetail>
-                            <CompDetailDetailImg src={circle} alt="" />Type : {type}
-                        </CompDetailDetail>
-                        <CompDetailDetail>
-                            <CompDetailDetailImg src={circle} alt="" />Role : {role}
-                        </CompDetailDetail>
-                        <CompDetailDetail>
-                            <CompDetailDetailImg src={circle} alt="" />Skills : {skills}
-                        </CompDetailDetail>
-                        <CompDetailDetail>
-                            <CompDetailDetailImg src={circle} alt="" />Tools : {tools}
-                        </CompDetailDetail>
-                        <CompDetailDetailHr />
-                        <CompDetailContent>
-                            <CompDetailDetail>
-                                <CompDetailDetailImg src={circle} alt="" /> Contents :{'\u00A0'}
-                            </CompDetailDetail>
-                            <CompDetailDetailContent>
-                                {( content1 != null ? <div> - {content1}</div> : null )}
-                                {( content2 != null ? <div> - {content2}</div> : null )}
-                            </CompDetailDetailContent>
-                        </CompDetailContent>
-                        <CompDetailDetail>
-                            <LinkButtonStyle className="tooltip" onClick={() => window.open(url.href,"_blank" )}>
-                                <span className="tooltiptext">{url.value}</span>
-                                <span>Link</span>
-                            </LinkButtonStyle>
-                        </CompDetailDetail>
-                    </CompDetailDiv>
-                </CompBottomDiv>
-            </CompContentDiv>
+                        <CompDetailDetailContent>
+                            {( content1 != null ? <div> - {content1}</div> : null )}
+                            {( content2 != null ? <div> - {content2}</div> : null )}
+                        </CompDetailDetailContent>
+                    </CompDetailContent>
+                    <CompDetailDetail>
+                        <LinkButtonStyle className="tooltip" onClick={() => window.open(url.href, "_blank")}>
+                            <span className="tooltiptext">{url.value}</span>
+                            <span>Link</span>
+                        </LinkButtonStyle>
+                    </CompDetailDetail>
+                </CompDetailDiv>
+            </CompBottomDiv>
         </CompLi>
     );
 };

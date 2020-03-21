@@ -78,13 +78,16 @@ const AvatarOccupation = styled.div`
 `;
 
 const SideBarLink = styled.div`
-    position : absolute;
-    bottom : 15px;
     display : flex;
 
     div + div {
         padding : 0 0 0 5px;
     }
+
+    /* Mobile Device */
+    @media screen and (min-height : 350px) {
+        position : absolute;
+        bottom : 15px;
 `;
 
 const SideBarLinkDiv = styled.div`
@@ -135,7 +138,7 @@ const SideBarSectionLinkDiv = styled.div`
     }
 `;
 
-function SideBar( {isSidebarOpen} ) {
+function SideBar( { isSidebarOpen } ) {
 
     return (
         <SideBarDiv isSidebarOpen={isSidebarOpen} >

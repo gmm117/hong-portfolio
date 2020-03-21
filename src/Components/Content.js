@@ -20,9 +20,9 @@ function Content( { onLocationChange }) {
 
     useEffect(() => {
         setCHeight(window.innerHeight - 50);
-    }, []); 
+    }, [cheight]); 
 
-    window.addEventListener('resize', function(event){
+    window.addEventListener('resize', function(e) {
         setCHeight(window.innerHeight - 50);
     });
 

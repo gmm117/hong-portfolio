@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback, useReducer, createContext } from 'react';
 import styled from 'styled-components';
 import '../assets/index.scss';
 
@@ -24,38 +24,47 @@ const ContentDiv = styled.div`
     position: relative;
 `;
 
+function reducer(state, action) {
+  switch(action.type) {
+    case "OPEN_SIDEBAR":
+      return {
+        ...state,
+        isSidebarOpen: !state.isSidebarOpen };
+      case "CHANGE_NAVIGATOR_NAME":
+        if(action.navName === state.navName)
+          return state;
+
+        return {
+          ...state,
+          navName: action.navName };
+    default:
+      return state ;
+  }
+}
+
+export const SideBarContext = createContext(null);
+
 function App() {
-  const [appState, setAppState] = useState({
+  const [appState, dispatch] = useReducer(reducer, {
     navName : "Home", 
-    isSidebarOpen : true
+    isSidebarOpen : true,
   });
 
   const {navName, isSidebarOpen} = appState;
 
-  const setSideBarOpen = useCallback(() => {
-    setAppState(prevState => ({
-      ...prevState,
-      isSidebarOpen: !prevState.isSidebarOpen
-    }));
-  }, [isSidebarOpen]);
-
-  const setNavName = useCallback((name) => {
-    setAppState(prevState => ({
-      ...prevState,
-      navName: name
-    }));
-  }, [navName]);
-
-  const onSidebarChnage = useCallback(() => {
-    setSideBarOpen();
+  const onSidebarChange = useCallback(() => {
+    dispatch({
+      type : "OPEN_SIDEBAR"
+    });
   }, []);
 
   const onLocationChange = useCallback((location) => {
     var name = GetLinkName(location.pathname);
     name = name.replace(BaseURL, "");
-    if(name !== navName) {
-      setNavName(name);
-    }
+    dispatch({
+      type : "CHANGE_NAVIGATOR_NAME",
+      navName : name
+    });
   }, [navName]);
 
   return (
@@ -64,10 +73,11 @@ function App() {
         isSidebarOpen={isSidebarOpen}
       />
       <ContentDiv>
-        <Header 
-          navName={navName} 
-          onSidebarChange={onSidebarChnage}
-        />
+        <SideBarContext.Provider value={onSidebarChange}>
+          <Header 
+            navName={navName}
+          />
+        </SideBarContext.Provider>
         <Content onLocationChange={onLocationChange}/>
       </ContentDiv>
     </ContainerDiv>

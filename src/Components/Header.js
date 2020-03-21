@@ -1,6 +1,8 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 import styled from 'styled-components';
 import menu from '../../imgs/menu.png';
+
+import { SideBarContext } from '../App';
 
 const HeaderDiv = styled.div`
     display: flex;
@@ -36,10 +38,12 @@ const NavImg = styled.img`
     height : 100%;
 `;
 
-function Header( { navName, onSidebarChange } ) {
+function Header( { navName } ) {
+    const sidebarChange = useContext(SideBarContext);
+
     const onSideClick = useCallback(() => {
-        onSidebarChange();
-    }, [onSidebarChange]);
+        sidebarChange();
+    }, [sidebarChange]);
 
     return (
         <HeaderDiv>
