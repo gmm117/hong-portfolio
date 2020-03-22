@@ -22,11 +22,22 @@ export const LinkButtonStyle = styled.div`
     font-size : 15px;
 `;
 
-
 //////////////////////////// tile ui layout ///////////////////////////////
 export const TileDiv = styled.div`
     display : flex;
     flex: 1;
+    margin : 0 auto;
+    max-width : 1280px;
+
+    /* Tablet Device */
+    @media screen and (min-width : 991px){
+        width : 90%;
+    }
+
+    /* Desktop Device */
+    @media screen and (min-width : 992px) {
+        width : 95%;
+    }
 `;
 
 export const TileUl = styled.ul`
@@ -48,34 +59,34 @@ export const TileItemLi = styled.li`
 
     /* Mobile Device */
     @media screen and (min-width : 320px) {
-        height: 100px;
-        min-height: 100px;
-        width: 150px;
-        min-width: 150px;
+        height: 200px;
+        min-height: 200px;
+        width: 200px;
+        min-width: 200px;
     }
 
     /* Mobile Device */
     @media screen and (min-width : 321px) and (max-width : 767px) {
-        height: 150px;
-        min-height: 150px;
-        width: 220px;
-        min-width: 220px;
-    }
-
-    /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
-        height: 180px;
-        min-height: 180px;
+        height: 250px;
+        min-height: 250px;
         width: 250px;
         min-width: 250px;
     }
 
+    /* Tablet Device */
+    @media screen and (min-width : 768px) and (max-width : 991px) {
+        height: 300px;
+        min-height: 300px;
+        width: 300px;
+        min-width: 300px;
+    }
+
     /* Desktop Device */
     @media screen and (min-width : 992px) {
-        height: 210px;
-        min-height: 210px;
-        width: 280px;
-        min-width: 280px;
+        height: 350px;
+        min-height: 350px;
+        width: 350px;
+        min-width: 350px;
     }
 `;
 
@@ -86,30 +97,30 @@ export const TileThumbDiv = styled.div`
     cursor: pointer;
     padding : ${props => (props.padding ? props.padding : '0px')};
     box-sizing: border-box;
-    box-shadow: 0 1px 15px rgba(0,21,41,0.08);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 
     /* Mobile Device */
     @media screen and (min-width : 320px) {
-        height: 100px;
-        min-height: 100px;
+        height: 200px;
+        min-height: 200px;
     }
 
     /* Mobile Device */
     @media screen and (min-width : 321px) and (max-width : 767px) {
-        height: 150px;
-        min-height: 150px;
+        height: 250px;
+        min-height: 250px;
     }
 
     /* Tablet Device */
     @media screen and (min-width : 768px) and (max-width : 991px) {
-        height: 180px;
-        min-height: 180px;
+        height: 300px;
+        min-height: 300px;
     }
 
     /* Desktop Device */
     @media screen and (min-width : 992px) {
-        height: 210px;
-        min-height: 210px;
+        height: 350px;
+        min-height: 350px;
     }
 `;
 

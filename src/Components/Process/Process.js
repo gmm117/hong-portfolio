@@ -3,9 +3,9 @@ import { Link, Route } from 'react-router-dom';
 import { LinkStyle, TileDiv, TileUl, TileItemLi, TileThumbDiv, TileThumbHoverDiv, TileThumbHoverDivItem, TileThumbItemDiv, TileThumbImg } from '../Utils/CommonStyle';
 import { BaseURL } from '../Utils/Define';
 
-import apps_logo from '../../../imgs/apps.svg';
-import study_logo from '../../../imgs/study.svg';
-import work_logo from '../../../imgs/work.svg';
+import apps_logo from '../../../imgs/apps.png';
+import study_logo from '../../../imgs/study.png';
+import work_logo from '../../../imgs/work.png';
 
 function Process({ location, onLocationChange }) {
     useEffect(() => {
@@ -16,7 +16,7 @@ function Process({ location, onLocationChange }) {
         <TileDiv>
             <TileUl>
                 <TileItemLi>
-                    <TileThumbDiv background={'#f6f6f6'} padding={'60px'}>
+                    <TileThumbDiv>
                         <TileThumbImg src={apps_logo} alt="My Apps Image" />
                         <TileThumbHoverDiv>
                             <Link style={LinkStyle} to={`${BaseURL}/Process-Apps`} >
@@ -30,7 +30,7 @@ function Process({ location, onLocationChange }) {
                     <TileThumbItemDiv>Apps</TileThumbItemDiv>
                 </TileItemLi>
                 <TileItemLi>
-                    <TileThumbDiv background={'#f6f6f6'} padding={'60px'}>
+                    <TileThumbDiv>
                         <TileThumbImg src={study_logo} alt="My Study Image" />
                         <TileThumbHoverDiv>
                             <Link style={LinkStyle} to={`${BaseURL}/Process-Study`} >
@@ -44,7 +44,7 @@ function Process({ location, onLocationChange }) {
                     <TileThumbItemDiv>Study</TileThumbItemDiv>
                 </TileItemLi>
                 <TileItemLi>
-                    <TileThumbDiv background={'#f6f6f6'} padding={'60px'}>
+                    <TileThumbDiv>
                         <TileThumbImg src={work_logo} alt="My Work Image" />
                         <TileThumbHoverDiv>
                             <Link style={LinkStyle} to={`${BaseURL}/Process-Work`} >

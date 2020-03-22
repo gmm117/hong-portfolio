@@ -55,3 +55,9 @@ ol, ul, dl {
     visibility: visible;
     opacity: 1;
 }
+
+.clearfix:after { 
+    content:""; 
+    display:black; 
+    clear:both;
+}
