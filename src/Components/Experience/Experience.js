@@ -7,7 +7,7 @@ import apps_logo from '../../../imgs/apps.png';
 import study_logo from '../../../imgs/study.png';
 import work_logo from '../../../imgs/work.png';
 
-function Process({ location, onLocationChange }) {
+function Experience({ location, onLocationChange }) {
     useEffect(() => {
         onLocationChange(location);
     }, []);
@@ -19,7 +19,7 @@ function Process({ location, onLocationChange }) {
                     <TileThumbDiv>
                         <TileThumbImg src={apps_logo} alt="My Apps Image" />
                         <TileThumbHoverDiv>
-                            <Link style={LinkStyle} to={`${BaseURL}/Process-Apps`} >
+                            <Link style={LinkStyle} to={`${BaseURL}/Experience-Apps`} >
                                 <TileThumbHoverDivItem>
                                     <div>My Apps</div>
                                     <div>2019.12 ~ </div>
@@ -33,7 +33,7 @@ function Process({ location, onLocationChange }) {
                     <TileThumbDiv>
                         <TileThumbImg src={study_logo} alt="My Study Image" />
                         <TileThumbHoverDiv>
-                            <Link style={LinkStyle} to={`${BaseURL}/Process-Study`} >
+                            <Link style={LinkStyle} to={`${BaseURL}/Experience-Study`} >
                                 <TileThumbHoverDivItem>
                                     <div>My Study</div>
                                     <div>2019.11 ~ </div>
@@ -47,7 +47,7 @@ function Process({ location, onLocationChange }) {
                     <TileThumbDiv>
                         <TileThumbImg src={work_logo} alt="My Work Image" />
                         <TileThumbHoverDiv>
-                            <Link style={LinkStyle} to={`${BaseURL}/Process-Work`} >
+                            <Link style={LinkStyle} to={`${BaseURL}/Experience-Work`} >
                                 <TileThumbHoverDivItem>
                                     <div>My Work</div>
                                     <div>2010 ~ </div>
@@ -62,4 +62,4 @@ function Process({ location, onLocationChange }) {
     );
 }
 
-export default Process;
+export default Experience;

@@ -45,8 +45,19 @@ export const TileUl = styled.ul`
     flex-wrap: wrap;
     box-sizing: border-box;
     color: #333;
-    padding : 0px 25px;
     font-family: Noto Sans Medium,AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;
+
+    @media screen and (max-width : 320px) {
+        padding : 0px 5px;
+    }
+
+    @media screen and (min-width : 321px) and (max-width : 375px) {
+        padding : 0px 10px;
+    }
+
+    @media screen and (min-width : 376px) {
+        padding : 0px 25px;
+    }
 `;
 
 export const TileItemLi = styled.li`

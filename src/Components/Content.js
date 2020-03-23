@@ -10,8 +10,8 @@ import About from './About';
 import Company from './Company/Company';
 import CompanyItem from './Company/CompanyItem';
 
-import Process from './Process/Process';
-import ProcessItem from './Process/ProcessItem';
+import Experience from './Experience/Experience';
+import ExperienceItem from './Experience/ExperienceItem';
 
 
 const ContentDiv = styled.div`
@@ -39,8 +39,8 @@ function Content( { onLocationChange }) {
                 <Route exact path={`${BaseURL}/Company`} component={( {location, match, history} ) => <Company onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
             </Switch>
             <Switch>
-                <Route exact path={`${BaseURL}/Process-:name`} component={( {location, match, history} ) => <ProcessItem onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
-                <Route exact path={`${BaseURL}/Process`} component={( {location, match, history} ) => <Process onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+                <Route exact path={`${BaseURL}/Experience-:name`} component={( {location, match, history} ) => <ExperienceItem onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+                <Route exact path={`${BaseURL}/Experience`} component={( {location, match, history} ) => <Experience onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
             </Switch>
             <Route exact path={`${BaseURL}/`} component={( {location, match, history} ) => <Home onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
         </ContentDiv>

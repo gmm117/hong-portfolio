@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const ProcessUl = styled.ul`
+const ExperienceUl = styled.ul`
     width : 100%;
     max-width: 1000px;
     display : flex;
@@ -17,7 +17,7 @@ const ProcessUl = styled.ul`
     }
 `;
 
-function ProcessItem( {location, onLocationChange} ) {
+function ExperienceItem( {location, onLocationChange} ) {
     useEffect(() => {
         onLocationChange(location);
     }, []);
@@ -25,10 +25,10 @@ function ProcessItem( {location, onLocationChange} ) {
 
     return(
         <div>준비중입니다.</div>
-        // <ProcessUl>
+        // <ExperienceUl>
             
-        // </ProcessUl>
+        // </ExperienceUl>
     );
 };
 
-export default ProcessItem;
+export default ExperienceItem;

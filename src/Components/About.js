@@ -284,6 +284,7 @@ const SkillItemListDiv = styled.div`
 
 const SkillItemListDetailDiv = styled.div`
     display : flex;
+    align-items : center;
     flex-direction : column;
     box-sizing: border-box;
     text-align : center;
