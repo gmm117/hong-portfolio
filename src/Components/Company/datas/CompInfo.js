@@ -63,7 +63,7 @@ const HancomInfos =
     {
         title : "웹한글/웹한글기안기 UI개발",
         sublist : {
-            date : "2017.03 - 2020.03", 
+            date : "Mar 2017 - Present", 
             type : "Hangul Ctrl WebApp",
             role : "Front-End Developer", 
             skills : "HTML, CSS, Javascript, Markdown", 
@@ -95,7 +95,7 @@ const OsstemImplantInfos =
     {
         title : "글로벌 치과용 프로그램 개발",
         sublist : {
-            date : "2015.09 - 2016.12", 
+            date : "Sep 2015 - Dec 2016", 
             type : "Medical Windows App",
             role : "Medical Insurance & Charge App Developer", 
             skills : "C#, WPF, NHibernate, WCF, Spring", 
@@ -123,7 +123,7 @@ const OsstemImplantInfos =
     {
         title : "국내 치과용 프로그램 개발",
         sublist : {
-            date : "2013.04 - 2016.12", 
+            date : "Apr 2013 - Dec 2016", 
             type : "Medical Windows App",
             role : "Medical Insurance & Charge App Developer", 
             skills : "COM, WTL7.0/9.0, ATL, C/C++", 
@@ -155,11 +155,11 @@ const BluebirdSoftInfos =
     {
         title : "단말기 모뎀 디바이스 개발/이동통신사 품질보증",
         sublist : {
-            date : "2010.08 - 2012.04", 
+            date : "Aug 2010 - Apr 2012", 
             type : "Wince/WindowsMobile System App",
             role : "Embedded System Developer", 
             skills : "C, C++, API, MFC", 
-            tools : "VS2015, PlatformBuilder, cvs",
+            tools : "VS2015, PlatformBuilder, CVS",
             url : {
                 href : "http://m.etnews.com/20190228000187",
                 value : "BPL-10"
@@ -183,11 +183,11 @@ const BluebirdSoftInfos =
     {
         title : "Wince, WindowsMobile 단말기 개발",
         sublist : {
-            date : "2010.06 - 2012.04", 
+            date : "Jun 2010 - Apr 2012", 
             type : "Wince/WindowsMobile System App",
             role : "Embedded System Developer", 
             skills : "C, C++, API, MFC", 
-            tools : "VS2015, PlatformBuilder, cvs",
+            tools : "VS2015, PlatformBuilder, CVS",
             url : {
                 href : "http://m.etnews.com/20190228000187",
                 value : "BPL-10"

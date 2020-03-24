@@ -13,11 +13,11 @@ const CompUl = styled.ul`
     align-items : center;
     margin: 0 auto;
     flex-direction : column;
-    padding : 10px;
-    box-sizing: border-box;  
+    box-sizing: border-box;
+    padding: 20px;  
 
     li + li {
-        padding-top : 20px;
+        margin-top : 20px;
     }
 `;
 
