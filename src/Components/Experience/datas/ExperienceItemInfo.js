@@ -3,8 +3,10 @@ import more from '../../../../imgs/more.svg';
 import github from '../../../../imgs/github.svg';
 import link from '../../../../imgs/link.svg';
 
+import blog from '../../../../imgs/blog.png';
 import lightmarkdown_electron from '../../../../imgs/lightmarkdown_electron.png';
 
+import typescriptImg from '../../../../imgs/typescript.png';
 
 export const GetExpInfo = (name) => {
     let cpInfo = DefaultInfos;
@@ -14,7 +16,7 @@ export const GetExpInfo = (name) => {
             cpInfo = AppsInfos;
             break;
         case "Experience-Study":
-            // cpInfo = StudyInfos;
+            cpInfo = StudyInfos;
             break;
         case "Experience-Work":
             // cpInfo = WorkInfos;
@@ -151,6 +153,96 @@ const AppsInfos =
             },
             onlineimg : {
                 onlineimg_src : link,
+                onlineimg_alt : 'View Online'
+            },
+            sourceimg : {
+                sourceimg_src : github,
+                sourceimg_alt : 'View Source'
+            }
+        }
+    },
+    {
+        itemTitles : {
+            bottitle : "Hong's Blog",
+            revealtitle : "Hong's Blog"
+        },
+        itemDesc : "jekyll을 통해 만든 개발 블로그",
+        itemContents : {
+            date : "Feb 2020 - Present",
+            role : "Front-End Developer",
+            style : "HTML, CSS", 
+            skills : "Javascript",
+            bundle : "gulp", 
+            others : "GIT, VSCode, jekyll"
+        },
+        itemFooters : {
+            online : {
+                online_url : 'https://gmm117.github.io/',
+                online_tooltip : 'View Online'
+            },
+            source : {
+                source_url : 'https://github.com/gmm117/gmm117.github.io',
+                source_tooltip : 'View Source'
+            }
+        },
+        itemImages : {
+            top : {
+                top_src : blog, 
+                top_alt : "Hong's Blog"
+            },
+            titlemore : {
+                titlemore_src : more, 
+                titlemore_alt : "상세보기"
+            },
+            onlineimg : {
+                onlineimg_src : link,
+                onlineimg_alt : 'View Online'
+            },
+            sourceimg : {
+                sourceimg_src : github,
+                sourceimg_alt : 'View Source'
+            }
+        }
+    }
+];
+
+const StudyInfos = 
+[
+    {
+        itemTitles : {
+            bottitle : "typescript study",
+            revealtitle : "typescript study"
+        },
+        itemDesc : "typescript study",
+        itemContents : {
+            date : "Nov 2019 - Present",
+            role : "Front-End Developer",
+            style : "HTML", 
+            skills : "typescript",
+            bundle : "parcel", 
+            others : "GIT, VSCode"
+        },
+        itemFooters : {
+            online : {
+                online_url : null,
+                online_tooltip : 'View Online'
+            },
+            source : {
+                source_url : 'https://github.com/gmm117/typescript',
+                source_tooltip : 'View Source'
+            }
+        },
+        itemImages : {
+            top : {
+                top_src : typescriptImg,
+                top_alt : "typescript study"
+            },
+            titlemore : {
+                titlemore_src : more, 
+                titlemore_alt : "상세보기"
+            },
+            onlineimg : {
+                onlineimg_src : null,
                 onlineimg_alt : 'View Online'
             },
             sourceimg : {

@@ -512,14 +512,22 @@ function AppsItemLayout( { expInfo } ) {
                         </CardItemContentDetailDiv>
                     </CardItemContentDiv>
                     <CardItemFooterDiv>
-                        <CardItemFooterItemDiv className="tooltip" marginRight={'20px'} onClick={(e) => { window.open(online_url, '_blank'); }}>
-                            <span className="tooltiptext">{online_tooltip}</span>
-                            <CardItemFooterItemImg src={onlineimg_src} alt={onlineimg_alt}></CardItemFooterItemImg>
-                        </CardItemFooterItemDiv>
-                        <CardItemFooterItemDiv className="tooltip" onClick={(e) => { window.open(source_url, '_blank'); }}>
-                            <span className="tooltiptext">{source_tooltip}</span>
-                            <CardItemFooterItemImg src={sourceimg_src} alt={sourceimg_alt}></CardItemFooterItemImg>
-                        </CardItemFooterItemDiv>
+                        {
+                            online_url ? (
+                            <CardItemFooterItemDiv className="tooltip" marginRight={'20px'} onClick={(e) => { window.open(online_url, '_blank'); }}>
+                                <span className="tooltiptext">{online_tooltip}</span>
+                                <CardItemFooterItemImg src={onlineimg_src} alt={onlineimg_alt}></CardItemFooterItemImg>
+                            </CardItemFooterItemDiv>
+                            ) : null
+                        }
+                        {
+                            source_url ? (
+                                <CardItemFooterItemDiv className="tooltip" onClick={(e) => { window.open(source_url, '_blank'); }}>
+                                <span className="tooltiptext">{source_tooltip}</span>
+                                <CardItemFooterItemImg src={sourceimg_src} alt={sourceimg_alt}></CardItemFooterItemImg>
+                            </CardItemFooterItemDiv>
+                            ) : null
+                        }
                     </CardItemFooterDiv>
                 </CardItemRevealDiv>
             </CardItemDiv>

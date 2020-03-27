@@ -207,53 +207,19 @@ const SkillDiv = styled.div`
     flex: 1;
     margin : 0 auto;
     width : 100%;
+    flex-direction: column;
 `;
 
-const SkillUl = styled.ul`
-    width : 100%;
-    display: flex;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    color: #333;
-    font-family: Noto Sans Medium,AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;
-`;
-
-const SkillLi = styled.li`
+const SkillItemDiv = styled.div`
     width : 100%;
     display : flex;
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
-    margin: 0 auto;
-
-    /* Mobile Device */
-    @media screen and (min-width : 0px) and (max-width : 320px) {
-        height: 200px;
-        min-height: 200px;
-    }
-
-    /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 767px) {
-        height: 250px;
-        min-height: 250px;
-    }
-
-    /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
-        height: 300px;
-        min-height: 300px;
-    }
-
-    /* Desktop Device */
-    @media screen and (min-width : 992px) {
-        height: 350px;
-        min-height: 350px;
-    }
-`;
-
-const SkillItemDiv = styled.div`
-    width: 100%;
-    margin-bottom: 60px;
+    margin: 0 auto 60px 0;
+    box-sizing : border-box;
+    color: #333;
+    font-family: Noto Sans Medium,AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;
 `;
 
 const SkillItemContentDiv = styled.div`
@@ -350,121 +316,117 @@ function About( {location, onLocationChange}) {
             <AboutSkillDiv>
                 <AboutTitleDiv>SKILLS</AboutTitleDiv>
                 <SkillDiv>
-                    <SkillUl>
-                        <SkillLi>
-                            <SkillItemDiv>
-                                <SkillItemContentDiv>
-                                    <SkillItemTitle>HTML</SkillItemTitle>
-                                    <SkillItemListDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={html5Img} alt="HTML5 IMAGE"></SkillItemListDetailImg>
-                                            HTML5
-                                        </SkillItemListDetailDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={reactImg} alt="JSX IMAGE"></SkillItemListDetailImg>
-                                            JSX
-                                        </SkillItemListDetailDiv>
-                                    </SkillItemListDiv>
-                                </SkillItemContentDiv>
-                            </SkillItemDiv>
-                            <SkillItemDiv>
-                                <SkillItemContentDiv>
-                                    <SkillItemTitle>STYLE</SkillItemTitle>
-                                    <SkillItemListDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={css3Img} alt="CSS3 IMAGE"></SkillItemListDetailImg>
-                                            CSS3
-                                        </SkillItemListDetailDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={sassImg} alt="SCSS IMAGE"></SkillItemListDetailImg>
-                                            SCSS
-                                        </SkillItemListDetailDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={styleComponentsImg} alt="STYLE_COMPONENTS IMAGE"></SkillItemListDetailImg>
-                                            Style Components
-                                        </SkillItemListDetailDiv>
-                                    </SkillItemListDiv>
-                                </SkillItemContentDiv>
-                            </SkillItemDiv>
-                            <SkillItemDiv>
-                                <SkillItemContentDiv>
-                                    <SkillItemTitle>JAVSCRIPT</SkillItemTitle>
-                                    <SkillItemListDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={reactImg} alt="REACT IMAGE"></SkillItemListDetailImg>
-                                            REACT
-                                        </SkillItemListDetailDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={javascriptImg} alt="JAVASCRIPT IMAGE"></SkillItemListDetailImg>
-                                            JAVASCRIPT
-                                        </SkillItemListDetailDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={typescriptImg} alt="TYPESCRIPT IMAGE"></SkillItemListDetailImg>
-                                            TYPESCRIPT
-                                        </SkillItemListDetailDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={nodejsImg} alt="NODEJS IMAGE"></SkillItemListDetailImg>
-                                            NodeJS
-                                        </SkillItemListDetailDiv>
-                                    </SkillItemListDiv>
-                                </SkillItemContentDiv>
-                            </SkillItemDiv>
-                            <SkillItemDiv>
-                                <SkillItemContentDiv>
-                                    <SkillItemTitle>WINDOWS</SkillItemTitle>
-                                    <SkillItemListDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={cImg} alt="C IMAGE"></SkillItemListDetailImg>
-                                            C
-                                        </SkillItemListDetailDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={cplusplusImg} alt="C++ IMAGE"></SkillItemListDetailImg>
-                                            C++
-                                        </SkillItemListDetailDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={csharpImg} alt="C# IMAGE"></SkillItemListDetailImg>
-                                            C#
-                                        </SkillItemListDetailDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={wpfImg} alt="WPF IMAGE"></SkillItemListDetailImg>
-                                            WPF
-                                        </SkillItemListDetailDiv>
-                                    </SkillItemListDiv>
-                                </SkillItemContentDiv>
-                            </SkillItemDiv>
-                            <SkillItemDiv>
-                                <SkillItemContentDiv>
-                                    <SkillItemTitle>OTHERS</SkillItemTitle>
-                                    <SkillItemListDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={electronImg} alt="ELECTRON IMAGE"></SkillItemListDetailImg>
-                                            ELECTRON
-                                        </SkillItemListDetailDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={webpackImg} alt="WEBPACK IMAGE"></SkillItemListDetailImg>
-                                            WEBPACK
-                                        </SkillItemListDetailDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={parcelImg} alt="PARCEL IMAGE"></SkillItemListDetailImg>
-                                            PARCEL
-                                        </SkillItemListDetailDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={gitImg} alt="GIT IMAGE"></SkillItemListDetailImg>
-                                            GIT
-                                        </SkillItemListDetailDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={githubImg} alt="GITHUB IMAGE"></SkillItemListDetailImg>
-                                            GITHUB
-                                        </SkillItemListDetailDiv>
-                                        <SkillItemListDetailDiv>
-                                            <SkillItemListDetailImg src={herokuImg} alt="HEROKU IMAGE"></SkillItemListDetailImg>
-                                            HEROKU
-                                        </SkillItemListDetailDiv>
-                                    </SkillItemListDiv>
-                                </SkillItemContentDiv>
-                            </SkillItemDiv>
-                        </SkillLi>
-                    </SkillUl>
+                    <SkillItemDiv>
+                        <SkillItemContentDiv>
+                            <SkillItemTitle>HTML</SkillItemTitle>
+                            <SkillItemListDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={html5Img} alt="HTML5 IMAGE"></SkillItemListDetailImg>
+                                    HTML5
+                                </SkillItemListDetailDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={reactImg} alt="JSX IMAGE"></SkillItemListDetailImg>
+                                    JSX
+                                </SkillItemListDetailDiv>
+                            </SkillItemListDiv>
+                        </SkillItemContentDiv>
+                    </SkillItemDiv>
+                    <SkillItemDiv>
+                        <SkillItemContentDiv>
+                            <SkillItemTitle>STYLE</SkillItemTitle>
+                            <SkillItemListDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={css3Img} alt="CSS3 IMAGE"></SkillItemListDetailImg>
+                                    CSS3
+                                </SkillItemListDetailDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={sassImg} alt="SCSS IMAGE"></SkillItemListDetailImg>
+                                    SCSS
+                                </SkillItemListDetailDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={styleComponentsImg} alt="STYLE_COMPONENTS IMAGE"></SkillItemListDetailImg>
+                                    Style Components
+                                </SkillItemListDetailDiv>
+                            </SkillItemListDiv>
+                        </SkillItemContentDiv>
+                    </SkillItemDiv>
+                    <SkillItemDiv>
+                        <SkillItemContentDiv>
+                            <SkillItemTitle>JAVSCRIPT</SkillItemTitle>
+                            <SkillItemListDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={reactImg} alt="REACT IMAGE"></SkillItemListDetailImg>
+                                    REACT
+                                </SkillItemListDetailDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={javascriptImg} alt="JAVASCRIPT IMAGE"></SkillItemListDetailImg>
+                                    JAVASCRIPT
+                                </SkillItemListDetailDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={typescriptImg} alt="TYPESCRIPT IMAGE"></SkillItemListDetailImg>
+                                    TYPESCRIPT
+                                </SkillItemListDetailDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={nodejsImg} alt="NODEJS IMAGE"></SkillItemListDetailImg>
+                                    NodeJS
+                                </SkillItemListDetailDiv>
+                            </SkillItemListDiv>
+                        </SkillItemContentDiv>
+                    </SkillItemDiv>
+                    <SkillItemDiv>
+                        <SkillItemContentDiv>
+                            <SkillItemTitle>WINDOWS</SkillItemTitle>
+                            <SkillItemListDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={cImg} alt="C IMAGE"></SkillItemListDetailImg>
+                                    C
+                                </SkillItemListDetailDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={cplusplusImg} alt="C++ IMAGE"></SkillItemListDetailImg>
+                                    C++
+                                </SkillItemListDetailDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={csharpImg} alt="C# IMAGE"></SkillItemListDetailImg>
+                                    C#
+                                </SkillItemListDetailDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={wpfImg} alt="WPF IMAGE"></SkillItemListDetailImg>
+                                    WPF
+                                </SkillItemListDetailDiv>
+                            </SkillItemListDiv>
+                        </SkillItemContentDiv>
+                    </SkillItemDiv>
+                    <SkillItemDiv>
+                        <SkillItemContentDiv>
+                            <SkillItemTitle>OTHERS</SkillItemTitle>
+                            <SkillItemListDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={electronImg} alt="ELECTRON IMAGE"></SkillItemListDetailImg>
+                                    ELECTRON
+                                </SkillItemListDetailDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={webpackImg} alt="WEBPACK IMAGE"></SkillItemListDetailImg>
+                                    WEBPACK
+                                </SkillItemListDetailDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={parcelImg} alt="PARCEL IMAGE"></SkillItemListDetailImg>
+                                    PARCEL
+                                </SkillItemListDetailDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={gitImg} alt="GIT IMAGE"></SkillItemListDetailImg>
+                                    GIT
+                                </SkillItemListDetailDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={githubImg} alt="GITHUB IMAGE"></SkillItemListDetailImg>
+                                    GITHUB
+                                </SkillItemListDetailDiv>
+                                <SkillItemListDetailDiv>
+                                    <SkillItemListDetailImg src={herokuImg} alt="HEROKU IMAGE"></SkillItemListDetailImg>
+                                    HEROKU
+                                </SkillItemListDetailDiv>
+                            </SkillItemListDiv>
+                        </SkillItemContentDiv>
+                    </SkillItemDiv>
                 </SkillDiv>
             </AboutSkillDiv>
         </AboutBody>
