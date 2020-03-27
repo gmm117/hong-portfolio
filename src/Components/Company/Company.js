@@ -21,8 +21,8 @@ class Company extends Component {
             <TileDiv>
                 <TileUl>
                     <TileItemLi>
-                        <TileThumbDiv>
-                            <TileThumbImg src={hancom_logo} alt="Hancom Group Logo" />
+                        <TileThumbDiv radius={'5px'}>
+                            <TileThumbImg radius={'5px'} src={hancom_logo} alt="Hancom Group Logo" />
                             <TileThumbHoverDiv>
                                 <Link style={LinkStyle} to={`${BaseURL}/Company-Hancom`} >
                                     <TileThumbHoverDivItem>
@@ -36,8 +36,8 @@ class Company extends Component {
                         <TileThumbItemDiv>한글과컴퓨터</TileThumbItemDiv>
                     </TileItemLi>
                     <TileItemLi>
-                        <TileThumbDiv padding={'35px'}>
-                            <TileThumbImg src={osstem_logo} alt="Osstem Implant Logo" />
+                        <TileThumbDiv radius={'5px'} padding={'35px'}>
+                            <TileThumbImg radius={'5px'} src={osstem_logo} alt="Osstem Implant Logo" />
                             <TileThumbHoverDiv>
                                 <Link style={LinkStyle} to={`${BaseURL}/Company-OsstemImplant`} >
                                     <TileThumbHoverDivItem>
@@ -51,8 +51,8 @@ class Company extends Component {
                         <TileThumbItemDiv>오스템임플란트</TileThumbItemDiv>
                     </TileItemLi>
                     <TileItemLi>
-                        <TileThumbDiv padding={'45px'}>
-                            <TileThumbImg src={bluebirdlogo} alt="Bluebird Logo" />
+                        <TileThumbDiv radius={'5px'} padding={'45px'}>
+                            <TileThumbImg radius={'5px'} src={bluebirdlogo} alt="Bluebird Logo" />
                             <TileThumbHoverDiv>
                                 <Link style={LinkStyle} to={`${BaseURL}/Company-Bluebird`} >
                                     <TileThumbHoverDivItem>

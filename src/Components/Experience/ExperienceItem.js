@@ -1,33 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import { TileDiv, TileUl } from '../Utils/CommonStyle';
+import { GetExpInfo } from './datas/ExperienceItemInfo';
+import AppsItemLayout from './datas/AppsItemLayout';
+import { BaseURL } from '../Utils/Define';
 
-const ExperienceUl = styled.ul`
-    width : 100%;
-    max-width: 1000px;
-    display : flex;
-    justify-content : center;
-    align-items : center;
-    margin: 0 auto;
-    flex-direction : column;
-    padding : 10px;
-    box-sizing: border-box;  
+function ExperienceItem( { location, onLocationChange } ) {
+    let newpathname = location.pathname.replace(BaseURL, "");
+    const [expInfos, setExpInfos] = useState(GetExpInfo(newpathname.substr(1)));
 
-    li + li {
-        padding-top : 20px;
-    }
-`;
-
-function ExperienceItem( {location, onLocationChange} ) {
     useEffect(() => {
         onLocationChange(location);
     }, []);
     
 
     return(
-        <div>준비중입니다.</div>
-        // <ExperienceUl>
-            
-        // </ExperienceUl>
+        <TileDiv>
+            <TileUl>
+                {
+                    expInfos.map((expInfo, index) => <AppsItemLayout key={index} expInfo={expInfo} /> )
+                }
+            </TileUl>
+        </TileDiv>
     );
 };
 

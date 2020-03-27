@@ -7,19 +7,9 @@ export const LinkStyle = {
     textDecoration: 'none'
 };
 
-export const LinkButtonStyle = styled.div`
-    display : flex;
-    align-items:center;
-    justify-content: center;
-    width : 70px;
-    height : 25px;
-    color : rgba(100,100,100,0.75);
-    background : white;
-    border : 1px solid rgba(100,100,100,0.75);
-    border-radius : 3px;
-    cursor : pointer;
-    font-weight : 600;
-    font-size : 15px;
+export const DimensionDiv = styled.div`
+    width : ${props => (props.width ? props.width : null)};
+    height : ${props => (props.height ? props.height : null)};
 `;
 
 //////////////////////////// tile ui layout ///////////////////////////////
@@ -27,7 +17,7 @@ export const TileDiv = styled.div`
     display : flex;
     flex: 1;
     margin : 0 auto;
-    max-width : 1280px;
+    max-width : 1440px;
 
     /* Tablet Device */
     @media screen and (min-width : 991px){
@@ -69,7 +59,7 @@ export const TileItemLi = styled.li`
     margin: 0 auto;
 
     /* Mobile Device */
-    @media screen and (min-width : 320px) {
+    @media screen and (min-width : 0px) and (max-width : 320px) {
         height: 200px;
         min-height: 200px;
         width: 200px;
@@ -77,27 +67,35 @@ export const TileItemLi = styled.li`
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 767px) {
+    @media screen and (min-width : 321px) and (max-width : 500px) {
         height: 250px;
         min-height: 250px;
         width: 250px;
         min-width: 250px;
     }
 
-    /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
+    /* Mobile Device */
+    @media screen and (min-width : 501px) and (max-width : 767px) {
         height: 300px;
         min-height: 300px;
         width: 300px;
         min-width: 300px;
     }
 
-    /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    /* Tablet Device */
+    @media screen and (min-width : 768px) and (max-width : 991px) {
         height: 350px;
         min-height: 350px;
         width: 350px;
         min-width: 350px;
+    }
+
+    /* Desktop Device */
+    @media screen and (min-width : 992px) {
+        height: 400px;
+        min-height: 400px;
+        width: 400px;
+        min-width: 400px;
     }
 `;
 
@@ -107,31 +105,38 @@ export const TileThumbDiv = styled.div`
     margin: 10px 0px;
     cursor: pointer;
     padding : ${props => (props.padding ? props.padding : '0px')};
+    border-radius : ${props => (props.radius ? props.radius : null)};
     box-sizing: border-box;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 
     /* Mobile Device */
-    @media screen and (min-width : 320px) {
+    @media screen and (min-width : 0px) and (max-width : 320px) {
         height: 200px;
         min-height: 200px;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 767px) {
+    @media screen and (min-width : 321px) and (max-width : 500px) {
         height: 250px;
         min-height: 250px;
     }
 
-    /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
+    /* Mobile Device */
+    @media screen and (min-width : 501px) and (max-width : 767px) {
         height: 300px;
         min-height: 300px;
     }
 
-    /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    /* Tablet Device */
+    @media screen and (min-width : 768px) and (max-width : 991px) {
         height: 350px;
         min-height: 350px;
+    }
+
+    /* Desktop Device */
+    @media screen and (min-width : 992px) {
+        height: 400px;
+        min-height: 400px;
     }
 `;
 
@@ -143,6 +148,7 @@ export const TileThumbHoverDiv = styled.div`
     width : 100%;
     background : rgba(0, 0, 0, 0);
     opacity: 0;
+    border-radius : 5px;
     &:hover {
         background : rgba(0, 0, 0, 0.7);
         opacity : 1;
@@ -172,6 +178,26 @@ export const TileThumbItemDiv = styled.div`
 export const TileThumbImg = styled.img`
     width: 100%;
     height: 100%;
+    border-radius : ${props => (props.radius ? props.radius : null)};
 `;
 
 ////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////// tile ui layout ///////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////
+export const ItemUl = styled.ul`
+    width : 100%;
+    max-width: 1000px;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    margin: 0 auto;
+    flex-direction : column;
+    box-sizing: border-box;
+    padding: 20px;  
+
+    li + li {
+        margin-top : 20px;
+    }
+`;

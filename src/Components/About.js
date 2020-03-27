@@ -227,7 +227,7 @@ const SkillLi = styled.li`
     margin: 0 auto;
 
     /* Mobile Device */
-    @media screen and (min-width : 320px) {
+    @media screen and (min-width : 0px) and (max-width : 320px) {
         height: 200px;
         min-height: 200px;
     }
@@ -290,7 +290,7 @@ const SkillItemListDetailDiv = styled.div`
     text-align : center;
 
     /* Mobile Device */
-    @media screen and (min-width : 320px) {
+    @media screen and (min-width : 0px) and (max-width : 320px) {
         margin : 10px 20px 0 0;
     }
 

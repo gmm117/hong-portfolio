@@ -16,8 +16,8 @@ function Experience({ location, onLocationChange }) {
         <TileDiv>
             <TileUl>
                 <TileItemLi>
-                    <TileThumbDiv>
-                        <TileThumbImg src={apps_logo} alt="My Apps Image" />
+                    <TileThumbDiv radius={'5px'}>
+                        <TileThumbImg radius={'5px'} src={apps_logo} alt="My Apps Image" />
                         <TileThumbHoverDiv>
                             <Link style={LinkStyle} to={`${BaseURL}/Experience-Apps`} >
                                 <TileThumbHoverDivItem>
@@ -30,8 +30,8 @@ function Experience({ location, onLocationChange }) {
                     <TileThumbItemDiv>Apps</TileThumbItemDiv>
                 </TileItemLi>
                 <TileItemLi>
-                    <TileThumbDiv>
-                        <TileThumbImg src={study_logo} alt="My Study Image" />
+                    <TileThumbDiv radius={'5px'}>
+                        <TileThumbImg radius={'5px'} src={study_logo} alt="My Study Image" />
                         <TileThumbHoverDiv>
                             <Link style={LinkStyle} to={`${BaseURL}/Experience-Study`} >
                                 <TileThumbHoverDivItem>
@@ -44,8 +44,8 @@ function Experience({ location, onLocationChange }) {
                     <TileThumbItemDiv>Study</TileThumbItemDiv>
                 </TileItemLi>
                 <TileItemLi>
-                    <TileThumbDiv>
-                        <TileThumbImg src={work_logo} alt="My Work Image" />
+                    <TileThumbDiv radius={'5px'}>
+                        <TileThumbImg radius={'5px'} src={work_logo} alt="My Work Image" />
                         <TileThumbHoverDiv>
                             <Link style={LinkStyle} to={`${BaseURL}/Experience-Work`} >
                                 <TileThumbHoverDivItem>

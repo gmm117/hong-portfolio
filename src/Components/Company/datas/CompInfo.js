@@ -99,7 +99,7 @@ const OsstemImplantInfos =
             type : "Medical Windows App",
             role : "Medical Insurance & Charge App Developer", 
             skills : "C#, WPF, NHibernate, WCF, Spring", 
-            tools : "VS2013, git",
+            tools : "VS2013, GIT",
             url : {
                 href : "http://www.dentalarirang.com/news/articleView.html?idxno=25815",
                 value : "OneClick"
@@ -127,7 +127,7 @@ const OsstemImplantInfos =
             type : "Medical Windows App",
             role : "Medical Insurance & Charge App Developer", 
             skills : "COM, WTL7.0/9.0, ATL, C/C++", 
-            tools : "VS2013/6.0, git, sourcesafe",
+            tools : "VS2013/6.0, GIT, Sourcesafe",
             url : {
                 href : "http://www.dentalnews.or.kr/news/article.html?no=23828",
                 value : "하나로/두번에"
