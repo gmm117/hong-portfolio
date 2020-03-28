@@ -395,8 +395,8 @@ const WorksInfos =
 [
     {
         itemTitles : {
-            bottitle : "웹 전자 문서 편집 장치 동작 방법",
-            revealtitle : "웹 전자 문서 편집 장치 동작 방법"
+            bottitle : "웹 전자 문서 편집 동작 방법",
+            revealtitle : "웹 전자 문서 편집 동작 방법"
         },
         itemDesc : "(특허)크로스 브라우징을 지원하는 웹 전자 문서 편집 장치 및 이의 동작 방법",
         itemContents : {
