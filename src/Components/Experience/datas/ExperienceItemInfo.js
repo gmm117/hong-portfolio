@@ -2,11 +2,17 @@ import portfolio from '../../../../imgs/portfolio.png';
 import more from '../../../../imgs/more.svg';
 import github from '../../../../imgs/github.svg';
 import link from '../../../../imgs/link.svg';
+import patents from '../../../../imgs/patents.svg';
 
 import blog from '../../../../imgs/blog.png';
 import lightmarkdown_electron from '../../../../imgs/lightmarkdown_electron.png';
 
 import typescriptImg from '../../../../imgs/typescript.png';
+import webpackImg from '../../../../imgs/webpack.png';
+import reactImg from '../../../../imgs/react.png';
+import react_typescriptImg from '../../../../imgs/react_typescript.png';
+
+import patentsTopImg from '../../../../imgs/patents.jpg';
 
 export const GetExpInfo = (name) => {
     let cpInfo = DefaultInfos;
@@ -19,7 +25,7 @@ export const GetExpInfo = (name) => {
             cpInfo = StudyInfos;
             break;
         case "Experience-Work":
-            // cpInfo = WorkInfos;
+            cpInfo = WorksInfos;
             break;
     }
 
@@ -210,23 +216,54 @@ const StudyInfos =
 [
     {
         itemTitles : {
-            bottitle : "typescript study",
-            revealtitle : "typescript study"
+            bottitle : "React study",
+            revealtitle : "React study"
         },
-        itemDesc : "typescript study",
+        itemDesc : "React study",
         itemContents : {
-            date : "Nov 2019 - Present",
+            date : "Jun 2019 - Sep 2019",
             role : "Front-End Developer",
-            style : "HTML", 
-            skills : "typescript",
-            bundle : "parcel", 
+            style : "Handlebars, CSS", 
+            skills : "React, CRA",
+            bundle : "Webpack", 
             others : "GIT, VSCode"
         },
         itemFooters : {
-            online : {
-                online_url : null,
-                online_tooltip : 'View Online'
+            source : {
+                source_url : 'https://github.com/supreme-developer/react2/',
+                source_tooltip : 'View Source'
+            }
+        },
+        itemImages : {
+            top : {
+                top_src : reactImg,
+                top_alt : "React study"
             },
+            titlemore : {
+                titlemore_src : more, 
+                titlemore_alt : "상세보기"
+            },
+            sourceimg : {
+                sourceimg_src : github,
+                sourceimg_alt : 'View Source'
+            }
+        }
+    },
+    {
+        itemTitles : {
+            bottitle : "Typescript study",
+            revealtitle : "Typescript study"
+        },
+        itemDesc : "Typescript study",
+        itemContents : {
+            date : "Nov 2019 - Nov 2019",
+            role : "Front-End Developer",
+            style : "HTML", 
+            skills : "Typescript",
+            bundle : "Parcel", 
+            others : "GIT, VSCode"
+        },
+        itemFooters : {
             source : {
                 source_url : 'https://github.com/gmm117/typescript',
                 source_tooltip : 'View Source'
@@ -235,19 +272,123 @@ const StudyInfos =
         itemImages : {
             top : {
                 top_src : typescriptImg,
-                top_alt : "typescript study"
+                top_alt : "Typescript study"
             },
             titlemore : {
                 titlemore_src : more, 
                 titlemore_alt : "상세보기"
             },
-            onlineimg : {
-                onlineimg_src : null,
-                onlineimg_alt : 'View Online'
+            sourceimg : {
+                sourceimg_src : github,
+                sourceimg_alt : 'View Source'
+            }
+        }
+    },
+    {
+        itemTitles : {
+            bottitle : "TSX study",
+            revealtitle : "TSX study"
+        },
+        itemDesc : "React & Typescript study",
+        itemContents : {
+            date : "Feb 2020 - Feb 2020",
+            role : "Front-End Developer",
+            style : "HTML, CSS, SCSS", 
+            skills : "TSX",
+            bundle : "Webpack, Babel", 
+            others : "GIT, VSCode, eslint"
+        },
+        itemFooters : {
+            source : {
+                source_url : 'https://github.com/gmm117/react-typescript',
+                source_tooltip : 'View Source'
+            }
+        },
+        itemImages : {
+            top : {
+                top_src : react_typescriptImg,
+                top_alt : "Typescript study"
+            },
+            titlemore : {
+                titlemore_src : more, 
+                titlemore_alt : "상세보기"
             },
             sourceimg : {
                 sourceimg_src : github,
                 sourceimg_alt : 'View Source'
+            }
+        }
+    },
+    {
+        itemTitles : {
+            bottitle : "Webpack study",
+            revealtitle : "Webpack study"
+        },
+        itemDesc : "Webpack study",
+        itemContents : {
+            date : "Nov 2019 - Nov 2019",
+            role : "Front-End Developer",
+            style : "Handlebars, CSS", 
+            skills : "Javascript",
+            bundle : "Webpack", 
+            others : "GIT, VSCode"
+        },
+        itemFooters : {
+            source : {
+                source_url : 'https://github.com/gmm117/webpack-exp',
+                source_tooltip : 'View Source'
+            }
+        },
+        itemImages : {
+            top : {
+                top_src : webpackImg,
+                top_alt : "Webpack study"
+            },
+            titlemore : {
+                titlemore_src : more, 
+                titlemore_alt : "상세보기"
+            },
+            sourceimg : {
+                sourceimg_src : github,
+                sourceimg_alt : 'View Source'
+            }
+        }
+    }
+];
+
+const WorksInfos = 
+[
+    {
+        itemTitles : {
+            bottitle : "웹 전자 문서 편집 장치 동작 방법",
+            revealtitle : "웹 전자 문서 편집 장치 동작 방법"
+        },
+        itemDesc : "(특허)크로스 브라우징을 지원하는 웹 전자 문서 편집 장치 및 이의 동작 방법",
+        itemContents : {
+            date : "Jun 2018 - Jan 2020",
+            role : "Front-End Developer",
+            type : "특허",
+            program : "웹한글 / 웹한글기안기",
+            desc : "브라우저 widget(컨트롤) 상태/업데이트 로직으로 특허등록"
+        },
+        itemFooters : {
+            patents : {
+                patents_url : 'http://kportal.kipris.or.kr/kportal/search/total_search.do',
+                patents_tooltip : 'Patents View'
+            }
+        },
+        itemImages : {
+            top : {
+                top_src : patentsTopImg,
+                top_alt : "React study"
+            },
+            titlemore : {
+                titlemore_src : more, 
+                titlemore_alt : "상세보기"
+            },
+            patentsimg : {
+                patentsimg_src : patents,
+                patentsimg_alt : 'Patents View'
             }
         }
     }

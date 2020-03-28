@@ -17,7 +17,7 @@ export const TileDiv = styled.div`
     display : flex;
     flex: 1;
     margin : 0 auto;
-    max-width : 1440px;
+    max-width : 1550px;
 
     /* Tablet Device */
     @media screen and (min-width : 991px){
@@ -32,6 +32,10 @@ export const TileDiv = styled.div`
 
 export const TileUl = styled.ul`
     display: flex;
+    width:100%;
+    flex-wrap: wrap;
+    -webkit-box-lines: multiple; 
+    -ms-flex-wrap: wrap; 
     flex-wrap: wrap;
     box-sizing: border-box;
     color: #333;

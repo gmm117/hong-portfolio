@@ -5,10 +5,7 @@ import circle from '../../../../imgs/circle.svg';
 export const CardItemLi = styled.li`
     display : flex;
     flex-direction: column;
-    align-items: center;
     padding: 76px 40px 0;
-    margin: 0 auto;
-    z-index : 1;
 
     /* Mobile Device */
     @media screen and (min-width : 0px) and (max-width : 320px) {
@@ -17,7 +14,13 @@ export const CardItemLi = styled.li`
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 500px) {
+    @media screen and (min-width : 321px) and (max-width : 375px) {
+        width: 180px;
+        min-width: 180px;
+    }
+
+    /* Mobile Device */
+    @media screen and (min-width : 376px) and (max-width : 500px) {
         width: 200px;
         min-width: 200px;
     }
@@ -85,44 +88,81 @@ const CardItemDiv = styled.div`
 `;
 
 const CardItemTopImg = styled.img`
+    width : 100%;
     border-radius : 5px 5px 0 0;
     cursor: pointer;
 
     /* Mobile Device */
     @media screen and (min-width : 0px) and (max-width : 320px) {
+        min-width: 150px;
         height: 150px;
         min-height: 150px;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 500px) {
+    @media screen and (min-width : 321px) and (max-width : 375px) {
+        min-width: 180px;
+        height: 180px;
+        min-height: 180px;
+    }
+
+    /* Mobile Device */
+    @media screen and (min-width : 376px) and (max-width : 500px) {
+        min-width: 200px;
         height: 200px;
         min-height: 200px;
     }
 
     /* Mobile Device */
     @media screen and (min-width : 501px) and (max-width : 767px) {
+        min-width: 250px;
         height: 250px;
         min-height: 250px;
     }
 
     /* Tablet Device */
     @media screen and (min-width : 768px) and (max-width : 991px) {
+        min-width: 300px;
         height: 300px;
         min-height: 300px;
     }
 
     /* Desktop Device */
     @media screen and (min-width : 992px) {
+        min-width: 350px;
         height: 350px;
         min-height: 350px;
     }
 `;
 
 const CardItemBottomDiv = styled.div`
-    height : 150px;
     padding : 15px;
+    border-top: 2px solid rgba(160,160,160,0.2);
     box-sizing : border-box;
+
+    /* Mobile Device */
+    @media screen and (min-width : 0px) and (max-width : 500px) {
+        min-height : 100px;
+        height : 100px;
+    }
+
+    /* Mobile Device */
+    @media screen and (min-width : 501px) and (max-width : 767px) {
+        min-height : 110px;
+        height : 110px;
+    }
+
+    /* Tablet Device */
+    @media screen and (min-width : 768px) and (max-width : 991px) {
+        min-height : 130px;
+        height : 130px;
+    }
+
+    /* Desktop Device */
+    @media screen and (min-width : 992px) {
+        min-height : 150px;
+        height : 150px;
+    }
 `;
 
 const CardItemTitleDiv = styled.div`
@@ -145,25 +185,25 @@ const CardItemBottomTitleSpan = styled.span`
 
     /* Mobile Device */
     @media screen and (min-width : 321px) and (max-width : 500px) {
-        font-size: 17px;
+        font-size: 16px;
         line-height: 1.5rem;
     }
 
     /* Mobile Device */
     @media screen and (min-width : 501px) and (max-width : 767px) {
-        font-size: 20px;
+        font-size: 18px;
         line-height: 2.0rem;
     }
 
     /* Tablet Device */
     @media screen and (min-width : 768px) and (max-width : 991px) {
-        font-size: 22px;
+        font-size: 20px;
         line-height: 2.0rem;
     }
 
     /* Desktop Device */
     @media screen and (min-width : 992px) {
-        font-size: 24px;
+        font-size: 22px;
         line-height: 2.5rem;
     }
 `;
@@ -462,19 +502,21 @@ function AppsItemLayout( { expInfo } ) {
     const { itemTitles, itemDesc, itemContents, itemFooters, itemImages } = expInfo;
     
     const { bottitle, revealtitle } = itemTitles;
-    const { date, role, style, skills, bundle, others } = itemContents;
+    const { date, role, style, skills, bundle, others, type, program, desc, search } = itemContents;
     
-    const { online, source } = itemFooters;
-    const { online_url, online_tooltip } = online;
-    const { source_url, source_tooltip } = source;
+    const { online, source, patents } = itemFooters;
+    const { online_url, online_tooltip } = online ? online : {};
+    const { source_url, source_tooltip } = source ? source : {};
+    const { patents_url, patents_tooltip } = patents ? patents : {};
 
-    const { top, titlemore, onlineimg, sourceimg } = itemImages;
+
+    const { top, titlemore, onlineimg, sourceimg, patentsimg } = itemImages;
     const { top_src, top_alt } = top;
     const { titlemore_src, titlemore_alt } = titlemore;
-    const { onlineimg_src, onlineimg_alt } = onlineimg;
-    const { sourceimg_src, sourceimg_alt } = sourceimg;
+    const { onlineimg_src, onlineimg_alt } = onlineimg ? onlineimg : {};
+    const { sourceimg_src, sourceimg_alt } = sourceimg ? sourceimg : {};
+    const { patentsimg_src, patentsimg_alt } = patentsimg ? patentsimg : {};
 
-    
     return (
         <CardItemLi>
             <CardItemDiv>
@@ -492,24 +534,86 @@ function AppsItemLayout( { expInfo } ) {
                         <CardItemRevealExitSpan onClick={OnRevealClick}>X</CardItemRevealExitSpan>
                     </CardItemTitleDiv>
                     <CardItemContentDiv>
-                        <CardItemContentDetailDiv>
-                            <CardItemContentDetailImg src={circle} alt="" />Date: {date}
-                        </CardItemContentDetailDiv>
-                        <CardItemContentDetailDiv>
-                            <CardItemContentDetailImg src={circle} alt="" />Role: {role}
-                        </CardItemContentDetailDiv>
-                        <CardItemContentDetailDiv>
-                            <CardItemContentDetailImg src={circle} alt="" />Style : {style}
-                        </CardItemContentDetailDiv>
-                        <CardItemContentDetailDiv>
-                            <CardItemContentDetailImg src={circle} alt="" />Skills : {skills}
-                        </CardItemContentDetailDiv>
-                        <CardItemContentDetailDiv>
-                            <CardItemContentDetailImg src={circle} alt="" />Bundle : {bundle}
-                        </CardItemContentDetailDiv>
-                        <CardItemContentDetailDiv>
-                            <CardItemContentDetailImg src={circle} alt="" />Othes : {others}
-                        </CardItemContentDetailDiv>
+                    {
+                        date ? (
+                            <CardItemContentDetailDiv>
+                                <CardItemContentDetailImg src={circle} alt="" />Date: {date}
+                            </CardItemContentDetailDiv>
+                        ) : null
+                        
+                    }
+                    {
+                        role ? (
+                            <CardItemContentDetailDiv>
+                                <CardItemContentDetailImg src={circle} alt="" />Role: {role}
+                            </CardItemContentDetailDiv>
+                        ) : null
+                        
+                    }
+                    {
+                        style ? (
+                            <CardItemContentDetailDiv>
+                                <CardItemContentDetailImg src={circle} alt="" />Style: {style}
+                            </CardItemContentDetailDiv>
+                        ) : null
+                        
+                    }
+                    {
+                        skills ? (
+                            <CardItemContentDetailDiv>
+                                <CardItemContentDetailImg src={circle} alt="" />Skills: {skills}
+                            </CardItemContentDetailDiv>
+                        ) : null
+                        
+                    }
+                    {
+                        bundle ? (
+                            <CardItemContentDetailDiv>
+                                <CardItemContentDetailImg src={circle} alt="" />Bundle: {bundle}
+                            </CardItemContentDetailDiv>
+                        ) : null
+                        
+                    }
+                    {
+                        others ? (
+                            <CardItemContentDetailDiv>
+                                <CardItemContentDetailImg src={circle} alt="" />Others: {others}
+                            </CardItemContentDetailDiv>
+                        ) : null
+                        
+                    }
+                    {
+                        type ? (
+                            <CardItemContentDetailDiv>
+                                <CardItemContentDetailImg src={circle} alt="" />Type: {type}
+                            </CardItemContentDetailDiv>
+                        ) : null
+                        
+                    }
+                    {
+                        program ? (
+                            <CardItemContentDetailDiv>
+                                <CardItemContentDetailImg src={circle} alt="" />Program: {program}
+                            </CardItemContentDetailDiv>
+                        ) : null
+                        
+                    }
+                    {
+                        desc ? (
+                            <CardItemContentDetailDiv>
+                                <CardItemContentDetailImg src={circle} alt="" />Desc: {desc}
+                            </CardItemContentDetailDiv>
+                        ) : null
+                        
+                    }
+                    {
+                        search ? (
+                            <CardItemContentDetailDiv>
+                                <CardItemContentDetailImg src={circle} alt="" />Search: {search}
+                            </CardItemContentDetailDiv>
+                        ) : null
+                        
+                    }
                     </CardItemContentDiv>
                     <CardItemFooterDiv>
                         {
@@ -525,6 +629,14 @@ function AppsItemLayout( { expInfo } ) {
                                 <CardItemFooterItemDiv className="tooltip" onClick={(e) => { window.open(source_url, '_blank'); }}>
                                 <span className="tooltiptext">{source_tooltip}</span>
                                 <CardItemFooterItemImg src={sourceimg_src} alt={sourceimg_alt}></CardItemFooterItemImg>
+                            </CardItemFooterItemDiv>
+                            ) : null
+                        }
+                        {   
+                            patents_url ? (
+                            <CardItemFooterItemDiv className="tooltip" onClick={(e) => { window.open(patents_url, '_blank'); }}>
+                                <span className="tooltiptext">{patents_tooltip}</span>
+                                <CardItemFooterItemImg src={patentsimg_src} alt={patentsimg_alt}></CardItemFooterItemImg>
                             </CardItemFooterItemDiv>
                             ) : null
                         }

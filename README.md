@@ -5,7 +5,7 @@
 * Cross platform
   - Windows, Mac, Linux
 * Browser
-  - IE11, Chrome, Safari, Edge
+  - IE11, Chrome, Safari, Edge, Whale
 
 ## How To Use
 
