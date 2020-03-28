@@ -11,6 +11,7 @@ import typescriptImg from '../../../../imgs/typescript.png';
 import webpackImg from '../../../../imgs/webpack.png';
 import reactImg from '../../../../imgs/react.png';
 import react_typescriptImg from '../../../../imgs/react_typescript.png';
+import reduxImg from '../../../../imgs/redux.png';
 
 import patentsTopImg from '../../../../imgs/patents.jpg';
 
@@ -343,6 +344,40 @@ const StudyInfos =
             top : {
                 top_src : webpackImg,
                 top_alt : "Webpack study"
+            },
+            titlemore : {
+                titlemore_src : more, 
+                titlemore_alt : "상세보기"
+            },
+            sourceimg : {
+                sourceimg_src : github,
+                sourceimg_alt : 'View Source'
+            }
+        }
+    },
+    {
+        itemTitles : {
+            bottitle : "Redux study",
+            revealtitle : "Redux study"
+        },
+        itemDesc : "Redux study",
+        itemContents : {
+            date : "Jun 2019 - Jun 2019",
+            role : "Front-End Developer",
+            style : "HTML", 
+            skills : "Redux",
+            others : "GIT, VSCode"
+        },
+        itemFooters : {
+            source : {
+                source_url : 'https://github.com/supreme-developer/redux',
+                source_tooltip : 'View Source'
+            }
+        },
+        itemImages : {
+            top : {
+                top_src : reduxImg,
+                top_alt : "Redux study"
             },
             titlemore : {
                 titlemore_src : more, 
