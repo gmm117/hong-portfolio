@@ -8,6 +8,8 @@ import homeImg from '../../../imgs/home.svg';
 import cubeImg from '../../../imgs/cube.svg';
 import userImg from '../../../imgs/user.svg';
 import experienceImg from '../../../imgs/experience.svg';
+import voiceMailImg from '../../../imgs/voice-mail.svg';
+
 
 const SideBarMenuList = styled.li`
     display: flex;
@@ -123,6 +125,17 @@ class SidebarMenu extends Component {
                                 <LinkImg src={experienceImg} alt="Experience" />
                             </LinkImgDiv>
                             <LinkDesDiv>Experience</LinkDesDiv>
+                        </LinkSubDiv>
+                    </Link>
+                </SideBarMenuList>
+                <SideBarMenuList>
+                    <Link style={LinkStyle} to={`${BaseURL}/Contact`}>
+                        <LinkSubDiv>
+                            <LinkImgDiv className="tooltip">
+                                <span className="tooltiptext">Contact</span>
+                                <LinkImg src={voiceMailImg} alt="Contact" />
+                            </LinkImgDiv>
+                            <LinkDesDiv>Contact</LinkDesDiv>
                         </LinkSubDiv>
                     </Link>
                 </SideBarMenuList>

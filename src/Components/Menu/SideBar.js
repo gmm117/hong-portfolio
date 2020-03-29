@@ -11,6 +11,7 @@ import instagram from '../../../imgs/instagram.svg';
 
 const SideBarDiv = styled.div`
     max-width : ${props => (props.isSidebarOpen ? '170px' : '0px')};
+    max-width : ${props => (props.isSidebarOpen ? '170px' : '0px')};
     width : 100%;
     height : 100%;
     background : #3F4651;
@@ -36,6 +37,16 @@ const SideBarSection = styled.div`
     font-weight : 500;
     color: white;
     margin : 0 0 30px 0;
+
+    /* Mobile Device */
+    @media screen and (max-height : 375px) {
+        margin : 0 0 10px 0;
+    }
+
+    /* Mobile Device */
+    @media screen and (min-height : 375px) {
+        margin : 0 0 10px 0;
+    }
 `;
 
 const AvatarImgDiv = styled.div`
@@ -75,6 +86,11 @@ const AvatarOccupation = styled.div`
     font-size: 12px;
     color: #BFCBD9;
     line-height: 1.6;
+
+    >a {
+        color: #BFCBD9;
+        text-decoration : none;
+    }
 `;
 
 const SideBarLink = styled.div`
@@ -85,9 +101,10 @@ const SideBarLink = styled.div`
     }
 
     /* Mobile Device */
-    @media screen and (min-height : 350px) {
+    @media screen and (min-height : 320px) {
         position : absolute;
-        bottom : 15px;
+        bottom : 13px;
+    }
 `;
 
 const SideBarLinkDiv = styled.div`
@@ -158,7 +175,9 @@ function SideBar( { isSidebarOpen } ) {
                 <AvatarContentDiv>
                     <AvatarName>홍 승 아</AvatarName>
                     <AvatarOccupation>Front End Developer</AvatarOccupation>
-                    <AvatarOccupation>010-7118-2519</AvatarOccupation>
+                    <AvatarOccupation style={{cursor:'pointer'}}>
+                        <a href="tel:01071182519">010-7118-2519</a>
+                    </AvatarOccupation>
                 </AvatarContentDiv>
                 <SidebarMenu/>
             </SideBarSubDiv>

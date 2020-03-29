@@ -6,13 +6,13 @@ import { BaseURL } from './Utils/Define';
 
 import Home from './Home';
 import About from './About';
+import Contact from './Contact';
 
 import Company from './Company/Company';
 import CompanyItem from './Company/CompanyItem';
 
 import Experience from './Experience/Experience';
 import ExperienceItem from './Experience/ExperienceItem';
-
 
 const ContentDiv = styled.div`
     width: 100%;
@@ -34,6 +34,7 @@ function Content( { onLocationChange }) {
     return(
         <ContentDiv cheight={cheight}>
             <Route exact path={`${BaseURL}/About`} component={( {location, match, history} ) => <About onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+            <Route exact path={`${BaseURL}/Contact`} component={( {location, match, history} ) => <Contact onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
             <Switch>
                 <Route exact path={`${BaseURL}/Company-:name`} component={( {location, match, history} ) => <CompanyItem onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
                 <Route exact path={`${BaseURL}/Company`} component={( {location, match, history} ) => <Company onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
