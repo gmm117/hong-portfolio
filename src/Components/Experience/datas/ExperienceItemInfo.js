@@ -50,7 +50,8 @@ const DefaultInfos =
         },
         itemImages : {
             
-        }
+        },
+        oldIsShow : false
     }
 ];
 
@@ -97,7 +98,8 @@ const AppsInfos =
                 sourceimg_src : github,
                 sourceimg_alt : 'View Source'
             }
-        }
+        },
+        oldIsShow : false
     },
     {
         itemTitles : {
@@ -140,7 +142,8 @@ const AppsInfos =
                 sourceimg_src : github,
                 sourceimg_alt : 'View Source'
             }
-        }
+        },
+        oldIsShow : false
     },
     {
         itemTitles : {
@@ -183,7 +186,8 @@ const AppsInfos =
                 sourceimg_src : github,
                 sourceimg_alt : 'View Source'
             }
-        }
+        },
+        oldIsShow : false
     },
     {
         itemTitles : {
@@ -217,7 +221,8 @@ const AppsInfos =
                 onlineimg_src : link,
                 onlineimg_alt : 'View Online'
             }
-        }
+        },
+        oldIsShow : false
     }
 ];
 
@@ -256,7 +261,8 @@ const StudyInfos =
                 sourceimg_src : github,
                 sourceimg_alt : 'View Source'
             }
-        }
+        },
+        oldIsShow : false
     },
     {
         itemTitles : {
@@ -291,7 +297,8 @@ const StudyInfos =
                 sourceimg_src : github,
                 sourceimg_alt : 'View Source'
             }
-        }
+        },
+        oldIsShow : false
     },
     {
         itemTitles : {
@@ -326,7 +333,8 @@ const StudyInfos =
                 sourceimg_src : github,
                 sourceimg_alt : 'View Source'
             }
-        }
+        },
+        oldIsShow : false
     },
     {
         itemTitles : {
@@ -361,7 +369,8 @@ const StudyInfos =
                 sourceimg_src : github,
                 sourceimg_alt : 'View Source'
             }
-        }
+        },
+        oldIsShow : false
     },
     {
         itemTitles : {
@@ -395,7 +404,8 @@ const StudyInfos =
                 sourceimg_src : github,
                 sourceimg_alt : 'View Source'
             }
-        }
+        },
+        oldIsShow : false
     }
 ];
 
@@ -433,6 +443,7 @@ const WorksInfos =
                 patentsimg_src : patents,
                 patentsimg_alt : 'Patents View'
             }
-        }
+        },
+        oldIsShow : false
     }
 ];

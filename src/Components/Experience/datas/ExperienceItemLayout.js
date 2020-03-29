@@ -488,7 +488,7 @@ let oldTranslate, oldIsShow;
 function AppsItemLayout( { expInfo } ) {
     const [reveal, setReveal] = useState({
         translate : oldTranslate === undefined ? '0px' : oldTranslate,
-        isshow : oldIsShow === undefined ? false : oldIsShow});
+        isshow : expInfo.oldIsShow });
 
     const { translate, isshow } = reveal;
     const OnRevealClick = () => setReveal({
@@ -497,7 +497,7 @@ function AppsItemLayout( { expInfo } ) {
     });
 
     oldTranslate = translate;
-    oldIsShow = isshow;
+    expInfo.oldIsShow = isshow;
 
     const { itemTitles, itemDesc, itemContents, itemFooters, itemImages } = expInfo;
     
