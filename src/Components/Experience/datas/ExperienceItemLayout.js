@@ -502,7 +502,7 @@ function AppsItemLayout( { expInfo } ) {
     const { itemTitles, itemDesc, itemContents, itemFooters, itemImages } = expInfo;
     
     const { bottitle, revealtitle } = itemTitles;
-    const { date, role, style, skills, bundle, others, type, program, desc, search } = itemContents;
+    const { date, role, style, skills, bundle, others, type, program, desc, search, company } = itemContents;
     
     const { online, source, patents } = itemFooters;
     const { online_url, online_tooltip } = online ? online : {};
@@ -578,6 +578,14 @@ function AppsItemLayout( { expInfo } ) {
                         others ? (
                             <CardItemContentDetailDiv>
                                 <CardItemContentDetailImg src={circle} alt="" />Others: {others}
+                            </CardItemContentDetailDiv>
+                        ) : null
+                        
+                    }
+                    {
+                        company ? (
+                            <CardItemContentDetailDiv>
+                                <CardItemContentDetailImg src={circle} alt="" />Company: {company}
                             </CardItemContentDetailDiv>
                         ) : null
                         

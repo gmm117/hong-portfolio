@@ -6,6 +6,7 @@ import patents from '../../../../imgs/patents.svg';
 
 import blog from '../../../../imgs/blog.png';
 import lightmarkdown_electron from '../../../../imgs/lightmarkdown_electron.png';
+import waple from '../../../../imgs/waple.png';
 
 import typescriptImg from '../../../../imgs/typescript.png';
 import webpackImg from '../../../../imgs/webpack.png';
@@ -42,40 +43,13 @@ const DefaultInfos =
         },
         itemDesc : "",
         itemContents : {
-            date : "",
-            role : "",
-            style : "", 
-            skills : "",
-            bundle : "", 
-            others : ""
+            
         },
         itemFooters : {
-            online : {
-                url : '',
-                tooltip : ''
-            },
-            source : {
-                url : '',
-                tooltip : ''
-            }
+            
         },
         itemImages : {
-            top : {
-                top_src : null, 
-                top_alt : ""
-            },
-            titlemore : {
-                titlemore_src : null, 
-                titlemore_alt : ""
-            },
-            onlineimg : {
-                onlineimg_src : null,
-                onlineimg_alt : ''
-            },
-            sourceimg : {
-                sourceimg_src : null,
-                sourceimg_alt : ''
-            }
+            
         }
     }
 ];
@@ -132,9 +106,9 @@ const AppsInfos =
         },
         itemDesc : "Electron과 웹브라우저에서 동작하는 Markdown Editor 개발",
         itemContents : {
-            date : "Dec 2019 - Present",
+            date : "Dec 2019 - Feb 2020",
             role : "Front-End Developer",
-            style : "HTML, CSS", 
+            style : "HTML, SCSS", 
             skills : "Javascript",
             bundle : "Webpack, Babel", 
             others : "GIT, VSCode, Electron"
@@ -208,6 +182,40 @@ const AppsInfos =
             sourceimg : {
                 sourceimg_src : github,
                 sourceimg_alt : 'View Source'
+            }
+        }
+    },
+    {
+        itemTitles : {
+            bottitle : "Waple+ (Windows Version)",
+            revealtitle : "Waple+ (Windows Version)"
+        },
+        itemDesc : "무선랜 자동연결(Waple+) 안드로이드 버전을 윈도우 버전으로 개발에 참여",
+        itemContents : {
+            date : "Mar 2016 - Apr 2016",
+            role : "Front-End Developer",
+            skills : "WPF, C#",
+            others : "GIT, Visual Studio 2013",
+            company : "MOIMCOMMS(모임컴즈)"
+        },
+        itemFooters : {
+            online : {
+                online_url : 'http://waple.us/',
+                online_tooltip : 'View Online'
+            }
+        },
+        itemImages : {
+            top : {
+                top_src : waple, 
+                top_alt : "Waple+ (Windows Version)"
+            },
+            titlemore : {
+                titlemore_src : more, 
+                titlemore_alt : "상세보기"
+            },
+            onlineimg : {
+                onlineimg_src : link,
+                onlineimg_alt : 'View Online'
             }
         }
     }

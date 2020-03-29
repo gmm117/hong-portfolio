@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { TileDiv, TileUl } from '../Utils/CommonStyle';
 import { GetExpInfo } from './datas/ExperienceItemInfo';
-import AppsItemLayout from './datas/AppsItemLayout';
+import ExperienceItemLayout from './datas/ExperienceItemLayout';
 import { BaseURL } from '../Utils/Define';
 
 function ExperienceItem( { location, onLocationChange } ) {
@@ -17,7 +17,7 @@ function ExperienceItem( { location, onLocationChange } ) {
         <TileDiv>
             <TileUl>
                 {
-                    expInfos.map((expInfo, index) => <AppsItemLayout key={index} expInfo={expInfo} /> )
+                    expInfos.map((expInfo, index) => <ExperienceItemLayout key={index} expInfo={expInfo} /> )
                 }
             </TileUl>
         </TileDiv>
