@@ -42,7 +42,7 @@ const ContactTopDiv = styled.div`
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 320px) and (max-width : 375px) {
+    @media screen and (max-width : 375px) {
         font-size: 20px;
         &:before {
             left: 0;
@@ -123,22 +123,65 @@ const ContactTopDiv = styled.div`
 
 const ContactItemImg = styled.img`
     margin-right : 10px;
-    width: 40px;
-    min-width : 40px;
-    height: 40px;
-    min-height 40px:
     cursor: pointer;
+
+    /* Mobile Device */
+    @media screen and (max-width : 425px) {
+        width: 25px;
+        height: 25px;
+        min-height 25px;
+    }
+
+    /* Mobile Device */
+    @media screen and (min-width : 426px) and (max-width : 768px) {
+        width: 30px;
+        height: 30px;
+        min-height 30px;
+    }
+
+    /* Tablet Device */
+    @media screen and (min-width : 769px) and (max-width : 991px) {
+        width: 35px;
+        height: 35px;
+        min-height 35px;
+    }
+
+    /* Desktop Device */
+    @media screen and (min-width : 992px) {
+        width: 40px;
+        height: 40px;
+        min-height 40px;
+    }
 `;
 
 const ContactItemDiv = styled.div`
-    margin-top : 30px;
-    padding-left : 5px;
-    font-weight : 600;
     display : flex;
     align-items : center;
+
     font-size : 20px;
-    color : #008073;
     font-weight : 600;
+    margin-top : 30px;
+    padding-left : 5px;
+
+    /* Mobile Device */
+    @media screen and (max-width : 425px) {
+        font-size : 10px;
+    }
+
+    /* Mobile Device */
+    @media screen and (min-width : 426px) and (max-width : 768px) {
+        font-size : 15px;
+    }
+
+    /* Tablet Device */
+    @media screen and (min-width : 769px) and (max-width : 991px) {
+        font-size : 20px;
+    }
+
+    /* Desktop Device */
+    @media screen and (min-width : 992px) {
+        font-size : 25px;
+    }
 `;
 
 const ContactItemSubDiv = styled.div`
@@ -148,7 +191,7 @@ const ContactItemSubDiv = styled.div`
             height : 12px;
             padding-bottom : 6px;
             &:hover {
-                border-bottom : 2px solid #2b8a3e;
+                border-bottom : 2px solid rgba(100,100,100,0.75);
             }
         }
 
@@ -156,10 +199,10 @@ const ContactItemSubDiv = styled.div`
             cursor : ${props => props.cursorType ? props.cursorType : null};
             height : 12px;
             padding-bottom : 6px;
-            color : #008073;
+            color : rgba(100,100,100,0.75);
             text-decoration : none;
             &:hover {
-                border-bottom : 2px solid #2b8a3e;
+                border-bottom : 2px solid rgba(100,100,100,0.75);
             }
         }
     `}

@@ -9,7 +9,7 @@ const HomeBody = styled.div`
     align-items : center;
     font-weight : 600;
     font-size : 50px;
-    color : #f783ac;
+    color : #2b8a3e;
     height : 100%;
     background: url(${HomeImg}) no-repeat center center;
     background-size : cover;

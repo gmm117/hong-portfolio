@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import styled, { withTheme } from 'styled-components';
-import { Link, Route } from 'react-router-dom';
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import SidebarMenu from './SidebarMenu';
 import { BaseURL } from '../Utils/Define';
 
