@@ -1,5 +1,57 @@
 import styled, { css } from 'styled-components';
 
+
+//////////////////////////// device layout //////////////////////////////////
+// const size = {
+//     mobileS: '320px',
+//     mobileM: '375px',
+//     mobileL: '425px',
+//     tablet: '768px',
+//     laptop: '1024px',
+//     laptopL: '1440px',
+//     desktop: '2560px'
+// }
+
+// export const device = {
+//     mobileS: `(min-width: ${size.mobileS})`,
+//     mobileM: `(min-width: ${size.mobileM})`,
+//     mobileL: `(min-width: ${size.mobileL})`,
+//     tablet: `(min-width: ${size.tablet})`,
+//     laptop: `(min-width: ${size.laptop})`,
+//     laptopL: `(min-width: ${size.laptopL})`,
+//     desktop: `(min-width: ${size.desktop})`,
+//     desktopL: `(min-width: ${size.desktop})`
+// };
+
+const deviceWInfo = {
+    mobileS: {min : '320px', max : '375px'},
+    mobileM: {min : '376px', max : '425px'},
+    mobileL: {min : '426px', max : '768px'},
+    tablet: {min : '769px', max : '991px'},
+    desktop: {min : '992px'}
+}
+
+export const DeviceWidth = {
+    mobileS: `screen and (min-width: ${deviceWInfo.mobileS.min}) and (max-width: ${deviceWInfo.mobileS.max})`,
+    mobileM: `screen and (min-width: ${deviceWInfo.mobileM.min}) and (max-width: ${deviceWInfo.mobileM.max})`,
+    mobileL: `screen and (min-width: ${deviceWInfo.mobileL.min}) and (max-width: ${deviceWInfo.mobileL.max})`,
+    tablet: `screen and (min-width: ${deviceWInfo.tablet.min}) and (max-width: ${deviceWInfo.tablet.max})`,
+    desktop: `screen and (min-width: ${deviceWInfo.desktop.min})`
+ };
+
+export const DeviceDirectWidth = ({min, max}) => {
+    return `screen 
+        ${min != null ? ' and (min-width: ' + min + ')' : ''}
+        ${max != null ? ' and (max-width: ' + max + ')' : ''}`
+}
+export const DeviceDirectHeight = ({min, max}) => {
+    return `screen 
+    ${min != null ? ' and (min-height: ' + min + ')' : ''}
+    ${max != null ? ' and (max-height: ' + max + ')' : ''}`
+}
+ 
+////////////////////////////////////////////////////////////////////////////
+
 //////////////////////////// css ui layout ///////////////////////////////
 export const LinkStyle = {
     display : 'inline-block',
@@ -42,13 +94,12 @@ export const TileDiv = styled.div`
     margin : 0 auto;
     max-width : 1550px;
 
-    /* Tablet Device */
-    @media screen and (min-width : 991px){
+    @media ${DeviceDirectWidth( { max : '991px' })} {
         width : 90%;
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    @media ${DeviceDirectWidth( { min : '992px' })} {
         width : 95%;
     }
 `;
@@ -64,15 +115,15 @@ export const TileUl = styled.ul`
     color: #333;
     font-family: Noto Sans Medium,AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;
 
-    @media screen and (max-width : 320px) {
+    @media ${DeviceDirectWidth( { max : '320px' })} {
         padding : 0px 5px;
     }
 
-    @media screen and (min-width : 321px) and (max-width : 375px) {
+    @media ${DeviceDirectWidth( { min : '321px', max : '375px' })} {
         padding : 0px 10px;
     }
 
-    @media screen and (min-width : 376px) {
+    @media ${DeviceDirectWidth( { min : '376px' })} {
         padding : 0px 25px;
     }
 `;
@@ -86,43 +137,28 @@ export const TileItemLi = styled.li`
     margin: 0 auto;
 
     /* Mobile Device */
-    @media screen and (min-width : 0px) and (max-width : 320px) {
-        height: 200px;
-        min-height: 200px;
-        width: 200px;
-        min-width: 200px;
+    @media ${DeviceDirectWidth( { min : '0', max : '320px' })} {
+        ${DirectSizeStyle({ width : '200px', height : '200px' })}; 
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 500px) {
-        height: 250px;
-        min-height: 250px;
-        width: 250px;
-        min-width: 250px;
+    @media ${DeviceDirectWidth( { min : '321px', max : '500px' })} {
+        ${DirectSizeStyle({ width : '250px', height : '250px' })}; 
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 501px) and (max-width : 767px) {
-        height: 300px;
-        min-height: 300px;
-        width: 300px;
-        min-width: 300px;
+    @media ${DeviceDirectWidth( { min : '501px', max : '767px' })} {
+        ${DirectSizeStyle({ width : '300px', height : '300px' })}; 
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
-        height: 350px;
-        min-height: 350px;
-        width: 350px;
-        min-width: 350px;
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
+        ${DirectSizeStyle({ width : '350px', height : '350px' })}; 
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
-        height: 400px;
-        min-height: 400px;
-        width: 400px;
-        min-width: 400px;
+    @media ${DeviceDirectWidth( { min : '992px' })} {
+        ${DirectSizeStyle({ width : '400px', height : '400px' })}; 
     }
 `;
 
@@ -137,33 +173,28 @@ export const TileThumbDiv = styled.div`
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 
     /* Mobile Device */
-    @media screen and (min-width : 0px) and (max-width : 320px) {
-        height: 200px;
-        min-height: 200px;
+    @media ${DeviceDirectWidth( { min : '0', max : '320px' })} {
+        ${DirectHeightSizeStyle('200px')};
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 500px) {
-        height: 250px;
-        min-height: 250px;
+    @media ${DeviceDirectWidth( { min : '321px', max : '500px' })} {
+        ${DirectHeightSizeStyle('250px')};
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 501px) and (max-width : 767px) {
-        height: 300px;
-        min-height: 300px;
+    @media ${DeviceDirectWidth( { min : '501px', max : '767px' })} {
+        ${DirectHeightSizeStyle('300px')};
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
-        height: 350px;
-        min-height: 350px;
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
+        ${DirectHeightSizeStyle('350px')};
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
-        height: 400px;
-        min-height: 400px;
+    @media ${DeviceDirectWidth( { min : '992px' })} {
+        ${DirectHeightSizeStyle('400px')};
     }
 `;
 
@@ -250,53 +281,4 @@ export const FeatureTitle = (size) => css`
         content: "";
     }
 `;
-////////////////////////////////////////////////////////////////////////////
-
-//////////////////////////// device layout //////////////////////////////////
-// const size = {
-//     mobileS: '320px',
-//     mobileM: '375px',
-//     mobileL: '425px',
-//     tablet: '768px',
-//     laptop: '1024px',
-//     laptopL: '1440px',
-//     desktop: '2560px'
-// }
-
-// export const device = {
-//     mobileS: `(min-width: ${size.mobileS})`,
-//     mobileM: `(min-width: ${size.mobileM})`,
-//     mobileL: `(min-width: ${size.mobileL})`,
-//     tablet: `(min-width: ${size.tablet})`,
-//     laptop: `(min-width: ${size.laptop})`,
-//     laptopL: `(min-width: ${size.laptopL})`,
-//     desktop: `(min-width: ${size.desktop})`,
-//     desktopL: `(min-width: ${size.desktop})`
-// };
-
-const deviceWInfo = {
-    mobileS: {min : '320px', max : '375px'},
-    mobileM: {min : '376px', max : '425px'},
-    mobileL: {min : '426px', max : '768px'},
-    tablet: {min : '769px', max : '991px'},
-    desktop: {min : '992px'}
-}
-
-export const DeviceWidth = {
-    mobileS: `screen and (min-width: ${deviceWInfo.mobileS.min}) and (max-width: ${deviceWInfo.mobileS.max})`,
-    mobileM: `screen and (min-width: ${deviceWInfo.mobileM.min}) and (max-width: ${deviceWInfo.mobileM.max})`,
-    mobileL: `screen and (min-width: ${deviceWInfo.mobileL.min}) and (max-width: ${deviceWInfo.mobileL.max})`,
-    tablet: `screen and (min-width: ${deviceWInfo.tablet.min}) and (max-width: ${deviceWInfo.tablet.max})`,
-    desktop: `screen and (min-width: ${deviceWInfo.desktop.min})`
- };
-
-export const DeviceDirectWidth = ({min, max}) => {
-    return `screen 
-        ${min != null ? ' and (min-width: ' + min + ')' : ''}
-        ${max != null ? ' and (max-width: ' + max + ')' : ''}`
-}
-export const DeviceDirectHeight = () => {
-
-}
- 
 ////////////////////////////////////////////////////////////////////////////

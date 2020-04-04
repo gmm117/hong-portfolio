@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import circle from '../../../../imgs/circle.svg';
-import { DeviceDirectWidth, DirectHeightSizeStyle, DirectWidthSizeStyle } from '../../Utils/CommonStyle';
+import { DeviceDirectWidth, DirectHeightSizeStyle, DirectWidthSizeStyle, DirectSizeStyle } from '../../Utils/CommonStyle';
 
 export const CardItemLi = styled.li`
     display : flex;
@@ -131,27 +131,23 @@ const CardItemBottomDiv = styled.div`
     box-sizing : border-box;
 
     /* Mobile Device */
-    @media screen and (min-width : 0px) and (max-width : 500px) {
-        min-height : 100px;
-        height : 100px;
+    @media ${DeviceDirectWidth( { min : '0', max : '500px'})} {
+        ${DirectHeightSizeStyle('100px')};
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 501px) and (max-width : 767px) {
-        min-height : 110px;
-        height : 110px;
+    @media ${DeviceDirectWidth( { min : '501px', max : '767px'})} {
+        ${DirectHeightSizeStyle('110px')};
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
-        min-height : 130px;
-        height : 130px;
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px'})} {
+        ${DirectHeightSizeStyle('130px')};
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
-        min-height : 150px;
-        height : 150px;
+    @media ${DeviceDirectWidth( { min : '992px'})} {
+        ${DirectHeightSizeStyle('150px')};
     }
 `;
 
@@ -168,31 +164,31 @@ const CardItemBottomTitleSpan = styled.span`
     color: #008073;
 
     /* Mobile Device */
-    @media screen and (min-width : 0px) and (max-width : 320px) {
+    @media ${DeviceDirectWidth( { min : '0', max : '320px'})} {
         font-size: 13px;
         line-height: 1.5rem;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 500px) {
+    @media ${DeviceDirectWidth( { min : '321px', max : '500px'})} {
         font-size: 16px;
         line-height: 1.5rem;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 501px) and (max-width : 767px) {
+    @media ${DeviceDirectWidth( { min : '501px', max : '767px'})} {
         font-size: 18px;
         line-height: 2.0rem;
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px'})} {
         font-size: 20px;
         line-height: 2.0rem;
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    @media ${DeviceDirectWidth( { min : '992px'})} {
         font-size: 22px;
         line-height: 2.5rem;
     }
@@ -202,27 +198,27 @@ const CardItemBottomTitleImg = styled.img`
     cursor: pointer;
 
     /* Mobile Device */
-    @media screen and (min-width : 0px) and (max-width : 320px) {
+    @media ${DeviceDirectWidth( { min : '0', max : '320px'})} {
         height: 13px;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 500px) {
+    @media ${DeviceDirectWidth( { min : '321px', max : '500px'})} {
         height: 17px;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 501px) and (max-width : 767px) {
+    @media ${DeviceDirectWidth( { min : '501px', max : '767px'})} {
         height: 20px;
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px'})} {
         height: 22px;
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    @media ${DeviceDirectWidth( { min : '992px'})} {
         height: 24px;
     }
 `;
@@ -230,32 +226,30 @@ const CardItemBottomTitleImg = styled.img`
 const CardItemBottomDescDiv = styled.div`
     padding : 5px 0 0 0;
     line-height: 1.5rem;
-
-    font-size: 16px;
     font-weight : 600;
     
     /* Mobile Device */
-    @media screen and (min-width : 0px) and (max-width : 320px) {
+    @media ${DeviceDirectWidth( { min : '0', max : '320px'})} {
         font-size: 10px;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 500px) {
+    @media ${DeviceDirectWidth( { min : '321px', max : '500px'})} {
         font-size: 12px;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 501px) and (max-width : 767px) {
+    @media ${DeviceDirectWidth( { min : '501px', max : '767px'})} {
         font-size: 14px;
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px'})} {
         font-size: 16px;
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    @media ${DeviceDirectWidth( { min : '992px'})} {
         font-size: 18px;
     }
 `;
@@ -277,109 +271,73 @@ const CardItemRevealDiv = styled.div`
     transition: transform 0.5s ease;
 
     /* Mobile Device */
-    @media screen and (min-width : 0px) and (max-width : 320px) {
-        height: 300px;
-        min-height: 300px;
+    @media ${DeviceDirectWidth( { min : '0', max : '320px'})} {
+        ${DirectHeightSizeStyle('300px')};
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 500px) {
-        height: 350px;
-        min-height: 350px;
+    @media ${DeviceDirectWidth( { min : '321px', max : '500px'})} {
+        ${DirectHeightSizeStyle('350px')};
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 501px) and (max-width : 767px) {
-        height: 400px;
-        min-height: 400px;
+    @media ${DeviceDirectWidth( { min : '501px', max : '767px'})} {
+        ${DirectHeightSizeStyle('400px')};
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
-        height: 450px;
-        min-height: 450px;
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px'})} {
+        ${DirectHeightSizeStyle('450px')};
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
-        height: 500px;
-        min-height: 500px;
+    @media ${DeviceDirectWidth( { min : '992px'})} {
+        ${DirectHeightSizeStyle('500px')};
+    }
+`;
+
+const CartItemRevealDeviceStyle = (fontWeight) => css`
+    cursor: pointer;
+    display : flex;
+    font-weight: ${fontWeight};
+    align-items: center;
+    /* Mobile Device */
+    @media ${DeviceDirectWidth( { min : '0', max : '320px'})} {
+        height: 8px;
+        font-size: 8px;
+    }
+
+    /* Mobile Device */
+    @media ${DeviceDirectWidth( { min : '321px', max : '500px'})} {
+        height: 13px;
+        font-size: 13px;
+    }
+
+    /* Mobile Device */
+    @media ${DeviceDirectWidth( { min : '501px', max : '767px'})} {
+        height: 18px;
+        font-size: 18px;
+    }
+
+    /* Tablet Device */
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px'})} {
+        height: 20px;
+        font-size: 20px;
+    }
+
+    /* Desktop Device */
+    @media ${DeviceDirectWidth( { min : '992px'})} {
+        height: 22px;
+        font-size: 22px;
     }
 `;
 
 const CardItemRevealTitleSpan = styled.span`
-    cursor: pointer;
-    display: block;
-    display : flex;
-    align-items: center;
-    font-weight : 900;
-
-    /* Mobile Device */
-    @media screen and (min-width : 0px) and (max-width : 320px) {
-        height: 8px;
-        font-size: 8px;
-    }
-
-    /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 500px) {
-        height: 13px;
-        font-size: 13px;
-    }
-
-    /* Mobile Device */
-    @media screen and (min-width : 501px) and (max-width : 767px) {
-        height: 18px;
-        font-size: 18px;
-    }
-
-    /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
-        height: 20px;
-        font-size: 20px;
-    }
-
-    /* Desktop Device */
-    @media screen and (min-width : 992px) {
-        height: 22px;
-        font-size: 22px;
-    }
+    ${CartItemRevealDeviceStyle(900)};
 `;
 
 const CardItemRevealExitSpan = styled.span`
-    cursor: pointer;
-    display : flex;
-    align-items: center;
-    font-weight : 600;
-
-    /* Mobile Device */
-    @media screen and (min-width : 0px) and (max-width : 320px) {
-        height: 8px;
-        font-size: 8px;
-    }
-
-    /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 500px) {
-        height: 13px;
-        font-size: 13px;
-    }
-
-    /* Mobile Device */
-    @media screen and (min-width : 501px) and (max-width : 767px) {
-        height: 18px;
-        font-size: 18px;
-    }
-
-    /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
-        height: 20px;
-        font-size: 20px;
-    }
-
-    /* Desktop Device */
-    @media screen and (min-width : 992px) {
-        height: 22px;
-        font-size: 22px;
-    }
+    ${CartItemRevealDeviceStyle(600)};
 `;
 
 const CardItemContentDiv = styled.div`
@@ -389,31 +347,25 @@ const CardItemContentDiv = styled.div`
     font-weight : 600;
 `;
 
-const CardItemContentDetailImg = styled.img`
+const CardItemContentDetailImg = styled.img.attrs({
+    src: circle,
+    alt: ""
+})`
     margin-right : 5px;
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
-        width: 5px;
-        min-width : 5px;
-        height: 5px;
-        min-height 5px: 
+    @media ${DeviceDirectWidth( { min : '992px' })} {
+        ${DirectSizeStyle({ width : '5px', height : '5px' })}; 
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
-        width: 3px;
-        min-width : 3px;
-        height: 3px;
-        min-height 3px: 
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
+        ${DirectSizeStyle({ width : '3px', height : '3px' })};  
     }
 
     /* Mobile Device */
-    @media screen and (max-width : 767px) {
-        width: 2px;
-        min-width : 2px;
-        height: 2px;
-        min-height 2px: 
+    @media ${DeviceDirectWidth( { max : '767px' })} {
+        ${DirectSizeStyle({ width : '2px', height : '2px' })}; 
     }
 `;
 
@@ -422,31 +374,31 @@ const CardItemContentDetailDiv = styled.div`
     font-weight : 600;
 
     /* Mobile Device */
-    @media screen and (min-width : 0px) and (max-width : 320px) {
+    @media ${DeviceDirectWidth( { min : '0', max : '320px' })} {
         font-size : 8px;
         line-height : 1.0rem;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 500px) {
+    @media ${DeviceDirectWidth( { min : '321px', max : '500px' })} {
         font-size : 10px;
         line-height : 1.4rem;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 501px) and (max-width : 767px) {
+    @media ${DeviceDirectWidth( { min : '501px', max : '767px' })} {
         font-size : 10px;
         line-height : 1.6rem;
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
         font-size : 12px;
         line-height : 1.8rem;
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    @media ${DeviceDirectWidth( { min : '992px' })} {
         font-size : 14px;
         line-height : 2.0rem;
     }
@@ -473,7 +425,8 @@ const CardItemFooterItemImg = styled.img`
     height : 100%;
 `;
 
-let oldTranslate, oldIsShow;
+
+let oldTranslate;
 
 function AppsItemLayout( { expInfo } ) {
     const [reveal, setReveal] = useState({
@@ -527,7 +480,7 @@ function AppsItemLayout( { expInfo } ) {
                     {
                         date ? (
                             <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg src={circle} alt="" />Date: {date}
+                                <CardItemContentDetailImg />Date: {date}
                             </CardItemContentDetailDiv>
                         ) : null
                         
@@ -535,7 +488,7 @@ function AppsItemLayout( { expInfo } ) {
                     {
                         role ? (
                             <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg src={circle} alt="" />Role: {role}
+                                <CardItemContentDetailImg />Role: {role}
                             </CardItemContentDetailDiv>
                         ) : null
                         
@@ -543,7 +496,7 @@ function AppsItemLayout( { expInfo } ) {
                     {
                         style ? (
                             <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg src={circle} alt="" />Style: {style}
+                                <CardItemContentDetailImg />Style: {style}
                             </CardItemContentDetailDiv>
                         ) : null
                         
@@ -551,7 +504,7 @@ function AppsItemLayout( { expInfo } ) {
                     {
                         skills ? (
                             <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg src={circle} alt="" />Skills: {skills}
+                                <CardItemContentDetailImg />Skills: {skills}
                             </CardItemContentDetailDiv>
                         ) : null
                         
@@ -559,7 +512,7 @@ function AppsItemLayout( { expInfo } ) {
                     {
                         bundle ? (
                             <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg src={circle} alt="" />Bundle: {bundle}
+                                <CardItemContentDetailImg />Bundle: {bundle}
                             </CardItemContentDetailDiv>
                         ) : null
                         
@@ -567,7 +520,7 @@ function AppsItemLayout( { expInfo } ) {
                     {
                         others ? (
                             <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg src={circle} alt="" />Others: {others}
+                                <CardItemContentDetailImg />Others: {others}
                             </CardItemContentDetailDiv>
                         ) : null
                         
@@ -575,7 +528,7 @@ function AppsItemLayout( { expInfo } ) {
                     {
                         company ? (
                             <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg src={circle} alt="" />Company: {company}
+                                <CardItemContentDetailImg />Company: {company}
                             </CardItemContentDetailDiv>
                         ) : null
                         
@@ -583,7 +536,7 @@ function AppsItemLayout( { expInfo } ) {
                     {
                         type ? (
                             <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg src={circle} alt="" />Type: {type}
+                                <CardItemContentDetailImg />Type: {type}
                             </CardItemContentDetailDiv>
                         ) : null
                         
@@ -591,7 +544,7 @@ function AppsItemLayout( { expInfo } ) {
                     {
                         program ? (
                             <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg src={circle} alt="" />Program: {program}
+                                <CardItemContentDetailImg />Program: {program}
                             </CardItemContentDetailDiv>
                         ) : null
                         
@@ -599,7 +552,7 @@ function AppsItemLayout( { expInfo } ) {
                     {
                         desc ? (
                             <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg src={circle} alt="" />Desc: {desc}
+                                <CardItemContentDetailImg />Desc: {desc}
                             </CardItemContentDetailDiv>
                         ) : null
                         
@@ -607,7 +560,7 @@ function AppsItemLayout( { expInfo } ) {
                     {
                         search ? (
                             <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg src={circle} alt="" />Search: {search}
+                                <CardItemContentDetailImg />Search: {search}
                             </CardItemContentDetailDiv>
                         ) : null
                         

@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 import circle from '../../../../imgs/circle.svg';
-import { DimensionDiv, TileThumbImg } from '../../Utils/CommonStyle';
+import { DimensionDiv, TileThumbImg, DeviceDirectWidth, DirectSizeStyle, DirectHeightSizeStyle } from '../../Utils/CommonStyle';
 
 const CompLi = styled.li`
     width : 100%;
@@ -15,22 +15,22 @@ const CompLi = styled.li`
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 
     /* Mobile Device */
-    @media screen and (min-width : 0px) and (max-width : 320px) {
+    @media ${DeviceDirectWidth( { min : '0', max : '320px' })} {
         min-height: 200px;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 767px) {
+    @media ${DeviceDirectWidth( { min : '321px', max : '767px' })} {
         min-height: 250px;
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
         min-height: 300px;
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    @media ${DeviceDirectWidth( { min : '992px' })} {
         min-height: 350px;
     }
 `;
@@ -73,7 +73,7 @@ const CompItemContentHr = styled.hr`
     margin : 10px 0;
 
     /* Mobile Device */
-    @media screen and (max-width : 767px) {
+    @media ${DeviceDirectWidth( { max : '767px' })} {
         margin : 5px 0;
     }
 `;
@@ -83,7 +83,7 @@ const CompItemBottomDiv = styled.div`
     padding-top : 20px;
 
     /* Desktop Device */
-    @media screen and (min-width : 768px) {
+    @media ${DeviceDirectWidth( { min : '768px' })} {
         display : flex;
     }
 `;
@@ -105,10 +105,9 @@ const CompItemImgDiv = styled.div`
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 375px) and (max-width : 520px) {
+    @media ${DeviceDirectWidth( { min : '375px', max : '520px' })} {
         width : 100%;
-        height : 200px;
-        min-height : 200px;
+        ${DirectHeightSizeStyle('200px')};
 
         &:hover {
             transform:scale(1.1); /* 마우스 오버시 이미지 크기를 1.1 배만큼 확대시킨다. */
@@ -124,11 +123,8 @@ const CompItemImgDiv = styled.div`
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 521px) and (max-width : 767px) {
-        width : 250px;
-        min-width : 250px;
-        height : 250px;
-        min-height : 250px;
+    @media ${DeviceDirectWidth( { min : '521px', max : '767px' })} {
+        ${DirectSizeStyle({width: '250px', height: '250px'})}; 
 
         &:hover {
             transform:scale(1.2); /* 마우스 오버시 이미지 크기를 1.1 배만큼 확대시킨다. */
@@ -144,20 +140,14 @@ const CompItemImgDiv = styled.div`
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
-        width : 300px;
-        min-width : 300px;
-        height : 300px;
-        min-height : 300px;
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
+        ${DirectSizeStyle({width: '300px', height: '300px'})}; 
         margin-right : 35px;
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
-        width : 350px;
-        min-width : 350px;
-        height : 350px;
-        min-height : 350px;
+    @media ${DeviceDirectWidth( { min : '992px' })} {
+        ${DirectSizeStyle({width: '350px', height: '350px'})}; 
         margin-right : 40px;
     }
 `;
@@ -170,19 +160,19 @@ const CompItemDetailDiv = styled.div`
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    @media ${DeviceDirectWidth( { min : '992px' })} {
         font-size : 16px;
         justify-content : center;
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
         font-size : 14px;
         justify-content : center;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 320px) and (max-width : 767px) {
+    @media ${DeviceDirectWidth( { min : '320px', max : '767px' })} {
         font-size : 12px;
         margin-top : 15px;
         justify-content : flex-start;
@@ -199,27 +189,18 @@ const CompItemDetailDetailImg = styled.img`
     margin-right : 5px;
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
-        width: 5px;
-        min-width : 5px;
-        height: 5px;
-        min-height 5px: 
+    @media ${DeviceDirectWidth( { min : '992px' })} {
+        ${DirectSizeStyle({width: '5px', height: '5px'})}; 
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
-        width: 3px;
-        min-width : 3px;
-        height: 3px;
-        min-height 3px: 
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
+        ${DirectSizeStyle({width: '3px', height: '3px'})}; 
     }
 
     /* Mobile Device */
-    @media screen and (max-width : 767px) {
-        width: 2px;
-        min-width : 2px;
-        height: 2px;
-        min-height 2px: 
+    @media ${DeviceDirectWidth( { max : '767px' })} {
+        ${DirectSizeStyle({width: '2px', height: '2px'})}; 
     }
 `;
 
@@ -228,17 +209,17 @@ const CompItemDetailDetailContentDiv = styled.div`
     font-weight : 600;
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    @media ${DeviceDirectWidth( { min : '992px' })} {
         font-size : 16px;
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
         font-size : 14px;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 320px) and (max-width : 767px) {
+    @media ${DeviceDirectWidth( { min : '320px', max : '767px' })} {
         font-size : 12px;
     }
 `;

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { BaseURL } from '../Utils/Define';
-import { LinkStyle } from '../Utils/CommonStyle';
+import { LinkStyle, DeviceDirectWidth, AutoLayoutDiv, DirectSizeStyle, DeviceDirectHeight } from '../Utils/CommonStyle';
 import homeImg from '../../../imgs/home.svg';
 import cubeImg from '../../../imgs/cube.svg';
 import userImg from '../../../imgs/user.svg';
@@ -20,36 +20,29 @@ const SideBarMenuList = styled.li`
     height : 25px;
 
     /* Mobile Device */
-    @media screen and (max-width : 767px) {
+    @media ${DeviceDirectWidth( { max : '767px' })} {
         padding : 1.0rem 0 1.0rem 0;
     }
 
     /* Mobile Device */
-    @media screen and (max-height : 480px) {
+    @media ${DeviceDirectHeight( { max : '480px' })} {
         padding : 0.3rem 0 0.3rem 0;
     }
 `;
 
 const LinkImgDiv = styled.div`
-    width : 20px;
-    min-width : 20px;
-    height : 20px;
-    min-height : 20px;
+    ${DirectSizeStyle({ width : '20px', height: '20px'})};
     margin-right: 0.5rem;
 
     /* Mobile Device */
-    @media screen and (max-width : 767px) {
-        width : 30px;
-        min-width : 30px;
-        height : 30px;
-        min-height : 30px;
+    @media ${DeviceDirectWidth( { max : '767px' })} {
+        ${DirectSizeStyle({ width : '30px', height: '30px'})};
         margin-right: 0;
     }
 `;
 
 const LinkImg = styled.img`
-    width : 100%;
-    height : 100%;
+    ${DirectSizeStyle({ width : '100%', height: '100%'})};
 `;
 
 const LinkDesDiv = styled.span`
@@ -60,7 +53,7 @@ const LinkDesDiv = styled.span`
     }
 
     /* Mobile Device */
-    @media screen and (max-width : 767px) {
+    @media ${DeviceDirectWidth( { max : '767px' })} {
         display: none;
     }
 `;
@@ -68,11 +61,10 @@ const LinkDesDiv = styled.span`
 const LinkSubDiv = styled.div`
     display: flex;
     align-items: center;
-    width : 100%;
-    height : 100%;
+    ${DirectSizeStyle({ width : '100%', height: '100%'})};
 
     /* Mobile Device */
-    @media screen and (max-width : 767px) {
+    @media ${DeviceDirectWidth( { max : '767px' })} {
         justify-content : center;
     }
 `;
