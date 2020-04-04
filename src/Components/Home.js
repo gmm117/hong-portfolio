@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 import HomeImg from '../../imgs/bg-home.jpg';
+import { DeviceDirectWidth } from './Utils/CommonStyle';
 
 const HomeBody = styled.div`
     display : flex;
@@ -9,33 +10,33 @@ const HomeBody = styled.div`
     align-items : center;
     font-weight : 600;
     font-size : 50px;
-    color : #2b8a3e;
+    color : #008073;
     height : 100%;
     background: url(${HomeImg}) no-repeat center center;
     background-size : cover;
 
     /* Mobile Device */
-    @media screen and (min-width : 320px) and (max-width : 399px) {
+    @media ${DeviceDirectWidth( { min : '320px', max : '399px'})} {
         font-size : 20px;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 400px) and (max-width : 520px) {
+    @media ${DeviceDirectWidth( { min : '400px', max : '520px'})} {
         font-size : 30px;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 521px) and (max-width : 767px) {
+    @media ${DeviceDirectWidth( { min : '521px', max : '767px'})} {
         font-size : 40px;
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px'})} {
         font-size : 50px;
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    @media ${DeviceDirectWidth( { min : '992px'})} {
         font-size : 60px;
     }
 `;

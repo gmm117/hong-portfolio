@@ -49,7 +49,8 @@ const CompItemContentDiv = styled.div`
 
 const CompItemContentTitleDiv = styled.div`
     display : flex;
-    color : #5c940d;
+    color : #008073;
+    font-size: 20px;
     font-weight : 600;
 
     ${css`
@@ -58,7 +59,7 @@ const CompItemContentTitleDiv = styled.div`
             height : 12px;
             padding-bottom : 10px;
             &:hover {
-                border-bottom : 2px solid #2b8a3e;
+                border-bottom : 2px solid #008073;
             }
         }
     `}

@@ -6,8 +6,7 @@ import { BaseURL } from '../Utils/Define';
 
 import avatar_profile from '../../../imgs/avatar_profile.png';
 import github from '../../../imgs/github.svg';
-import facebook from '../../../imgs/facebook.svg';
-import instagram from '../../../imgs/instagram.svg';
+import blog from '../../../imgs/blog.svg';
 
 const SideBarDiv = styled.div`
     max-width : ${props => (props.isSidebarOpen ? '170px' : '0px')};
@@ -186,13 +185,9 @@ function SideBar( { isSidebarOpen } ) {
                     <span className="tooltiptext">GitHub</span>
                     <SideBarLinkImg src={github} alt="GitHub Link" />
                 </SideBarLinkDiv> 
-                <SideBarLinkDiv className="tooltip" onClick={(e) => { window.open('https://www.facebook.com/profile.php?id=100002349562000', '_blank'); }}>
-                    <span className="tooltiptext">FaceBook</span>
-                    <SideBarLinkImg src={facebook} alt="FaceBook Link" />
-                </SideBarLinkDiv>
-                <SideBarLinkDiv className="tooltip" onClick={(e) => { window.open('https://www.instagram.com/hongseunga/', '_blank'); }}>
-                    <span className="tooltiptext">Instagram</span>
-                    <SideBarLinkImg src={instagram} alt="Instagram Link" />
+                <SideBarLinkDiv className="tooltip" onClick={(e) => { window.open('https://gmm117.github.io/', '_blank'); }}>
+                    <span className="tooltiptext">Blog</span>
+                    <SideBarLinkImg src={blog} alt="Blog Link" />
                 </SideBarLinkDiv>
             </SideBarLink>
         </SideBarDiv>

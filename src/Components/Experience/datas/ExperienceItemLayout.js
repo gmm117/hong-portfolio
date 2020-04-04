@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import circle from '../../../../imgs/circle.svg';
+import { DeviceDirectWidth, DirectHeightSizeStyle, DirectWidthSizeStyle } from '../../Utils/CommonStyle';
 
 export const CardItemLi = styled.li`
     display : flex;
@@ -8,39 +9,33 @@ export const CardItemLi = styled.li`
     padding: 76px 40px 0;
 
     /* Mobile Device */
-    @media screen and (min-width : 0px) and (max-width : 320px) {
-        width: 150px;
-        min-width: 150px;
+    @media ${DeviceDirectWidth( { min : '0', max : '320px'})} {
+        ${DirectWidthSizeStyle('150px')};
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 375px) {
-        width: 180px;
-        min-width: 180px;
+    @media ${DeviceDirectWidth( { min : '321px', max : '375px'})} {
+        ${DirectWidthSizeStyle('180px')};
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 376px) and (max-width : 500px) {
-        width: 200px;
-        min-width: 200px;
+    @media ${DeviceDirectWidth( { min : '376px', max : '500px'})} {
+        ${DirectWidthSizeStyle('200px')};
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 501px) and (max-width : 767px) {
-        width: 250px;
-        min-width: 250px;
+    @media ${DeviceDirectWidth( { min : '501px', max : '767px'})} {
+        ${DirectWidthSizeStyle('250px')};
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
-        width: 300px;
-        min-width: 300px;
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px'})} {
+        ${DirectWidthSizeStyle('300px')};
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
-        width: 350px;
-        min-width: 350px;
+    @media ${DeviceDirectWidth( { min : '992px'})} {
+        ${DirectWidthSizeStyle('350px')};
     }
 `;
 
@@ -57,33 +52,28 @@ const CardItemDiv = styled.div`
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 
     /* Mobile Device */
-    @media screen and (min-width : 0px) and (max-width : 320px) {
-        height: 300px;
-        min-height: 300px;
+    @media ${DeviceDirectWidth( { min : '0', max : '320px' })} {
+        ${DirectHeightSizeStyle('300px')};
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 500px) {
-        height: 350px;
-        min-height: 350px;
+    @media ${DeviceDirectWidth( { min : '321px', max : '500px' })} {
+        ${DirectHeightSizeStyle('350px')};
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 501px) and (max-width : 767px) {
-        height: 400px;
-        min-height: 400px;
+    @media ${DeviceDirectWidth( { min : '501px', max : '767px' })} {
+        ${DirectHeightSizeStyle('400px')};
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
-        height: 450px;
-        min-height: 450px;
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
+        ${DirectHeightSizeStyle('450px')};
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
-        height: 500px;
-        min-height: 500px;
+    @media ${DeviceDirectWidth( { min : '992px' })} {
+        ${DirectHeightSizeStyle('500px')};
     }
 `;
 
@@ -93,42 +83,42 @@ const CardItemTopImg = styled.img`
     cursor: pointer;
 
     /* Mobile Device */
-    @media screen and (min-width : 0px) and (max-width : 320px) {
+    @media ${DeviceDirectWidth( { min : '0', max : '320px' })} {
         min-width: 150px;
         height: 150px;
         min-height: 150px;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 375px) {
+    @media ${DeviceDirectWidth( { min : '321px', max : '375px' })} {
         min-width: 180px;
         height: 180px;
         min-height: 180px;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 376px) and (max-width : 500px) {
+    @media ${DeviceDirectWidth( { min : '376px', max : '500px' })} {
         min-width: 200px;
         height: 200px;
         min-height: 200px;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 501px) and (max-width : 767px) {
+    @media ${DeviceDirectWidth( { min : '501px', max : '767px' })} {
         min-width: 250px;
         height: 250px;
         min-height: 250px;
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
         min-width: 300px;
         height: 300px;
         min-height: 300px;
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    @media ${DeviceDirectWidth( { min : '992px' })} {
         min-width: 350px;
         height: 350px;
         min-height: 350px;

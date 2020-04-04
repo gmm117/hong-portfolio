@@ -1,5 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
+//////////////////////////// css ui layout ///////////////////////////////
 export const LinkStyle = {
     display : 'inline-block',
     width : '100%',
@@ -7,9 +8,31 @@ export const LinkStyle = {
     textDecoration: 'none'
 };
 
+export const DirectWidthSizeStyle = (width) => css`
+    width: ${width};
+    min-width : ${width};
+`;
+
+export const DirectHeightSizeStyle = (height) => css`
+    height: ${height};
+    min-height : ${height};
+`;
+
+export const DirectSizeStyle = ({width, height}) => css`
+    width: ${width};
+    min-width : ${width};
+    height: ${height};
+    min-height : ${height};
+`
+
 export const DimensionDiv = styled.div`
     width : ${props => (props.width ? props.width : null)};
     height : ${props => (props.height ? props.height : null)};
+`;
+
+export const AutoLayoutDiv = styled.div`
+    width : 100%;
+    height : 100%;
 `;
 
 //////////////////////////// tile ui layout ///////////////////////////////
@@ -188,8 +211,6 @@ export const TileThumbImg = styled.img`
 ////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////// tile ui layout ///////////////////////////////
-
-////////////////////////////////////////////////////////////////////////////
 export const ItemUl = styled.ul`
     width : 100%;
     max-width: 1000px;
@@ -205,3 +226,77 @@ export const ItemUl = styled.ul`
         margin-top : 20px;
     }
 `;
+
+////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////// title layout //////////////////////////////////
+export const FeatureTitle = (size) => css`
+    &:before {
+        left: 0;
+        position: absolute;
+        top: 50%;
+        display: block;
+        width: ${size};
+        border-bottom: 5px solid rgba(0, 0, 0, 0.25);
+        content: "";
+    }
+    &:after {
+        right: 0;
+        position: absolute;
+        top: 50%;
+        display: block;
+        width: ${size};
+        border-bottom: 5px solid rgba(0, 0, 0, 0.25);
+        content: "";
+    }
+`;
+////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////// device layout //////////////////////////////////
+// const size = {
+//     mobileS: '320px',
+//     mobileM: '375px',
+//     mobileL: '425px',
+//     tablet: '768px',
+//     laptop: '1024px',
+//     laptopL: '1440px',
+//     desktop: '2560px'
+// }
+
+// export const device = {
+//     mobileS: `(min-width: ${size.mobileS})`,
+//     mobileM: `(min-width: ${size.mobileM})`,
+//     mobileL: `(min-width: ${size.mobileL})`,
+//     tablet: `(min-width: ${size.tablet})`,
+//     laptop: `(min-width: ${size.laptop})`,
+//     laptopL: `(min-width: ${size.laptopL})`,
+//     desktop: `(min-width: ${size.desktop})`,
+//     desktopL: `(min-width: ${size.desktop})`
+// };
+
+const deviceWInfo = {
+    mobileS: {min : '320px', max : '375px'},
+    mobileM: {min : '376px', max : '425px'},
+    mobileL: {min : '426px', max : '768px'},
+    tablet: {min : '769px', max : '991px'},
+    desktop: {min : '992px'}
+}
+
+export const DeviceWidth = {
+    mobileS: `screen and (min-width: ${deviceWInfo.mobileS.min}) and (max-width: ${deviceWInfo.mobileS.max})`,
+    mobileM: `screen and (min-width: ${deviceWInfo.mobileM.min}) and (max-width: ${deviceWInfo.mobileM.max})`,
+    mobileL: `screen and (min-width: ${deviceWInfo.mobileL.min}) and (max-width: ${deviceWInfo.mobileL.max})`,
+    tablet: `screen and (min-width: ${deviceWInfo.tablet.min}) and (max-width: ${deviceWInfo.tablet.max})`,
+    desktop: `screen and (min-width: ${deviceWInfo.desktop.min})`
+ };
+
+export const DeviceDirectWidth = ({min, max}) => {
+    return `screen 
+        ${min != null ? ' and (min-width: ' + min + ')' : ''}
+        ${max != null ? ' and (max-width: ' + max + ')' : ''}`
+}
+export const DeviceDirectHeight = () => {
+
+}
+ 
+////////////////////////////////////////////////////////////////////////////

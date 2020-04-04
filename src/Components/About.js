@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { FeatureTitle, DeviceWidth, AutoLayoutDiv, DeviceDirectWidth, DirectSizeStyle } from './Utils/CommonStyle';
+
 import Profile from '../../imgs/profile.jpg';
 import html5Img from '../../imgs/html5.png';
 import reactImg from '../../imgs/react.png';
@@ -33,11 +35,10 @@ const AboutBody = styled.div`
 `;
 
 const IntroduceDiv = styled.div`
-    width : 100%;
-    height : 100%;
+    ${AutoLayoutDiv};
 
     /* Tablet Device */
-    @media screen and (max-width : 991px) {
+    @media ${DeviceDirectWidth( { max: '991px' })} {
         display : flex;
         flex-direction: column;
         align-items : center;
@@ -47,152 +48,69 @@ const IntroduceDiv = styled.div`
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    @media ${DeviceDirectWidth( { min: '992px' })} {
         font-size: 20px; 
         line-height : 1.3;
     }
 `;
 
-const ProfileImage = styled.img`
-    width: 300px;
-    min-width : 300px;
-    height: 300px;
-    min-height : 300px;
+
+const ProfileImage = styled.img.attrs({
+    src: Profile,
+    alt:"Hong's Image"
+  })`
+    ${DirectSizeStyle({ width: '300px', height: '300px' })};
     border-radius : 10%;
 
-    /* Mobile Device */
-    @media screen and (max-width : 320px) {
-        width: 200px;
-        min-width : 200px;
-        height: 200px;
-        min-height : 200px;
+    /* Mobile Device */    
+    @media ${DeviceDirectWidth( { max: '320px' })} {
+        ${DirectSizeStyle({ width: '100%', height: '200px' })};
         margin: 0px 0px 15px 0px; 
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 767px) {
-        width: 250px;
-        min-width : 250px;
-        height: 250px;
-        min-height : 250px;
+    @media ${DeviceDirectWidth( { min : '321px', max: '767px' })} {
+        ${DirectSizeStyle({ width: '250px', height: '250px' })};
         margin: 0px 0px 15px 0px; 
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 768px) {
+    @media ${DeviceDirectWidth( { min: '768px' })} {
         float: left; 
         margin: 0px 15px 5px 0px;
     }
-`;
-
-const AboutContentDiv = styled.div`
-    width : 100%;
-    height : 100%;
 `;
 
 const AboutTitleDiv = styled.div`
     width : 100%;
     margin : 30px auto;
     font-weight : 600px;
-    font-size: 42px;
     position : relative;
     text-align : center;
 
-    &:before {
-        left: 0;
-        position: absolute;
-        top: 50%;
-        display: block;
-        width: 30%;
-        border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-        content: "";
-    }
-    &:after {
-        right: 0;
-        position: absolute;
-        top: 50%;
-        display: block;
-        width: 30%;
-        border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-        content: "";
-    }
+    ${FeatureTitle('30%')};
 
-    /* Mobile Device */
-    @media screen and (min-width : 320px) and (max-width : 375px) {
+    /* Mobile Small Device */
+    @media ${DeviceWidth.mobileS} {
         font-size: 20px;
-        &:before {
-            left: 0;
-            position: absolute;
-            top: 50%;
-            display: block;
-            width: 10%;
-            border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-            content: "";
-        }
-        &:after {
-            right: 0;
-            position: absolute;
-            top: 50%;
-            display: block;
-            width: 10%;
-            border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-            content: "";
-        }
+        ${FeatureTitle('10%')};
     }
-
-    /* Mobile Device */
-    @media screen and (min-width : 376px) and (max-width : 425px) {
+    /* Mobile Medium Device */
+    @media ${DeviceWidth.mobileM} {
         font-size: 30px;
-        &:before {
-            left: 0;
-            position: absolute;
-            top: 50%;
-            display: block;
-            width: 15%;
-            border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-            content: "";
-        }
-        &:after {
-            right: 0;
-            position: absolute;
-            top: 50%;
-            display: block;
-            width: 15%;
-            border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-            content: "";
-        }
+        ${FeatureTitle('15%')};
     }
-
-    /* Mobile Device */
-    @media screen and (min-width : 426px) and (max-width : 768px) {
+    /* Mobile Large Device */
+    @media ${DeviceWidth.mobileL} {
         font-size: 30px;
-        &:before {
-            left: 0;
-            position: absolute;
-            top: 50%;
-            display: block;
-            width: 20%;
-            border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-            content: "";
-        }
-        &:after {
-            right: 0;
-            position: absolute;
-            top: 50%;
-            display: block;
-            width: 20%;
-            border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-            content: "";
-        }
+        ${FeatureTitle('20%')};
     }
-
     /* Tablet Device */
-    @media screen and (min-width : 769px) and (max-width : 991px) {
-        font-size: 42px;
+    @media ${DeviceWidth.tablet} {
+        font-size: 35px;
     }
-
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    @media ${DeviceWidth.desktop} {
         font-size: 42px;
     }
 `;
@@ -240,6 +158,11 @@ const SkillItemTitle = styled.div`
     font-size: 2.28rem;
     line-height: 2.508rem;
     margin: 1.14rem 0 0.912rem 0;
+
+    /* Mobile Small Device */
+    @media ${DeviceWidth.mobileS} {
+        font-size: 2rem;
+    }
 `;
 
 const SkillItemListDiv = styled.div`
@@ -256,22 +179,23 @@ const SkillItemListDetailDiv = styled.div`
     text-align : center;
 
     /* Mobile Device */
-    @media screen and (min-width : 0px) and (max-width : 320px) {
+   
+    @media ${DeviceDirectWidth( { min : '0px', max: '320px' })} {
         margin : 10px 20px 0 0;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 321px) and (max-width : 767px) {
+    @media ${DeviceDirectWidth( { min : '321px', max: '767px' })} {
         margin : 10px 25px 0 0;
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 768px) and (max-width : 991px) {
+    @media ${DeviceDirectWidth( { min : '768px', max: '991px' })} {
         margin : 10px 35px 0 0;
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    @media ${DeviceDirectWidth( { min : '992px'})} {
         margin : 10px 45px 0 0;
     }
 `;
@@ -283,7 +207,7 @@ const SkillItemListDetailImg = styled.img`
     padding-bottom : 8px;
 
     /* Mobile Device */
-    @media screen and (max-width : 767px) {
+    @media ${DeviceDirectWidth( { max : '767px'})} {
         max-width : 70px;
         min-height: 70px;  
         max-height: 70px;
@@ -300,8 +224,8 @@ function About( {location, onLocationChange}) {
         <AboutBody>
             <IntroduceDiv className="clearfix">
                 <AboutTitleDiv>INTRODUCE</AboutTitleDiv>
-                <AboutContentDiv>
-                    <ProfileImage src={Profile} alt="Hong's Image" />
+                <AutoLayoutDiv>
+                    <ProfileImage />
                     <div>
                         저의 개발자로서의 성향은 3가지의 단어(도전,노력,공유)로 표현 할 수 있을 것 같습니다.<br/><br/>
                         빠르게 변화하는 기술에 대해서 적극적으로 기술을 습득하려는 도전적인 자세를 지냈으며,<br/>
@@ -311,7 +235,7 @@ function About( {location, onLocationChange}) {
                         마지막으로 저는 제가 했던 업무,스터디 했던 내용을 팀원들이나 특정 개발자에게 도움을 주고자 개발공유를 하고 있습니다.<br/><br/>
                         회사에는 wiki페이지에 스터디한 내용은 github 공유해서 개인의 발전이 아닌 전체가 발전할 수 있는 생태계를 만들고 싶은게 저의 개발자로서의 꿈입니다.
                     </div>
-                </AboutContentDiv>
+                </AutoLayoutDiv>
             </IntroduceDiv>
             <AboutSkillDiv>
                 <AboutTitleDiv>SKILLS</AboutTitleDiv>

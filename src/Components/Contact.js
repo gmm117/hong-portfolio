@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled, { css } from 'styled-components';
-import { TileDiv } from './Utils/CommonStyle';
+import { TileDiv, FeatureTitle, DeviceWidth, DeviceDirectWidth, DirectSizeStyle } from './Utils/CommonStyle';
 
 
 import mail from '../../imgs/mail.svg';
@@ -18,105 +18,32 @@ const ContactTopDiv = styled.div`
     width : 100%;
     margin : 30px auto;
     font-weight : 600px;
-    font-size: 42px;
     position : relative;
     text-align : center;
 
-    &:before {
-        left: 0;
-        position: absolute;
-        top: 50%;
-        display: block;
-        width: 30%;
-        border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-        content: "";
-    }
-    &:after {
-        right: 0;
-        position: absolute;
-        top: 50%;
-        display: block;
-        width: 30%;
-        border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-        content: "";
-    }
+    ${FeatureTitle('30%')};
 
-    /* Mobile Device */
-    @media screen and (max-width : 375px) {
+    /* Mobile Small Device */
+    @media ${DeviceWidth.mobileS} {
         font-size: 20px;
-        &:before {
-            left: 0;
-            position: absolute;
-            top: 50%;
-            display: block;
-            width: 10%;
-            border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-            content: "";
-        }
-        &:after {
-            right: 0;
-            position: absolute;
-            top: 50%;
-            display: block;
-            width: 10%;
-            border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-            content: "";
-        }
+        ${FeatureTitle('10%')};
     }
-
-    /* Mobile Device */
-    @media screen and (min-width : 376px) and (max-width : 425px) {
+    /* Mobile Medium Device */
+    @media ${DeviceWidth.mobileM} {
         font-size: 30px;
-        &:before {
-            left: 0;
-            position: absolute;
-            top: 50%;
-            display: block;
-            width: 15%;
-            border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-            content: "";
-        }
-        &:after {
-            right: 0;
-            position: absolute;
-            top: 50%;
-            display: block;
-            width: 15%;
-            border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-            content: "";
-        }
+        ${FeatureTitle('15%')};
     }
-
-    /* Mobile Device */
-    @media screen and (min-width : 426px) and (max-width : 768px) {
+    /* Mobile Large Device */
+    @media ${DeviceWidth.mobileL} {
         font-size: 30px;
-        &:before {
-            left: 0;
-            position: absolute;
-            top: 50%;
-            display: block;
-            width: 20%;
-            border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-            content: "";
-        }
-        &:after {
-            right: 0;
-            position: absolute;
-            top: 50%;
-            display: block;
-            width: 20%;
-            border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-            content: "";
-        }
+        ${FeatureTitle('20%')};
     }
-
     /* Tablet Device */
-    @media screen and (min-width : 769px) and (max-width : 991px) {
-        font-size: 42px;
+    @media ${DeviceWidth.tablet} {
+        font-size: 35px;
     }
-
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    @media ${DeviceWidth.desktop} {
         font-size: 42px;
     }
 `;
@@ -126,31 +53,23 @@ const ContactItemImg = styled.img`
     cursor: pointer;
 
     /* Mobile Device */
-    @media screen and (max-width : 425px) {
-        width: 25px;
-        height: 25px;
-        min-height 25px;
+    @media ${DeviceDirectWidth( { max : '425px'})} {
+        ${DirectSizeStyle({ width: '25px', height: '25px' })};        
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 426px) and (max-width : 768px) {
-        width: 30px;
-        height: 30px;
-        min-height 30px;
+    @media ${DeviceDirectWidth( { min : '426px', max : '768px'})} {
+        ${DirectSizeStyle({ width: '30px', height: '30px' })};
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 769px) and (max-width : 991px) {
-        width: 35px;
-        height: 35px;
-        min-height 35px;
+    @media ${DeviceDirectWidth( { min : '769px', max : '991px'})} {
+        ${DirectSizeStyle({ width: '35px', height: '35px' })};
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
-        width: 40px;
-        height: 40px;
-        min-height 40px;
+    @media ${DeviceDirectWidth( { min : '992px'})} {
+        ${DirectSizeStyle({ width: '40px', height: '40px' })};
     }
 `;
 
@@ -164,22 +83,22 @@ const ContactItemDiv = styled.div`
     padding-left : 5px;
 
     /* Mobile Device */
-    @media screen and (max-width : 425px) {
+    @media ${DeviceDirectWidth( { max : '425px'})} {
         font-size : 10px;
     }
 
     /* Mobile Device */
-    @media screen and (min-width : 426px) and (max-width : 768px) {
+    @media ${DeviceDirectWidth( { min : '426px', max : '768px'})} {
         font-size : 15px;
     }
 
     /* Tablet Device */
-    @media screen and (min-width : 769px) and (max-width : 991px) {
+    @media ${DeviceDirectWidth( { min : '769px', max : '991px'})} {
         font-size : 20px;
     }
 
     /* Desktop Device */
-    @media screen and (min-width : 992px) {
+    @media ${DeviceDirectWidth( { min : '992px'})} {
         font-size : 25px;
     }
 `;
