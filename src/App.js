@@ -8,18 +8,17 @@ import { BaseURL } from './Components/Utils/Define';
 import Header from './Components/Header';
 import SideBar from './Components/Menu/SideBar';
 import Content from './Components/Content';
+import { AutoLayoutStyle } from './Components/Utils/CommonStyle';
 
 const ContainerDiv = styled.div`
+    ${AutoLayoutStyle};
     display: flex;  
-    width: 100%;
-    height : 100%;
     color: rgba(100, 100, 100, 0.75);
     overflow : hidden;
 `;
 
 const ContentDiv = styled.div`
-    width: 100%;
-    height : 100%;
+    ${AutoLayoutStyle};
     overflow : auto;
     position: relative;
 `;

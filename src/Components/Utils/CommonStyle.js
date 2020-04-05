@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import circle from '../../../imgs/circle.svg';
 
 
 //////////////////////////// device layout //////////////////////////////////
@@ -77,14 +78,18 @@ export const DirectSizeStyle = ({width, height}) => css`
     min-height : ${height};
 `
 
+export const AutoLayoutStyle = css`
+    width : 100%;
+    height : 100%;
+`;
+
 export const DimensionDiv = styled.div`
     width : ${props => (props.width ? props.width : null)};
     height : ${props => (props.height ? props.height : null)};
 `;
 
 export const AutoLayoutDiv = styled.div`
-    width : 100%;
-    height : 100%;
+    ${AutoLayoutStyle};
 `;
 
 //////////////////////////// tile ui layout ///////////////////////////////
@@ -138,11 +143,13 @@ export const TileItemLi = styled.li`
 
     /* Mobile Device */
     @media ${DeviceDirectWidth( { min : '0', max : '320px' })} {
+        padding: 76px 0 0;
         ${DirectSizeStyle({ width : '200px', height : '200px' })}; 
     }
 
     /* Mobile Device */
     @media ${DeviceDirectWidth( { min : '321px', max : '500px' })} {
+        padding: 76px 0 0;
         ${DirectSizeStyle({ width : '250px', height : '250px' })}; 
     }
 
@@ -199,11 +206,10 @@ export const TileThumbDiv = styled.div`
 `;
 
 export const TileThumbHoverDiv = styled.div`
+    ${AutoLayoutStyle};
     position: absolute;
     left: 0;
     top: 0;
-    height : 100%;
-    width : 100%;
     background : rgba(0, 0, 0, 0);
     opacity: 0;
     border-radius : 5px;
@@ -234,8 +240,7 @@ export const TileThumbItemDiv = styled.div`
 `;
 
 export const TileThumbImg = styled.img`
-    width: 100%;
-    height: 100%;
+    ${AutoLayoutStyle};
     border-radius : ${props => (props.radius ? props.radius : null)};
 `;
 
@@ -281,4 +286,30 @@ export const FeatureTitle = (size) => css`
         content: "";
     }
 `;
+////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////// list layout ///////////////////////////////////
+export const ListItemCircleImg = styled.img.attrs({
+    src: circle, 
+    alt: ""
+})`
+    margin-right : 5px;
+
+    /* Desktop Device */
+    @media ${DeviceDirectWidth( { min : '992px' })} {
+        ${DirectSizeStyle({width: '5px', height: '5px'})}; 
+    }
+
+    /* Tablet Device */
+    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
+        ${DirectSizeStyle({width: '3px', height: '3px'})}; 
+    }
+
+    /* Mobile Device */
+    @media ${DeviceDirectWidth( { max : '767px' })} {
+        ${DirectSizeStyle({width: '2px', height: '2px'})}; 
+    }
+`;
+
+
 ////////////////////////////////////////////////////////////////////////////

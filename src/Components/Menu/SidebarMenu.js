@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { BaseURL } from '../Utils/Define';
-import { LinkStyle, DeviceDirectWidth, AutoLayoutDiv, DirectSizeStyle, DeviceDirectHeight } from '../Utils/CommonStyle';
+import { LinkStyle, DeviceDirectWidth, DirectSizeStyle, DeviceDirectHeight } from '../Utils/CommonStyle';
 import homeImg from '../../../imgs/home.svg';
 import cubeImg from '../../../imgs/cube.svg';
 import userImg from '../../../imgs/user.svg';
@@ -42,7 +42,7 @@ const LinkImgDiv = styled.div`
 `;
 
 const LinkImg = styled.img`
-    ${DirectSizeStyle({ width : '100%', height: '100%'})};
+-    ${DirectSizeStyle({ width : '100%', height: '100%'})};
 `;
 
 const LinkDesDiv = styled.span`
@@ -134,6 +134,6 @@ class SidebarMenu extends Component {
             </ul>
         );
     }
-};
+}
 
 export default SidebarMenu;

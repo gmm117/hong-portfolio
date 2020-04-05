@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import menu from '../../imgs/menu.png';
 
 import { DispatchContext } from '../App';
+import { AutoLayoutStyle } from './Utils/CommonStyle';
 
 const HeaderDiv = styled.div`
     display: flex;
@@ -34,8 +35,7 @@ const NavTitle = styled.span`
 `;
 
 const NavImg = styled.img`
-    width : 100%;
-    height : 100%;
+    ${AutoLayoutStyle};
 `;
 
 function Header( { navName } ) {

@@ -7,13 +7,12 @@ import { BaseURL } from '../Utils/Define';
 import avatar_profile from '../../../imgs/avatar_profile.png';
 import github from '../../../imgs/github.svg';
 import blog from '../../../imgs/blog.svg';
-import { DeviceDirectHeight, DeviceDirectWidth } from '../Utils/CommonStyle';
+import { DeviceDirectHeight, DeviceDirectWidth, AutoLayoutStyle } from '../Utils/CommonStyle';
 
 const SideBarDiv = styled.div`
+    ${AutoLayoutStyle};
     max-width : ${props => (props.isSidebarOpen ? '170px' : '0px')};
     max-width : ${props => (props.isSidebarOpen ? '170px' : '0px')};
-    width : 100%;
-    height : 100%;
     background : #3F4651;
     position : relative;
     box-shadow: 0 1px 4px rgba(0,21,41,0.08);
@@ -52,8 +51,7 @@ const AvatarImgDiv = styled.div`
 `;
 
 const AvatarImg = styled.img`
-    width : 100%;
-    height : 100%;
+    ${AutoLayoutStyle};
     border-radius: 50%;
 `;
 
@@ -104,8 +102,7 @@ const SideBarLinkDiv = styled.div`
 `;
 
 const SideBarLinkImg = styled.img`
-    width : 100%;
-    height : 100%;
+    ${AutoLayoutStyle};
 `;
 
 const SideBarLinkStyle = {

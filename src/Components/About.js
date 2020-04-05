@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import styled, { css } from 'styled-components';
-import { FeatureTitle, DeviceWidth, AutoLayoutDiv, DeviceDirectWidth, DirectSizeStyle } from './Utils/CommonStyle';
+import styled from 'styled-components';
+import { FeatureTitle, DeviceWidth, DeviceDirectWidth, DirectSizeStyle, AutoLayoutStyle, AutoLayoutDiv } from './Utils/CommonStyle';
 
 import Profile from '../../imgs/profile.jpg';
 import html5Img from '../../imgs/html5.png';
@@ -35,7 +35,7 @@ const AboutBody = styled.div`
 `;
 
 const IntroduceDiv = styled.div`
-    ${AutoLayoutDiv};
+    ${AutoLayoutStyle};
 
     /* Tablet Device */
     @media ${DeviceDirectWidth( { max: '991px' })} {
@@ -54,11 +54,21 @@ const IntroduceDiv = styled.div`
     }
 `;
 
+const ProfileDiv = styled.div`
+    /* Desktop Device */
+    @media ${DeviceDirectWidth( { max: '767px' })} {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+`;
 
 const ProfileImage = styled.img.attrs({
     src: Profile,
     alt:"Hong's Image"
   })`
+       
     ${DirectSizeStyle({ width: '300px', height: '300px' })};
     border-radius : 10%;
 
@@ -214,8 +224,44 @@ const SkillItemListDetailImg = styled.img`
     }
 `;
 
+const AboutCurFocusDiv = styled.div`
+    display: flex;
+    line-height : 1.3;
+    color: black;
+    margin-top: 15px;
 
-function About( {location, onLocationChange}) {
+    /* Tablet Device */
+    @media ${DeviceDirectWidth( { max: '991px' })} {
+        font-size: 23px; 
+    }
+
+    /* Desktop Device */
+    @media ${DeviceDirectWidth( { min: '992px' })} {
+        font-size: 25px; 
+    }
+`;
+
+const SkillListItem = ({ title, items }) => {
+    return (
+        <SkillItemDiv>
+            <SkillItemContentDiv>
+                <SkillItemTitle>{title}</SkillItemTitle>
+                <SkillItemListDiv>
+                    {
+                        items ? items.map((item, index) => (
+                            <SkillItemListDetailDiv key={index}>
+                                <SkillItemListDetailImg src={item.img} alt={item.alt}></SkillItemListDetailImg>
+                                {item.desc}
+                            </SkillItemListDetailDiv>
+                        )): null
+                    }
+                </SkillItemListDiv>
+            </SkillItemContentDiv>
+        </SkillItemDiv>
+    );
+};
+
+function About({ location, onLocationChange }) {
     useEffect(() => {
         onLocationChange(location);
     }, [location, onLocationChange]);
@@ -225,7 +271,9 @@ function About( {location, onLocationChange}) {
             <IntroduceDiv className="clearfix">
                 <AboutTitleDiv>INTRODUCE</AboutTitleDiv>
                 <AutoLayoutDiv>
-                    <ProfileImage />
+                    <ProfileDiv>
+                        <ProfileImage/>
+                    </ProfileDiv>
                     <div>
                         저의 개발자로서의 성향은 3가지의 단어(도전,노력,공유)로 표현 할 수 있을 것 같습니다.<br/><br/>
                         빠르게 변화하는 기술에 대해서 적극적으로 기술을 습득하려는 도전적인 자세를 지냈으며,<br/>
@@ -237,120 +285,39 @@ function About( {location, onLocationChange}) {
                     </div>
                 </AutoLayoutDiv>
             </IntroduceDiv>
+            <AboutCurFocusDiv>Current Focus: React, CSS(SCSS, Style Components) </AboutCurFocusDiv>
             <AboutSkillDiv>
                 <AboutTitleDiv>SKILLS</AboutTitleDiv>
                 <SkillDiv>
-                    <SkillItemDiv>
-                        <SkillItemContentDiv>
-                            <SkillItemTitle>HTML</SkillItemTitle>
-                            <SkillItemListDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={html5Img} alt="HTML5 IMAGE"></SkillItemListDetailImg>
-                                    HTML5
-                                </SkillItemListDetailDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={reactImg} alt="JSX IMAGE"></SkillItemListDetailImg>
-                                    JSX
-                                </SkillItemListDetailDiv>
-                            </SkillItemListDiv>
-                        </SkillItemContentDiv>
-                    </SkillItemDiv>
-                    <SkillItemDiv>
-                        <SkillItemContentDiv>
-                            <SkillItemTitle>STYLE</SkillItemTitle>
-                            <SkillItemListDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={css3Img} alt="CSS3 IMAGE"></SkillItemListDetailImg>
-                                    CSS3
-                                </SkillItemListDetailDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={sassImg} alt="SCSS IMAGE"></SkillItemListDetailImg>
-                                    SCSS
-                                </SkillItemListDetailDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={styleComponentsImg} alt="STYLE_COMPONENTS IMAGE"></SkillItemListDetailImg>
-                                    Style Components
-                                </SkillItemListDetailDiv>
-                            </SkillItemListDiv>
-                        </SkillItemContentDiv>
-                    </SkillItemDiv>
-                    <SkillItemDiv>
-                        <SkillItemContentDiv>
-                            <SkillItemTitle>JAVSCRIPT</SkillItemTitle>
-                            <SkillItemListDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={reactImg} alt="REACT IMAGE"></SkillItemListDetailImg>
-                                    REACT
-                                </SkillItemListDetailDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={javascriptImg} alt="JAVASCRIPT IMAGE"></SkillItemListDetailImg>
-                                    JAVASCRIPT
-                                </SkillItemListDetailDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={typescriptImg} alt="TYPESCRIPT IMAGE"></SkillItemListDetailImg>
-                                    TYPESCRIPT
-                                </SkillItemListDetailDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={nodejsImg} alt="NODEJS IMAGE"></SkillItemListDetailImg>
-                                    NodeJS
-                                </SkillItemListDetailDiv>
-                            </SkillItemListDiv>
-                        </SkillItemContentDiv>
-                    </SkillItemDiv>
-                    <SkillItemDiv>
-                        <SkillItemContentDiv>
-                            <SkillItemTitle>WINDOWS</SkillItemTitle>
-                            <SkillItemListDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={cImg} alt="C IMAGE"></SkillItemListDetailImg>
-                                    C
-                                </SkillItemListDetailDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={cplusplusImg} alt="C++ IMAGE"></SkillItemListDetailImg>
-                                    C++
-                                </SkillItemListDetailDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={csharpImg} alt="C# IMAGE"></SkillItemListDetailImg>
-                                    C#
-                                </SkillItemListDetailDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={wpfImg} alt="WPF IMAGE"></SkillItemListDetailImg>
-                                    WPF
-                                </SkillItemListDetailDiv>
-                            </SkillItemListDiv>
-                        </SkillItemContentDiv>
-                    </SkillItemDiv>
-                    <SkillItemDiv>
-                        <SkillItemContentDiv>
-                            <SkillItemTitle>OTHERS</SkillItemTitle>
-                            <SkillItemListDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={electronImg} alt="ELECTRON IMAGE"></SkillItemListDetailImg>
-                                    ELECTRON
-                                </SkillItemListDetailDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={webpackImg} alt="WEBPACK IMAGE"></SkillItemListDetailImg>
-                                    WEBPACK
-                                </SkillItemListDetailDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={parcelImg} alt="PARCEL IMAGE"></SkillItemListDetailImg>
-                                    PARCEL
-                                </SkillItemListDetailDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={gitImg} alt="GIT IMAGE"></SkillItemListDetailImg>
-                                    GIT
-                                </SkillItemListDetailDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={githubImg} alt="GITHUB IMAGE"></SkillItemListDetailImg>
-                                    GITHUB
-                                </SkillItemListDetailDiv>
-                                <SkillItemListDetailDiv>
-                                    <SkillItemListDetailImg src={herokuImg} alt="HEROKU IMAGE"></SkillItemListDetailImg>
-                                    HEROKU
-                                </SkillItemListDetailDiv>
-                            </SkillItemListDiv>
-                        </SkillItemContentDiv>
-                    </SkillItemDiv>
+                    { SkillListItem({title: 'HTML', items : [ 
+                        { img: html5Img, alt: "HTML5 IMAGE", desc: "HTML5"},
+                        { img: reactImg, alt: "JSX IMAGE", desc: "JSX"}
+                    ]}) }
+                    { SkillListItem({title: 'STYLE', items : [ 
+                        { img: css3Img, alt: "CSS3 IMAGE", desc: "CSS3"},
+                        { img: sassImg, alt: "SCSS IMAGE", desc: "SCSS"},
+                        { img: styleComponentsImg, alt: "STYLE_COMPONENTS IMAGE", desc: "Style Components"}
+                    ]}) }
+                    { SkillListItem({title: 'JAVSCRIPT', items : [ 
+                        { img: reactImg, alt: "REACT IMAGE", desc: "REACT"},
+                        { img: javascriptImg, alt: "JAVASCRIPT IMAGE", desc: "JAVASCRIPT"},
+                        { img: typescriptImg, alt: "TYPESCRIPT IMAGE", desc: "TYPESCRIPT"},
+                        { img: nodejsImg, alt: "NODEJS IMAGE", desc: "NodeJS"}
+                    ]}) }
+                    { SkillListItem({title: 'WINDOWS', items : [ 
+                        { img: cImg, alt: "C IMAGE", desc: "C"},
+                        { img: cplusplusImg, alt: "C++ IMAGE", desc: "C++"},
+                        { img: csharpImg, alt: "C# IMAGE", desc: "C#"},
+                        { img: wpfImg, alt: "WPF IMAGE", desc: "WPF"}
+                    ]}) }
+                    { SkillListItem({title: 'OTHERS', items : [ 
+                        { img: electronImg, alt: "ELECTRON IMAGE", desc: "ELECTRON"},
+                        { img: webpackImg, alt: "WEBPACK IMAGE", desc: "WEBPACK"},
+                        { img: parcelImg, alt: "PARCEL IMAGE", desc: "PARCEL"},
+                        { img: gitImg, alt: "GIT IMAGE", desc: "GIT"},
+                        { img: githubImg, alt: "GITHUB IMAGE", desc: "GITHUB"},
+                        { img: herokuImg, alt: "HEROKU IMAGE", desc: "HEROKU"}
+                    ]}) }
                 </SkillDiv>
             </AboutSkillDiv>
         </AboutBody>

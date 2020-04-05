@@ -1,8 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import circle from '../../../../imgs/circle.svg';
-import { DimensionDiv, TileThumbImg, DeviceDirectWidth, DirectSizeStyle, DirectHeightSizeStyle } from '../../Utils/CommonStyle';
+import { DimensionDiv, TileThumbImg, DeviceDirectWidth, DirectSizeStyle, ListItemCircleImg } from '../../Utils/CommonStyle';
 
 const CompLi = styled.li`
     width : 100%;
@@ -88,37 +87,34 @@ const CompItemBottomDiv = styled.div`
     }
 `;
 
-const CompItemImgDiv = styled.div`
-    cursor:pointer;
-    box-shadow: 0 1px 10px rgba(0,21,41,0.08);
-
+const CompItemImgScale = (scale) => css`
     &:hover {
-        transform:scale(1.3); /* 마우스 오버시 이미지 크기를 1.1 배만큼 확대시킨다. */
-        -o-transform:scale(1.3); 
-        -moz-transform:scale(1.3);
-        -webkit-transform:scale(1.3);
- 
+        transform:scale(${scale}); /* 마우스 오버시 이미지 크기를 scale 배만큼 확대시킨다. */
+        -o-transform:scale(${scale}); 
+        -moz-transform:scale(${scale});
+        -webkit-transform:scale(${scale});
+
         transition: transform .35s;  
         -o-transition: transform .35s;
         -moz-transition: transform .35s;
         -webkit-transition: transform .35s;
     }
+`;
+
+const CompItemImgDiv = styled.div`
+    cursor:pointer;
+    box-shadow: 0 1px 10px rgba(0,21,41,0.08);
+
+    &:hover {
+        ${CompItemImgScale(1.3)};
+    }
 
     /* Mobile Device */
     @media ${DeviceDirectWidth( { min : '375px', max : '520px' })} {
-        width : 100%;
-        ${DirectHeightSizeStyle('200px')};
+        ${DirectSizeStyle({width: '200px', height: '200px'})}; 
 
         &:hover {
-            transform:scale(1.1); /* 마우스 오버시 이미지 크기를 1.1 배만큼 확대시킨다. */
-            -o-transform:scale(1.1); 
-            -moz-transform:scale(1.1);
-            -webkit-transform:scale(1.1);
-     
-            transition: transform .35s;  
-            -o-transition: transform .35s;
-            -moz-transition: transform .35s;
-            -webkit-transition: transform .35s;
+            ${CompItemImgScale(1.1)};
         }
     }
 
@@ -127,15 +123,7 @@ const CompItemImgDiv = styled.div`
         ${DirectSizeStyle({width: '250px', height: '250px'})}; 
 
         &:hover {
-            transform:scale(1.2); /* 마우스 오버시 이미지 크기를 1.1 배만큼 확대시킨다. */
-            -o-transform:scale(1.2); 
-            -moz-transform:scale(1.2);
-            -webkit-transform:scale(1.2);
-     
-            transition: transform .35s;  
-            -o-transition: transform .35s;
-            -moz-transition: transform .35s;
-            -webkit-transition: transform .35s;
+            ${CompItemImgScale(1.2)};
         }
     }
 
@@ -185,25 +173,6 @@ const CompItemDetailDetailDiv = styled.div`
     font-weight : 600;
 `;
 
-const CompItemDetailDetailImg = styled.img`
-    margin-right : 5px;
-
-    /* Desktop Device */
-    @media ${DeviceDirectWidth( { min : '992px' })} {
-        ${DirectSizeStyle({width: '5px', height: '5px'})}; 
-    }
-
-    /* Tablet Device */
-    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
-        ${DirectSizeStyle({width: '3px', height: '3px'})}; 
-    }
-
-    /* Mobile Device */
-    @media ${DeviceDirectWidth( { max : '767px' })} {
-        ${DirectSizeStyle({width: '2px', height: '2px'})}; 
-    }
-`;
-
 const CompItemDetailDetailContentDiv = styled.div`
     padding-left : 20px;
     font-weight : 600;
@@ -232,7 +201,18 @@ const CompItemActionDiv = styled.div`
     box-sizing: border-box;
 `;
 
-function CompLayout( {compInfo} ) {
+const CompListItem = (src, desc) => {
+    return (
+        src ? (
+            <CompItemDetailDetailDiv>
+                <ListItemCircleImg />
+                { desc + ': ' + src }
+            </CompItemDetailDetailDiv>
+        ) : null
+    );
+};
+
+function CompLayout({ compInfo }) {
     const { title, image, sublist } = compInfo;
     const { main_src, main_alt } = image.main;
     const { date, type, role, skills, tools, url, contents } = sublist;
@@ -252,22 +232,12 @@ function CompLayout( {compInfo} ) {
                         <TileThumbImg src={main_src} alt={main_alt} />
                     </CompItemImgDiv>
                     <CompItemDetailDiv>
-                        <CompItemDetailDetailDiv>
-                            <CompItemDetailDetailImg src={circle} alt=""/>Type :  {type}
-                        </CompItemDetailDetailDiv>
-                        <CompItemDetailDetailDiv>
-                            <CompItemDetailDetailImg src={circle} alt=""/>Role :  {role}
-                        </CompItemDetailDetailDiv>
-                        <CompItemDetailDetailDiv>
-                            <CompItemDetailDetailImg src={circle} alt=""/>Skills : {skills}
-                        </CompItemDetailDetailDiv>
-                        <CompItemDetailDetailDiv>
-                            <CompItemDetailDetailImg src={circle} alt=""/>Tools : {tools}
-                        </CompItemDetailDetailDiv>
+                        { CompListItem(type, 'Type') }
+                        { CompListItem(role, 'Role') }
+                        { CompListItem(skills, 'Skills') }
+                        { CompListItem(tools, 'Tools') }
                         <DimensionDiv width={'100%'}>
-                            <CompItemDetailDetailDiv>
-                                <CompItemDetailDetailImg src={circle} alt="" /> Contents :{'\u00A0'}
-                            </CompItemDetailDetailDiv>
+                            { CompListItem('\u00A0', 'Contents') }
                             <CompItemDetailDetailContentDiv>
                                 {( content1 != null ? <div> - {content1}</div> : null )}
                                 {( content2 != null ? <div> - {content2}</div> : null )}
@@ -277,11 +247,11 @@ function CompLayout( {compInfo} ) {
                 </CompItemBottomDiv>
             </CompItemDiv>
             <CompItemActionDiv>
-                    <span>{date}</span>
+                <span>{date}</span>
             </CompItemActionDiv>
         </CompLi>
     );
-};
+}
 
 export default CompLayout;
 

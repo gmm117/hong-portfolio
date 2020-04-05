@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
-import circle from '../../../../imgs/circle.svg';
-import { DeviceDirectWidth, DirectHeightSizeStyle, DirectWidthSizeStyle, DirectSizeStyle } from '../../Utils/CommonStyle';
+import { DeviceDirectWidth, DirectHeightSizeStyle, DirectWidthSizeStyle, ListItemCircleImg } from '../../Utils/CommonStyle';
 
 export const CardItemLi = styled.li`
     display : flex;
@@ -347,28 +346,6 @@ const CardItemContentDiv = styled.div`
     font-weight : 600;
 `;
 
-const CardItemContentDetailImg = styled.img.attrs({
-    src: circle,
-    alt: ""
-})`
-    margin-right : 5px;
-
-    /* Desktop Device */
-    @media ${DeviceDirectWidth( { min : '992px' })} {
-        ${DirectSizeStyle({ width : '5px', height : '5px' })}; 
-    }
-
-    /* Tablet Device */
-    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
-        ${DirectSizeStyle({ width : '3px', height : '3px' })};  
-    }
-
-    /* Mobile Device */
-    @media ${DeviceDirectWidth( { max : '767px' })} {
-        ${DirectSizeStyle({ width : '2px', height : '2px' })}; 
-    }
-`;
-
 const CardItemContentDetailDiv = styled.div`
     padding-left : 5px;
     font-weight : 600;
@@ -425,6 +402,31 @@ const CardItemFooterItemImg = styled.img`
     height : 100%;
 `;
 
+const CardListItem = (src, desc) => {
+    return (
+        src ? (
+            <CardItemContentDetailDiv>
+                <ListItemCircleImg />
+                { desc + ': ' + src }
+            </CardItemContentDetailDiv>
+        ) : null
+    );
+};
+
+const CardListFooterItem = ({ srcs, marginRight }) => {
+    const { url, tooltip, imgsrc, imgalt } = srcs;
+    return (
+        url ? (
+        <CardItemFooterItemDiv 
+            className="tooltip"
+            marginRight={marginRight}
+            onClick={() => { window.open(url, '_blank'); }}>
+            <span className="tooltiptext">{tooltip}</span>
+            <CardItemFooterItemImg src={imgsrc} alt={imgalt}></CardItemFooterItemImg>
+        </CardItemFooterItemDiv>
+        ) : null
+    );
+};
 
 let oldTranslate;
 
@@ -477,126 +479,28 @@ function AppsItemLayout( { expInfo } ) {
                         <CardItemRevealExitSpan onClick={OnRevealClick}>X</CardItemRevealExitSpan>
                     </CardItemTitleDiv>
                     <CardItemContentDiv>
-                    {
-                        date ? (
-                            <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg />Date: {date}
-                            </CardItemContentDetailDiv>
-                        ) : null
-                        
-                    }
-                    {
-                        role ? (
-                            <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg />Role: {role}
-                            </CardItemContentDetailDiv>
-                        ) : null
-                        
-                    }
-                    {
-                        style ? (
-                            <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg />Style: {style}
-                            </CardItemContentDetailDiv>
-                        ) : null
-                        
-                    }
-                    {
-                        skills ? (
-                            <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg />Skills: {skills}
-                            </CardItemContentDetailDiv>
-                        ) : null
-                        
-                    }
-                    {
-                        bundle ? (
-                            <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg />Bundle: {bundle}
-                            </CardItemContentDetailDiv>
-                        ) : null
-                        
-                    }
-                    {
-                        others ? (
-                            <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg />Others: {others}
-                            </CardItemContentDetailDiv>
-                        ) : null
-                        
-                    }
-                    {
-                        company ? (
-                            <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg />Company: {company}
-                            </CardItemContentDetailDiv>
-                        ) : null
-                        
-                    }
-                    {
-                        type ? (
-                            <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg />Type: {type}
-                            </CardItemContentDetailDiv>
-                        ) : null
-                        
-                    }
-                    {
-                        program ? (
-                            <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg />Program: {program}
-                            </CardItemContentDetailDiv>
-                        ) : null
-                        
-                    }
-                    {
-                        desc ? (
-                            <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg />Desc: {desc}
-                            </CardItemContentDetailDiv>
-                        ) : null
-                        
-                    }
-                    {
-                        search ? (
-                            <CardItemContentDetailDiv>
-                                <CardItemContentDetailImg />Search: {search}
-                            </CardItemContentDetailDiv>
-                        ) : null
-                        
-                    }
+                    { CardListItem(date, 'Date') }
+                    { CardListItem(role, 'Role') }
+                    { CardListItem(style, 'Style') }
+                    { CardListItem(skills, 'Skills') }
+                    { CardListItem(bundle, 'Bundle') }
+                    { CardListItem(others, 'Others') }
+                    { CardListItem(company, 'Company') }
+                    { CardListItem(type, 'Type') }
+                    { CardListItem(program, 'Program') }
+                    { CardListItem(desc, 'Desc') }
+                    { CardListItem(search, 'Search') }
                     </CardItemContentDiv>
                     <CardItemFooterDiv>
-                        {
-                            online_url ? (
-                            <CardItemFooterItemDiv className="tooltip" marginRight={'20px'} onClick={(e) => { window.open(online_url, '_blank'); }}>
-                                <span className="tooltiptext">{online_tooltip}</span>
-                                <CardItemFooterItemImg src={onlineimg_src} alt={onlineimg_alt}></CardItemFooterItemImg>
-                            </CardItemFooterItemDiv>
-                            ) : null
-                        }
-                        {
-                            source_url ? (
-                                <CardItemFooterItemDiv className="tooltip" onClick={(e) => { window.open(source_url, '_blank'); }}>
-                                <span className="tooltiptext">{source_tooltip}</span>
-                                <CardItemFooterItemImg src={sourceimg_src} alt={sourceimg_alt}></CardItemFooterItemImg>
-                            </CardItemFooterItemDiv>
-                            ) : null
-                        }
-                        {   
-                            patents_url ? (
-                            <CardItemFooterItemDiv className="tooltip" onClick={(e) => { window.open(patents_url, '_blank'); }}>
-                                <span className="tooltiptext">{patents_tooltip}</span>
-                                <CardItemFooterItemImg src={patentsimg_src} alt={patentsimg_alt}></CardItemFooterItemImg>
-                            </CardItemFooterItemDiv>
-                            ) : null
-                        }
+                        { CardListFooterItem({srcs : {url : online_url, tooltip : online_tooltip, imgsrc : onlineimg_src, imgalt: onlineimg_alt}, marginRight: '20px'}) }
+                        { CardListFooterItem({srcs : {url : source_url, tooltip : source_tooltip, imgsrc : sourceimg_src, imgalt: sourceimg_alt}}) }
+                        { CardListFooterItem({srcs : {url : patents_url, tooltip : patents_tooltip, imgsrc : patentsimg_src, imgalt: patentsimg_alt}}) }
                     </CardItemFooterDiv>
                 </CardItemRevealDiv>
             </CardItemDiv>
         </CardItemLi>
     );
-};
+}
 
 export default AppsItemLayout;
 
