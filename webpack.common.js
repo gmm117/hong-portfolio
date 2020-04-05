@@ -22,7 +22,7 @@ module.exports = {
             use: ['babel-loader'],
         },
         {
-            test: /\.(png|jpg|svg)$/,
+            test: /\.(png|jpg|svg|ico)$/,
             use: ['file-loader'],
         },
         {
@@ -50,7 +50,8 @@ module.exports = {
     }),
     new HtmlWebPackPlugin({
         template: path.resolve(__dirname, 'assets', 'index.html'), // assets/index.html 파일을 읽는다.
-        filename: 'index.html' // output으로 출력할 파일은 index.html 이다.
+        filename: 'index.html', // output으로 출력할 파일은 index.html 이다.
+        favicon: path.resolve(__dirname, 'assets', 'favicon.ico')
     }),
     
     new CleanWebpackPlugin()
