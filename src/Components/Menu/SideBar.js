@@ -7,7 +7,7 @@ import { BaseURL } from '../Utils/Define';
 import avatar_profile from '../../../imgs/avatar_profile.png';
 import github from '../../../imgs/github.svg';
 import blog from '../../../imgs/blog.svg';
-import { DeviceDirectHeight, DeviceDirectWidth, AutoLayoutStyle } from '../Utils/CommonStyle';
+import { DeviceDirectWidth, AutoLayoutStyle } from '../Utils/CommonStyle';
 
 const SideBarDiv = styled.div`
     ${AutoLayoutStyle};
@@ -150,8 +150,8 @@ function SideBar( { isSidebarOpen } ) {
                 <SideBarSection>
                     <Link style={SideBarLinkStyle} to={`${BaseURL}/`}>
                         <SideBarSectionLinkDiv>
-                            <div>Hong's</div>
-                            <div>{'\u00A0'}</div>
+                            <div>{`Hong's`}</div>
+                            <div>{`\u00A0`}</div>
                             <div> Portfolio</div>
                         </SideBarSectionLinkDiv>
                     </Link>
@@ -169,17 +169,17 @@ function SideBar( { isSidebarOpen } ) {
                 <SidebarMenu/>
             </SideBarSubDiv>
             <SideBarLink>
-                <SideBarLinkDiv className="tooltip" onClick={(e) => { window.open('https://github.com/gmm117', '_blank'); }}>
+                <SideBarLinkDiv className="tooltip" onClick={() => { window.open('https://github.com/gmm117', '_blank'); }}>
                     <span className="tooltiptext">GitHub</span>
                     <SideBarLinkImg src={github} alt="GitHub Link" />
                 </SideBarLinkDiv> 
-                <SideBarLinkDiv className="tooltip" onClick={(e) => { window.open('https://gmm117.github.io/', '_blank'); }}>
+                <SideBarLinkDiv className="tooltip" onClick={() => { window.open('https://gmm117.github.io/', '_blank'); }}>
                     <span className="tooltiptext">Blog</span>
                     <SideBarLinkImg src={blog} alt="Blog Link" />
                 </SideBarLinkDiv>
             </SideBarLink>
         </SideBarDiv>
     );
-};
+}
 
 export default SideBar;

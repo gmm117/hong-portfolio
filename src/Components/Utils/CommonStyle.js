@@ -30,7 +30,7 @@ const deviceWInfo = {
     mobileL: {min : '426px', max : '768px'},
     tablet: {min : '769px', max : '991px'},
     desktop: {min : '992px'}
-}
+};
 
 export const DeviceWidth = {
     mobileS: `screen and (min-width: ${deviceWInfo.mobileS.min}) and (max-width: ${deviceWInfo.mobileS.max})`,
@@ -43,13 +43,13 @@ export const DeviceWidth = {
 export const DeviceDirectWidth = ({min, max}) => {
     return `screen 
         ${min != null ? ' and (min-width: ' + min + ')' : ''}
-        ${max != null ? ' and (max-width: ' + max + ')' : ''}`
-}
+        ${max != null ? ' and (max-width: ' + max + ')' : ''}`;
+};
 export const DeviceDirectHeight = ({min, max}) => {
     return `screen 
     ${min != null ? ' and (min-height: ' + min + ')' : ''}
-    ${max != null ? ' and (max-height: ' + max + ')' : ''}`
-}
+    ${max != null ? ' and (max-height: ' + max + ')' : ''}`;
+};
  
 ////////////////////////////////////////////////////////////////////////////
 
@@ -76,7 +76,7 @@ export const DirectSizeStyle = ({width, height}) => css`
     min-width : ${width};
     height: ${height};
     min-height : ${height};
-`
+`;
 
 export const AutoLayoutStyle = css`
     width : 100%;
