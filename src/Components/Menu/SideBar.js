@@ -20,7 +20,6 @@ const SideBarDiv = styled.div`
     opacity : ${props => (props.isSidebarOpen ? 1 : 0)} ;
     padding : ${props => (props.isSidebarOpen ? '10px 20px 20px 20px' : '0px')} ;
     -webkit-transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     transition: all 0.5s ease;
 

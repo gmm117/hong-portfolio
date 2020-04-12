@@ -61,7 +61,7 @@ const DefaultCompInfos =
 const HancomInfos = 
 [
     {
-        title : "웹한글/웹한글기안기 UI개발",
+        title : "웹한글/웹한글기안기 개발",
         sublist : {
             date : "Mar 2017 - Present", 
             type : "Hangul Ctrl WebApp",
@@ -73,7 +73,7 @@ const HancomInfos =
                 value : "웹한글/웹한글기안기"
             }, 
             contents : {
-                content1 : "웹한글/웹한글기안기 관련 본문/프레임기능 중 UI/액션 기능 개발", 
+                content1 : "웹한글/웹한글기안기 관련 본문/프레임기능 중 UI/액션/기능 개발", 
                 content2 : "웹한글기안기 컨트롤 API 기능제공"
             }
         },
@@ -161,7 +161,7 @@ const BluebirdSoftInfos =
             skills : "C, C++, API, MFC", 
             tools : "VS2015, PlatformBuilder, CVS",
             url : {
-                href : "http://m.etnews.com/20190228000187",
+                href : "http://www.digitaltoday.co.kr/news/articleView.html?idxno=23131",
                 value : "BPL-10"
             }, 
             contents : {
@@ -189,7 +189,7 @@ const BluebirdSoftInfos =
             skills : "C, C++, API, MFC", 
             tools : "VS2015, PlatformBuilder, CVS",
             url : {
-                href : "http://m.etnews.com/20190228000187",
+                href : "http://bluebirdcorp.com/products/Mobile-Computers/Handheld-Computers/BIP7000",
                 value : "BPL-10"
             }, 
             contents : {
