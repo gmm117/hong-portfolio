@@ -31,6 +31,10 @@ function Content( { onLocationChange }) {
         setCHeight(window.innerHeight - 50);
     });
 
+    window.addEventListener("orientationchange", function() {
+        setCHeight(window.innerHeight - 50);
+    });
+
     return(
         <ContentDiv cheight={cheight}>
             <Route exact path={`${BaseURL}/About`} component={( {location, match, history} ) => <About onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
