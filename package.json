@@ -15,7 +15,13 @@
     "type": "git",
     "url": "git+https://github.com/gmm117/hong-portfolio.git"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "scss",
+    "react-router-dom",
+    "styled-components",
+    "html"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
