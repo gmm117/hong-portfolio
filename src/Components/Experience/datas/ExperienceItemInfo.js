@@ -307,7 +307,7 @@ const StudyInfos =
         },
         itemDesc : "React & Typescript study",
         itemContents : {
-            date : "Feb 2020 - Feb 2020",
+            date : "Feb 2020 - Present",
             role : "Front-End Developer",
             style : "HTML, CSS, SCSS", 
             skills : "TSX",
@@ -315,8 +315,12 @@ const StudyInfos =
             others : "GIT, VSCode, eslint"
         },
         itemFooters : {
+            online : {
+                online_url : 'https://gmm117.github.io/todo-tasks/',
+                online_tooltip : 'View Online'
+            },
             source : {
-                source_url : 'https://github.com/gmm117/react-typescript',
+                source_url : 'https://github.com/gmm117/todo-tasks',
                 source_tooltip : 'View Source'
             }
         },
