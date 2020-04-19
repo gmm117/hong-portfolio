@@ -336,6 +336,10 @@ const StudyInfos =
             sourceimg : {
                 sourceimg_src : github,
                 sourceimg_alt : 'View Source'
+            },
+            onlineimg : {
+                onlineimg_src : link,
+                onlineimg_alt : 'View Online'
             }
         },
         oldIsShow : false
