@@ -155,7 +155,7 @@ const AppsInfos =
             date : "Feb 2020 - Present",
             role : "Front-End Developer",
             style : "HTML, CSS", 
-            skills : "Javascript",
+            skills : "Javascript, Markdown",
             bundle : "gulp", 
             others : "GIT, VSCode, jekyll"
         },
