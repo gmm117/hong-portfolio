@@ -1,4 +1,5 @@
 import webhwp_main from '../../../../imgs/webhwp_main.png';
+import webhwpctrl_main from '../../../../imgs/webhwpctrl_main.png';
 import elecchart_1 from '../../../../imgs/elecchart_1.png';
 import insurechart_1 from '../../../../imgs/insurechart_1.png';
 import oldinsurechart_1 from '../../../../imgs/oldinsurechart_1.png';
@@ -61,7 +62,7 @@ const DefaultCompInfos =
 const HancomInfos = 
 [
     {
-        title : "웹한글/웹한글기안기 개발",
+        title : "웹한글기안기 개발",
         sublist : {
             date : "Mar 2017 - Present", 
             type : "Hangul Ctrl WebApp",
@@ -69,12 +70,40 @@ const HancomInfos =
             skills : "HTML, CSS, Javascript, Markdown", 
             tools : "intellij, git",
             url : {
-                href : "http://m.etnews.com/20190228000187",
-                value : "웹한글/웹한글기안기"
+                href : "https://m.etnews.com/20200214000099?obj=Tzo4OiJzdGRDbGFzcyI6Mjp7czo3OiJyZWZlcmVyIjtOO3M6NzoiZm9yd2FyZCI7czoxMzoid2ViIHRvIG1vYmlsZSI7fQ%3D%3D",
+                value : "웹한글기안기"
             }, 
             contents : {
-                content1 : "웹한글/웹한글기안기 관련 본문/프레임기능 중 UI/액션/기능 개발", 
+                content1 : "웹한글기안기 관련 본문/프레임기능 중 UI/액션/기능 개발", 
                 content2 : "웹한글기안기 컨트롤 API 기능제공"
+            }
+        },
+        image : {
+            main : {
+                main_src : webhwpctrl_main, 
+                main_alt : "웹한글기안기 메인화면"
+            },
+            thumnail1 : {
+                thumnail1_src : webhwpctrl_main, 
+                thumnail1_alt : "웹한글기안기 메인화면"
+            }
+        }
+    },
+    {
+        title : "웹한글 개발",
+        sublist : {
+            date : "Mar 2017 - Present", 
+            type : "Hangul WebApp",
+            role : "Front-End Developer", 
+            skills : "HTML, CSS, Javascript, Markdown", 
+            tools : "intellij, git",
+            url : {
+                href : "http://it.chosun.com/site/data/html_dir/2019/03/06/2019030601116.html",
+                value : "웹한글"
+            }, 
+            contents : {
+                content1 : "웹한글 관련 본문/프레임기능 중 UI/액션/기능 개발", 
+                content2 : "웹한글 동시편집 업무지원"
             }
         },
         image : {
