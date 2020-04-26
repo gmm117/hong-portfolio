@@ -74,8 +74,8 @@ const HancomInfos =
                 value : "웹한글기안기"
             }, 
             contents : {
-                content1 : "웹한글기안기 관련 본문/프레임기능 중 UI/액션/기능 개발", 
-                content2 : "웹한글기안기 컨트롤 API 기능제공"
+                content1 : "웹한글기안기 엔진모델/렌더링 관련 액션/기능개발, 프레임 관련 툴바/컨텍스트메뉴/다이얼로그/단축키 엔진연동 및 UI기능개발", 
+                content2 : "웹한글기안기 고객지원 컨트롤 OpenAPI 제공기능 개발"
             }
         },
         image : {
@@ -95,15 +95,15 @@ const HancomInfos =
             date : "Mar 2017 - Present", 
             type : "Hangul WebApp",
             role : "Front-End Developer", 
-            skills : "HTML, CSS, Javascript, Markdown", 
+            skills : "HTML, CSS, Javascript", 
             tools : "intellij, git",
             url : {
                 href : "http://it.chosun.com/site/data/html_dir/2019/03/06/2019030601116.html",
                 value : "웹한글"
             }, 
             contents : {
-                content1 : "웹한글 관련 본문/프레임기능 중 UI/액션/기능 개발", 
-                content2 : "웹한글 동시편집 업무지원"
+                content1 : "웹한글 엔진모델/렌더링 관련 액션/기능개발, 프레임 관련 툴바/컨텍스트메뉴/다이얼로그/단축키 엔진연동 및 UI기능개발", 
+                content2 : "웹한글 동시편집 액션,UI 업무지원 및 웹서비스 필요한 상태표시 기능추가"
             }
         },
         image : {
