@@ -389,7 +389,7 @@ const StudyInfos =
         itemContents : {
             date : "Jun 2019 - Apr 2020",
             role : "Front-End Developer",
-            style : "HTML, CSS, Handlebars", 
+            style : "HTML, CSS", 
             skills : "JS, TS, TSX, React-Redux",
             bundle : "Webpack, Babel", 
             others : "GIT, VSCode, CRA"
