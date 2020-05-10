@@ -64,7 +64,7 @@ const HancomInfos =
     {
         title : "웹한글기안기 개발",
         sublist : {
-            date : "Mar 2017 - Present", 
+            date : "Dec 2016 - Present", 
             type : "Hangul Ctrl WebApp",
             role : "Front-End Developer", 
             skills : "HTML, CSS, Javascript, Markdown", 
@@ -92,7 +92,7 @@ const HancomInfos =
     {
         title : "웹한글 개발",
         sublist : {
-            date : "Mar 2017 - Present", 
+            date : "Dec 2016 - Present", 
             type : "Hangul WebApp",
             role : "Front-End Developer", 
             skills : "HTML, CSS, Javascript", 

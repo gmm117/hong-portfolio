@@ -66,7 +66,7 @@ const AppsInfos =
         itemContents : {
             date : "Dec 2019 - Present",
             role : "Front-End Developer",
-            style : "HTML, CSS, SCSS, Styled-Components", 
+            style : "HTML, CSS, SCSS, Styled-Components, JSX", 
             skills : "Javascript, React, React Hooks",
             bundle : "Webpack, Babel", 
             others : "Eslint, GIT, VSCode"
@@ -103,17 +103,17 @@ const AppsInfos =
     },
     {
         itemTitles : {
-            bottitle : "Light MarkDown",
-            revealtitle : "Light MarkDown"
+            bottitle : "MarkDown Editor",
+            revealtitle : "MarkDown Editor"
         },
         itemDesc : "Electron과 웹브라우저에서 동작하는 Markdown Editor 개발",
         itemContents : {
             date : "Dec 2019 - Feb 2020",
             role : "Front-End Developer",
             style : "HTML, SCSS", 
-            skills : "Javascript",
+            skills : "Javascript, Markdown",
             bundle : "Webpack, Babel", 
-            others : "GIT, VSCode, Electron"
+            others : "GIT, VSCode, Electron, Marked(library)"
         },
         itemFooters : {
             online : {
@@ -157,7 +157,7 @@ const AppsInfos =
             style : "HTML, CSS", 
             skills : "Javascript, Markdown",
             bundle : "gulp", 
-            others : "GIT, VSCode, jekyll"
+            others : "GIT, VSCode, jekyll, Google Analytics, disqus"
         },
         itemFooters : {
             online : {
@@ -237,10 +237,10 @@ const StudyInfos =
         itemContents : {
             date : "Jun 2019 - Sep 2019",
             role : "Front-End Developer",
-            style : "Handlebars, CSS", 
-            skills : "React, CRA",
-            bundle : "Webpack", 
-            others : "GIT, VSCode"
+            style : "HTML, CSS",
+            skills : "React, JSX",
+            bundle : "Webpack, Babel", 
+            others : "GIT, VSCode, CRA"
         },
         itemFooters : {
             source : {
@@ -273,7 +273,7 @@ const StudyInfos =
         itemContents : {
             date : "Nov 2019 - Nov 2019",
             role : "Front-End Developer",
-            style : "HTML", 
+            style : "HTML, CSS", 
             skills : "Typescript",
             bundle : "Parcel", 
             others : "GIT, VSCode"
@@ -309,10 +309,10 @@ const StudyInfos =
         itemContents : {
             date : "Feb 2020 - Present",
             role : "Front-End Developer",
-            style : "HTML, CSS, SCSS", 
-            skills : "TSX",
+            style : "HTML, CSS, SCSS, Styled-Components", 
+            skills : "JS, TS, TSX, ContextAPI",
             bundle : "Webpack, Babel", 
-            others : "GIT, VSCode, eslint"
+            others : "GIT, VSCode, eslint, CRA"
         },
         itemFooters : {
             online : {
@@ -355,7 +355,7 @@ const StudyInfos =
             role : "Front-End Developer",
             style : "Handlebars, CSS", 
             skills : "Javascript",
-            bundle : "Webpack", 
+            bundle : "Parcel", 
             others : "GIT, VSCode"
         },
         itemFooters : {
@@ -387,11 +387,12 @@ const StudyInfos =
         },
         itemDesc : "Redux study",
         itemContents : {
-            date : "Jun 2019 - Jun 2019",
+            date : "Jun 2019 - Apr 2020",
             role : "Front-End Developer",
-            style : "HTML", 
-            skills : "Redux",
-            others : "GIT, VSCode"
+            style : "HTML, CSS, Handlebars", 
+            skills : "JS, TS, TSX, React-Redux",
+            bundle : "Webpack, Babel", 
+            others : "GIT, VSCode, CRA"
         },
         itemFooters : {
             source : {
