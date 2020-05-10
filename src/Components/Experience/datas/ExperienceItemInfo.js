@@ -110,7 +110,7 @@ const AppsInfos =
         itemContents : {
             date : "Dec 2019 - Feb 2020",
             role : "Front-End Developer",
-            style : "HTML, SCSS", 
+            style : "HTML, CSS", 
             skills : "Javascript, Markdown",
             bundle : "Webpack, Babel", 
             others : "GIT, VSCode, Electron, Marked(library)"
@@ -156,7 +156,7 @@ const AppsInfos =
             role : "Front-End Developer",
             style : "HTML, CSS", 
             skills : "Javascript, Markdown",
-            bundle : "gulp", 
+            bundle : "Jekyll Bundler", 
             others : "GIT, VSCode, jekyll, Google Analytics, disqus"
         },
         itemFooters : {
