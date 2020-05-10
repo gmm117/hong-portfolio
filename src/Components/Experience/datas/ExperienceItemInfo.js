@@ -355,7 +355,7 @@ const StudyInfos =
             role : "Front-End Developer",
             style : "Handlebars, CSS", 
             skills : "Javascript",
-            bundle : "Parcel", 
+            bundle : "Webpack", 
             others : "GIT, VSCode"
         },
         itemFooters : {
