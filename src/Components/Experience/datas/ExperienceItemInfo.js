@@ -13,6 +13,10 @@ import webpackImg from '../../../../imgs/webpack.png';
 import reactImg from '../../../../imgs/react.png';
 import react_typescriptImg from '../../../../imgs/react_typescript.png';
 import reduxImg from '../../../../imgs/redux.png';
+import mobxImg from '../../../../imgs/mobx.png';
+import svelteImg from '../../../../imgs/svelte.png';
+import denoImg from '../../../../imgs/deno.svg';
+
 
 import patentsTopImg from '../../../../imgs/patents.jpg';
 
@@ -404,6 +408,114 @@ const StudyInfos =
             top : {
                 top_src : reduxImg,
                 top_alt : "Redux study"
+            },
+            titlemore : {
+                titlemore_src : more, 
+                titlemore_alt : "상세보기"
+            },
+            sourceimg : {
+                sourceimg_src : github,
+                sourceimg_alt : 'View Source'
+            }
+        },
+        oldIsShow : false
+    },
+    {
+        itemTitles : {
+            bottitle : "Mobx study",
+            revealtitle : "Mobx study"
+        },
+        itemDesc : "Mobx study",
+        itemContents : {
+            date : "Jun 2020 - Present",
+            role : "Front-End Developer",
+            style : "HTML", 
+            skills : "Mobx",
+            bundle : "Parcel", 
+            others : "GIT, VSCode"
+        },
+        itemFooters : {
+            source : {
+                source_url : 'https://github.com/gmm117/mobx',
+                source_tooltip : 'View Source'
+            }
+        },
+        itemImages : {
+            top : {
+                top_src : mobxImg,
+                top_alt : "Mobx study"
+            },
+            titlemore : {
+                titlemore_src : more, 
+                titlemore_alt : "상세보기"
+            },
+            sourceimg : {
+                sourceimg_src : github,
+                sourceimg_alt : 'View Source'
+            }
+        },
+        oldIsShow : false
+    },
+    {
+        itemTitles : {
+            bottitle : "Svelte study",
+            revealtitle : "Svelte study"
+        },
+        itemDesc : "Svelte study",
+        itemContents : {
+            date : "Jun 2020 - Present",
+            role : "Front-End Developer",
+            style : "HTML, CSS", 
+            skills : "Svelte",
+            bundle : "Rollup", 
+            others : "GIT, VSCode"
+        },
+        itemFooters : {
+            source : {
+                source_url : 'https://github.com/gmm117/svelte',
+                source_tooltip : 'View Source'
+            }
+        },
+        itemImages : {
+            top : {
+                top_src : svelteImg,
+                top_alt : "Svelte study"
+            },
+            titlemore : {
+                titlemore_src : more, 
+                titlemore_alt : "상세보기"
+            },
+            sourceimg : {
+                sourceimg_src : github,
+                sourceimg_alt : 'View Source'
+            }
+        },
+        oldIsShow : false
+    },
+    {
+        itemTitles : {
+            bottitle : "Deno study",
+            revealtitle : "Deno study"
+        },
+        itemDesc : "Deno study",
+        itemContents : {
+            date : "Jun 2020 - Present",
+            role : "Front-End Developer",
+            style : "", 
+            skills : "Deno, TS",
+            bundle : "", 
+            others : "GIT, VSCode"
+        },
+        itemFooters : {
+            source : {
+                source_url : 'https://github.com/gmm117/deno',
+                source_tooltip : 'View Source'
+            }
+        },
+        itemImages : {
+            top : {
+                top_src : denoImg,
+                top_alt : "Deno study"
             },
             titlemore : {
                 titlemore_src : more, 
