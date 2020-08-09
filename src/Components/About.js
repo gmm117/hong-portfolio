@@ -241,6 +241,38 @@ const AboutCurFocusDiv = styled.div`
     }
 `;
 
+const SkillListDatas = [
+    { title: 'HTML', items : [ 
+        { img: html5Img, alt: "HTML5 IMAGE", desc: "HTML5"},
+        { img: reactImg, alt: "JSX IMAGE", desc: "JSX"}
+    ]},
+    { title: 'STYLE', items : [ 
+        { img: css3Img, alt: "CSS3 IMAGE", desc: "CSS3"},
+        { img: sassImg, alt: "SCSS IMAGE", desc: "SCSS"},
+        { img: styleComponentsImg, alt: "STYLE_COMPONENTS IMAGE", desc: "Style Components"}
+    ]},
+    { title: 'JAVSCRIPT', items : [ 
+        { img: reactImg, alt: "REACT IMAGE", desc: "REACT"},
+        { img: javascriptImg, alt: "JAVASCRIPT IMAGE", desc: "JAVASCRIPT"},
+        { img: typescriptImg, alt: "TYPESCRIPT IMAGE", desc: "TYPESCRIPT"},
+        { img: nodejsImg, alt: "NODEJS IMAGE", desc: "NodeJS"}
+    ]},
+    { title: 'WINDOWS', items : [ 
+        { img: cImg, alt: "C IMAGE", desc: "C"},
+        { img: cplusplusImg, alt: "C++ IMAGE", desc: "C++"},
+        { img: csharpImg, alt: "C# IMAGE", desc: "C#"},
+        { img: wpfImg, alt: "WPF IMAGE", desc: "WPF"}
+    ]},
+    { title: 'OTHERS', items : [ 
+        { img: electronImg, alt: "ELECTRON IMAGE", desc: "ELECTRON"},
+        { img: webpackImg, alt: "WEBPACK IMAGE", desc: "WEBPACK"},
+        { img: parcelImg, alt: "PARCEL IMAGE", desc: "PARCEL"},
+        { img: gitImg, alt: "GIT IMAGE", desc: "GIT"},
+        { img: githubImg, alt: "GITHUB IMAGE", desc: "GITHUB"},
+        { img: herokuImg, alt: "HEROKU IMAGE", desc: "HEROKU"}
+    ]}
+];
+
 const SkillListItem = ({ title, items }) => {
     return (
         <SkillItemDiv>
@@ -285,39 +317,13 @@ function About({ location, onLocationChange }) {
                     </div>
                 </AutoLayoutDiv>
             </IntroduceDiv>
-            <AboutCurFocusDiv>Current Focus: React, CSS(SCSS, Style Components) </AboutCurFocusDiv>
+            <AboutCurFocusDiv>Current Focus: React, CSS(SCSS, Styled Components) </AboutCurFocusDiv>
             <AboutSkillDiv>
                 <AboutTitleDiv>SKILLS</AboutTitleDiv>
                 <SkillDiv>
-                    { SkillListItem({title: 'HTML', items : [ 
-                        { img: html5Img, alt: "HTML5 IMAGE", desc: "HTML5"},
-                        { img: reactImg, alt: "JSX IMAGE", desc: "JSX"}
-                    ]}) }
-                    { SkillListItem({title: 'STYLE', items : [ 
-                        { img: css3Img, alt: "CSS3 IMAGE", desc: "CSS3"},
-                        { img: sassImg, alt: "SCSS IMAGE", desc: "SCSS"},
-                        { img: styleComponentsImg, alt: "STYLE_COMPONENTS IMAGE", desc: "Style Components"}
-                    ]}) }
-                    { SkillListItem({title: 'JAVSCRIPT', items : [ 
-                        { img: reactImg, alt: "REACT IMAGE", desc: "REACT"},
-                        { img: javascriptImg, alt: "JAVASCRIPT IMAGE", desc: "JAVASCRIPT"},
-                        { img: typescriptImg, alt: "TYPESCRIPT IMAGE", desc: "TYPESCRIPT"},
-                        { img: nodejsImg, alt: "NODEJS IMAGE", desc: "NodeJS"}
-                    ]}) }
-                    { SkillListItem({title: 'WINDOWS', items : [ 
-                        { img: cImg, alt: "C IMAGE", desc: "C"},
-                        { img: cplusplusImg, alt: "C++ IMAGE", desc: "C++"},
-                        { img: csharpImg, alt: "C# IMAGE", desc: "C#"},
-                        { img: wpfImg, alt: "WPF IMAGE", desc: "WPF"}
-                    ]}) }
-                    { SkillListItem({title: 'OTHERS', items : [ 
-                        { img: electronImg, alt: "ELECTRON IMAGE", desc: "ELECTRON"},
-                        { img: webpackImg, alt: "WEBPACK IMAGE", desc: "WEBPACK"},
-                        { img: parcelImg, alt: "PARCEL IMAGE", desc: "PARCEL"},
-                        { img: gitImg, alt: "GIT IMAGE", desc: "GIT"},
-                        { img: githubImg, alt: "GITHUB IMAGE", desc: "GITHUB"},
-                        { img: herokuImg, alt: "HEROKU IMAGE", desc: "HEROKU"}
-                    ]}) }
+                    {
+                        SkillListDatas.map(({ title, items }, index) => <SkillListItem key={index} title={title} items={items} /> )
+                    }
                 </SkillDiv>
             </AboutSkillDiv>
         </AboutBody>

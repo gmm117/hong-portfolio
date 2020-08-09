@@ -43,4 +43,4 @@ export function checkBroswer() {
     }
 
     return browser;
-}
+};

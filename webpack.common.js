@@ -23,7 +23,14 @@ module.exports = {
         },
         {
             test: /\.(png|jpg|svg|ico)$/,
-            use: ['file-loader'],
+            use: [
+              {
+                loader: 'url-loader',
+                options: {
+                  limit: 10000, 
+                }
+              }
+            ],
         },
         {
             test: /\.html$/,

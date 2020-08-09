@@ -25,15 +25,22 @@ function Content( { onLocationChange }) {
 
     useEffect(() => {
         setCHeight(window.innerHeight - 50);
+
+        const changeHeightfunc = () => {
+            setCHeight(window.innerHeight - 50);
+        };
+
+
+        window.addEventListener('resize', changeHeightfunc);
+        
+        // 모바일 가로 화면 전환시 호출되는 이벤트
+        window.addEventListener("orientationchange", changeHeightfunc);
+
+        return () => {
+            window.removeEventListener('resize', changeHeightfunc);
+            window.removeEventListener('orientationchange', changeHeightfunc);
+        };
     }, [cheight]); 
-
-    window.addEventListener('resize', function(e) {
-        setCHeight(window.innerHeight - 50);
-    });
-
-    window.addEventListener("orientationchange", function() {
-        setCHeight(window.innerHeight - 50);
-    });
 
     return(
         <ContentDiv cheight={cheight}>

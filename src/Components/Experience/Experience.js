@@ -1,11 +1,16 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { LinkStyle, TileDiv, TileUl, TileItemLi, TileThumbDiv, TileThumbHoverDiv, TileThumbHoverDivItem, TileThumbItemDiv, TileThumbImg } from '../Utils/CommonStyle';
+import { TileDiv, TileUl, TileItemComponentItem } from '../Utils/CommonStyle';
 import { BaseURL } from '../Utils/Define';
 
 import apps_logo from '../../../imgs/apps.png';
 import study_logo from '../../../imgs/study.png';
 import work_logo from '../../../imgs/work.png';
+
+const ExperienceDatas = [
+    { radius: '5px', src: apps_logo, alt: "My Apps Image", to: `${BaseURL}/Experience-Apps`, name: 'My Apps', period: '2019.12 ~ ', footname: 'Apps' },
+    { radius: '5px', src: study_logo, alt: "My Study Image", to: `${BaseURL}/Experience-Study`, name: 'My Study', period: '2019.11 ~ ', footname: 'Study' },
+    { radius: '5px', src: work_logo, alt: "My Work Image", to: `${BaseURL}/Experience-Work`, name: 'My Work', period: '2010 ~ ', footname: 'Work' },
+];
 
 function Experience({ location, onLocationChange }) {
     useEffect(() => {
@@ -15,48 +20,11 @@ function Experience({ location, onLocationChange }) {
     return (
         <TileDiv>
             <TileUl>
-                <TileItemLi>
-                    <TileThumbDiv radius={'5px'}>
-                        <TileThumbImg radius={'5px'} src={apps_logo} alt="My Apps Image" />
-                        <TileThumbHoverDiv>
-                            <Link style={LinkStyle} to={`${BaseURL}/Experience-Apps`} >
-                                <TileThumbHoverDivItem>
-                                    <div>My Apps</div>
-                                    <div>2019.12 ~ </div>
-                                </TileThumbHoverDivItem>
-                            </Link>
-                        </TileThumbHoverDiv>
-                    </TileThumbDiv>
-                    <TileThumbItemDiv>Apps</TileThumbItemDiv>
-                </TileItemLi>
-                <TileItemLi>
-                    <TileThumbDiv radius={'5px'}>
-                        <TileThumbImg radius={'5px'} src={study_logo} alt="My Study Image" />
-                        <TileThumbHoverDiv>
-                            <Link style={LinkStyle} to={`${BaseURL}/Experience-Study`} >
-                                <TileThumbHoverDivItem>
-                                    <div>My Study</div>
-                                    <div>2019.11 ~ </div>
-                                </TileThumbHoverDivItem>
-                            </Link>
-                        </TileThumbHoverDiv>
-                    </TileThumbDiv>
-                    <TileThumbItemDiv>Study</TileThumbItemDiv>
-                </TileItemLi>
-                <TileItemLi>
-                    <TileThumbDiv radius={'5px'}>
-                        <TileThumbImg radius={'5px'} src={work_logo} alt="My Work Image" />
-                        <TileThumbHoverDiv>
-                            <Link style={LinkStyle} to={`${BaseURL}/Experience-Work`} >
-                                <TileThumbHoverDivItem>
-                                    <div>My Work</div>
-                                    <div>2010 ~ </div>
-                                </TileThumbHoverDivItem>
-                            </Link>
-                        </TileThumbHoverDiv>
-                    </TileThumbDiv>
-                    <TileThumbItemDiv>Work</TileThumbItemDiv>
-                </TileItemLi>
+                {
+                    ExperienceDatas.map(({ radius, padding, src, alt, style, to, name, product, period, footname }, index) => 
+                        <TileItemComponentItem key={index} radius={radius} padding={padding} src={src} alt={alt} style={style} to={to} name={name} product={product} period={period} footname={footname} />
+                    )
+                }
             </TileUl>
         </TileDiv>
     );

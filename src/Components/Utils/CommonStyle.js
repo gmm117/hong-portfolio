@@ -1,6 +1,38 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import circle from '../../../imgs/circle.svg';
 
+//////////////////////////// component layout //////////////////////////////////
+export const LinkStyle = {
+    display : 'inline-block',
+    width : '100%',
+    height : '100%',
+    textDecoration: 'none'
+};
+
+export const TileItemComponentItem = ({radius, padding, src, alt, to, name, product, period, footname}) => {
+    return (
+        <TileItemLi>
+            <TileThumbDiv radius={radius} padding={padding}>
+                <TileThumbImg radius={radius} src={src} alt={alt} />
+                <TileThumbHoverDiv>
+                    <Link style={LinkStyle} to={to} >
+                        <TileThumbHoverDivItem>
+                            <div>{name}</div>
+                            <div>{product}</div>
+                            <div>{period}</div>
+                        </TileThumbHoverDivItem>
+                    </Link>
+                </TileThumbHoverDiv>
+            </TileThumbDiv>
+            <TileThumbItemDiv>{footname}</TileThumbItemDiv>
+        </TileItemLi>
+    );
+};
+
+ 
+////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////// device layout //////////////////////////////////
 // const size = {
@@ -54,13 +86,6 @@ export const DeviceDirectHeight = ({min, max}) => {
 ////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////// css ui layout ///////////////////////////////
-export const LinkStyle = {
-    display : 'inline-block',
-    width : '100%',
-    height : '100%',
-    textDecoration: 'none'
-};
-
 export const DirectWidthSizeStyle = (width) => css`
     width: ${width};
     min-width : ${width};
@@ -133,7 +158,12 @@ export const TileUl = styled.ul`
     }
 `;
 
-export const TileItemLi = styled.li`
+export const TileThumbImg = styled.img`
+    ${AutoLayoutStyle};
+    border-radius : ${props => (props.radius ? props.radius : null)};
+`;
+
+const TileItemLi = styled.li`
     display : flex;
     flex-direction: column;
     align-items: center;
@@ -169,7 +199,7 @@ export const TileItemLi = styled.li`
     }
 `;
 
-export const TileThumbDiv = styled.div`
+const TileThumbDiv = styled.div`
     position: relative;
     width: 100%;
     margin: 10px 0px;
@@ -205,7 +235,7 @@ export const TileThumbDiv = styled.div`
     }
 `;
 
-export const TileThumbHoverDiv = styled.div`
+const TileThumbHoverDiv = styled.div`
     ${AutoLayoutStyle};
     position: absolute;
     left: 0;
@@ -219,7 +249,7 @@ export const TileThumbHoverDiv = styled.div`
     }
 `;
 
-export const TileThumbHoverDivItem = styled.div`
+const TileThumbHoverDivItem = styled.div`
     display : flex;
     flex-direction: column;
     justify-content : center;
@@ -234,14 +264,9 @@ export const TileThumbHoverDivItem = styled.div`
     }
 `;
 
-export const TileThumbItemDiv = styled.div`
+const TileThumbItemDiv = styled.div`
     width: 100%;
     font-weight: 600;
-`;
-
-export const TileThumbImg = styled.img`
-    ${AutoLayoutStyle};
-    border-radius : ${props => (props.radius ? props.radius : null)};
 `;
 
 ////////////////////////////////////////////////////////////////////////////
