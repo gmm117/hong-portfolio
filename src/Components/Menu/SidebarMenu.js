@@ -69,6 +69,30 @@ const LinkSubDiv = styled.div`
     }
 `;
 
+const SideBarComponentItem = ({ url, title, src, alt }) => {
+    return (
+        <SideBarMenuList>
+            <Link style={LinkStyle} to={url}>
+                <LinkSubDiv>
+                    <LinkImgDiv className="tooltip">
+                        <span className="tooltiptext">{title}</span>
+                        <LinkImg src={src} alt={alt} />
+                    </LinkImgDiv>
+                    <LinkDesDiv>{title}</LinkDesDiv>
+                </LinkSubDiv>
+            </Link> 
+        </SideBarMenuList>
+    );
+};
+
+const sideBarItem = [
+    { url : `${BaseURL}/`, title: 'Home', src: homeImg, alt: 'Home' },
+    { url : `${BaseURL}/About`, title: 'About', src: userImg, alt: 'About' },
+    { url : `${BaseURL}/Company`, title: 'Company', src: cubeImg, alt: 'Company Projects' },
+    { url : `${BaseURL}/Experience`, title: 'Experience', src: experienceImg, alt: 'Experience' },
+    { url : `${BaseURL}/Contact`, title: 'Contact', src: voiceMailImg, alt: 'Contact' }
+];
+
 class SidebarMenu extends Component {
     constructor(props) {
         super(props);
@@ -76,61 +100,9 @@ class SidebarMenu extends Component {
     render() {
         return (
             <ul>
-                <SideBarMenuList>
-                    <Link style={LinkStyle} to={`${BaseURL}/`}>
-                        <LinkSubDiv>
-                            <LinkImgDiv className="tooltip">
-                                <span className="tooltiptext">Home</span>
-                                <LinkImg src={homeImg} alt="Home" />
-                            </LinkImgDiv>
-                            <LinkDesDiv>Home</LinkDesDiv>
-                        </LinkSubDiv>
-                    </Link> 
-                </SideBarMenuList>
-                <SideBarMenuList>
-                    <Link style={LinkStyle} to={`${BaseURL}/About`}>
-                        <LinkSubDiv>
-                            <LinkImgDiv className="tooltip">
-                                <span className="tooltiptext">About</span>
-                                <LinkImg src={userImg} alt="About" />
-                            </LinkImgDiv>
-                            <LinkDesDiv>About</LinkDesDiv>
-                        </LinkSubDiv>
-                    </Link>
-                </SideBarMenuList>
-                <SideBarMenuList>
-                    <Link style={LinkStyle} to={`${BaseURL}/Company`}>
-                        <LinkSubDiv>
-                            <LinkImgDiv className="tooltip">
-                                <span className="tooltiptext">Company</span>
-                                <LinkImg src={cubeImg} alt="Company Projects" />
-                            </LinkImgDiv>
-                            <LinkDesDiv>Company</LinkDesDiv>
-                        </LinkSubDiv>
-                    </Link>
-                </SideBarMenuList>
-                <SideBarMenuList>
-                    <Link style={LinkStyle} to={`${BaseURL}/Experience`}>
-                        <LinkSubDiv>
-                            <LinkImgDiv className="tooltip">
-                                <span className="tooltiptext">Experience</span>
-                                <LinkImg src={experienceImg} alt="Experience" />
-                            </LinkImgDiv>
-                            <LinkDesDiv>Experience</LinkDesDiv>
-                        </LinkSubDiv>
-                    </Link>
-                </SideBarMenuList>
-                <SideBarMenuList>
-                    <Link style={LinkStyle} to={`${BaseURL}/Contact`}>
-                        <LinkSubDiv>
-                            <LinkImgDiv className="tooltip">
-                                <span className="tooltiptext">Contact</span>
-                                <LinkImg src={voiceMailImg} alt="Contact" />
-                            </LinkImgDiv>
-                            <LinkDesDiv>Contact</LinkDesDiv>
-                        </LinkSubDiv>
-                    </Link>
-                </SideBarMenuList>
+                {
+                    sideBarItem.map(({url, title, src, alt}, index) => <SideBarComponentItem key={index} url={url} title={title} src={src} alt={alt} />)
+                }
             </ul>
         );
     }
