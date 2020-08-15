@@ -27,8 +27,7 @@ const getCompInfo = (name) => {
     return cpInfo;
 };
 
-const defaultCompInfos = 
-[
+const defaultCompInfos = [
     {
         title : "준비중입니다.",
         sublist : {
@@ -59,8 +58,7 @@ const defaultCompInfos =
     }
 ];
 
-const hancomInfos = 
-[
+const hancomInfos = [
     {
         title : "웹한글기안기 개발",
         sublist : {
@@ -119,8 +117,7 @@ const hancomInfos =
     }
 ];
 
-const osstemImplantInfos = 
-[
+const osstemImplantInfos = [
     {
         title : "글로벌 치과용 프로그램 개발",
         sublist : {
@@ -179,8 +176,7 @@ const osstemImplantInfos =
     }
 ];
 
-const bluebirdSoftInfos = 
-[
+const bluebirdSoftInfos = [
     {
         title: "단말기 모뎀 디바이스 개발/이동통신사 품질보증",
         sublist: {

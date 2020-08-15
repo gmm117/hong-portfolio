@@ -141,7 +141,7 @@ const SideBarSectionLinkDiv = styled.div`
     }
 `;
 
-function SideBar({ isSidebarOpen } ) {
+function SideBar({ isSidebarOpen }) {
     return (
         <SideBarDiv isSidebarOpen={isSidebarOpen} >
             <SideBarSubDiv>

@@ -38,8 +38,7 @@ const getExpInfo = (name) => {
     return cpInfo;
 };
 
-const defaultInfos = 
-[
+const defaultInfos = [
     {
         itemTitles: {
             bottitle: "준비중입니다.",
@@ -57,8 +56,7 @@ const defaultInfos =
     }
 ];
 
-const appsInfos = 
-[
+const appsInfos = [
     {
         itemTitles: {
             bottitle: "Hong's Portfolio",
@@ -228,8 +226,7 @@ const appsInfos =
     }
 ];
 
-const studyInfos = 
-[
+const studyInfos = [
     {
         itemTitles: {
             bottitle: "React study",
@@ -528,8 +525,7 @@ const studyInfos =
     }
 ];
 
-const worksInfos = 
-[
+const worksInfos = [
     {
         itemTitles: {
             bottitle: "웹 전자 문서 편집 동작 방법",
