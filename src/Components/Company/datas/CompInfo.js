@@ -9,25 +9,25 @@ import modemdevelop_2 from '../../../../imgs/modemdevelop_2.png';
 import windowsce_device_1 from '../../../../imgs/windowsce_device_1.png';
 import windowsmobile_device_1 from '../../../../imgs/windowsmobile_device_1.png';
 
-export const GetCompInfo = (name) => {
-    let cpInfo = DefaultCompInfos;
+export const getCompInfo = (name) => {
+    let cpInfo = defaultCompInfos;
     
     switch(name) {
         case "Company-Hancom":
-            cpInfo = HancomInfos;
+            cpInfo = hancomInfos;
             break;
         case "Company-OsstemImplant":
-            cpInfo = OsstemImplantInfos;
+            cpInfo = osstemImplantInfos;
             break;
         case "Company-Bluebird":
-            cpInfo = BluebirdSoftInfos;
+            cpInfo = bluebirdSoftInfos;
             break;
     }
 
     return cpInfo;
 };
 
-const DefaultCompInfos = 
+const defaultCompInfos = 
 [
     {
         title : "준비중입니다.",
@@ -59,7 +59,7 @@ const DefaultCompInfos =
     }
 ];
 
-const HancomInfos = 
+const hancomInfos = 
 [
     {
         title : "웹한글기안기 개발",
@@ -119,7 +119,7 @@ const HancomInfos =
     }
 ];
 
-const OsstemImplantInfos = 
+const osstemImplantInfos = 
 [
     {
         title : "글로벌 치과용 프로그램 개발",
@@ -179,7 +179,7 @@ const OsstemImplantInfos =
     }
 ];
 
-const BluebirdSoftInfos = 
+const bluebirdSoftInfos = 
 [
     {
         title: "단말기 모뎀 디바이스 개발/이동통신사 품질보증",

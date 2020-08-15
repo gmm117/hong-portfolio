@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled, { css } from 'styled-components';
-import { TileDiv, FeatureTitle, DeviceWidth, DeviceDirectWidth, DirectSizeStyle } from './Utils/CommonStyle';
+import { TileDiv, FeatureTitle, DeviceWidth, DeviceDirectWidth, DirectSizeStyle } from './utils/CommonStyle';
 
 import mail from '../../imgs/mail.svg';
 import github from '../../imgs/github.svg';

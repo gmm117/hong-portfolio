@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { BaseURL } from './Utils/Define';
+import { baseURL } from './utils/define';
 
 import Home from './Home';
 import About from './About';
@@ -45,17 +45,17 @@ function Content({ onLocationChange }) {
     return(
         /* jshint ignore:start */
         <ContentDiv cheight={cheight}>
-            <Route exact path={`${BaseURL}/About`} component={({location, match, history}) => <About onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
-            <Route exact path={`${BaseURL}/Contact`} component={({location, match, history}) => <Contact onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+            <Route exact path={`${baseURL}/About`} component={({location, match, history}) => <About onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+            <Route exact path={`${baseURL}/Contact`} component={({location, match, history}) => <Contact onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
             <Switch>
-                <Route exact path={`${BaseURL}/Company-:name`} component={({location, match, history}) => <CompanyItem onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
-                <Route exact path={`${BaseURL}/Company`} component={({location, match, history}) => <Company onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+                <Route exact path={`${baseURL}/Company-:name`} component={({location, match, history}) => <CompanyItem onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+                <Route exact path={`${baseURL}/Company`} component={({location, match, history}) => <Company onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
             </Switch>
             <Switch>
-                <Route exact path={`${BaseURL}/Experience-:name`} component={({location, match, history}) => <ExperienceItem onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
-                <Route exact path={`${BaseURL}/Experience`} component={({location, match, history}) => <Experience onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+                <Route exact path={`${baseURL}/Experience-:name`} component={({location, match, history}) => <ExperienceItem onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+                <Route exact path={`${baseURL}/Experience`} component={({location, match, history}) => <Experience onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
             </Switch>
-            <Route exact path={`${BaseURL}/`} component={({location, match, history}) => <Home onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
+            <Route exact path={`${baseURL}/`} component={({location, match, history}) => <Home onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
         </ContentDiv>
         /* jshint ignore:end */
     );

@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import SidebarMenu from './SidebarMenu';
-import { BaseURL } from '../Utils/Define';
+import { baseURL } from '../utils/define';
 
 import avatar_profile from '../../../imgs/avatar_profile.png';
 import github from '../../../imgs/github.svg';
 import blog from '../../../imgs/blog.svg';
-import { DeviceDirectWidth, AutoLayoutStyle } from '../Utils/CommonStyle';
+import { DeviceDirectWidth, AutoLayoutStyle } from '../utils/CommonStyle';
 
 const SideBarDiv = styled.div`
     ${AutoLayoutStyle};
@@ -142,12 +142,11 @@ const SideBarSectionLinkDiv = styled.div`
 `;
 
 function SideBar({ isSidebarOpen } ) {
-
     return (
         <SideBarDiv isSidebarOpen={isSidebarOpen} >
             <SideBarSubDiv>
                 <SideBarSection>
-                    <Link style={SideBarLinkStyle} to={`${BaseURL}/`}>
+                    <Link style={SideBarLinkStyle} to={`${baseURL}/`}>
                         <SideBarSectionLinkDiv>
                             <div>{`Hong's`}</div>
                             <div>{`\u00A0`}</div>

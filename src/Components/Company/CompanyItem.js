@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
-import { BaseURL } from '../Utils/Define';
-import { GetCompInfo } from './datas/CompInfo';
-import CompLayout from './datas/CompLayout';
-import { ItemUl } from '../Utils/CommonStyle';
+import CompItemLayout from './CompItemLayout';
+import { ItemUl } from '../utils/CommonStyle';
+
+import { getCompInfo } from './datas/compInfo';
+import { baseURL } from '../utils/define';
 
 function CompanyItem({ location, onLocationChange }) {
-    let newpathname = location.pathname.replace(BaseURL, "");
-    const [compInfos, setCompInfos] = useState(GetCompInfo(newpathname.substr(1)));
+    let newpathname = location.pathname.replace(baseURL, "");
+    const [compInfos, setCompInfos] = useState(getCompInfo(newpathname.substr(1)));
     
     useEffect(() => {
         onLocationChange(location);
@@ -17,7 +18,7 @@ function CompanyItem({ location, onLocationChange }) {
         /* jshint ignore:start */
         <ItemUl>
             {
-                compInfos.map((compInfo, index) => <CompLayout key={index} compInfo={compInfo} /> )
+                compInfos.map((compInfo, index) => <CompItemLayout key={index} compInfo={compInfo} /> )
             }
         </ItemUl>
         /* jshint ignore:end */

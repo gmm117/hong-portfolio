@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import { DimensionDiv, TileThumbImg, DeviceDirectWidth, DirectSizeStyle, ListItemCircleImg } from '../../Utils/CommonStyle';
+import { DimensionDiv, TileThumbImg, DeviceDirectWidth, DirectSizeStyle, ListItemCircleImg } from '../utils/CommonStyle';
 
 const CompLi = styled.li`
     width: 100%;
@@ -201,7 +201,27 @@ const CompItemActionDiv = styled.div`
     box-sizing: border-box;
 `;
 
-const CompListItem = (src, desc) => {
+export const TileItemComponentItem = ({radius, padding, src, alt, to, name, product, period, footname}) => {
+    return (
+        <TileItemLi>
+            <TileThumbDiv radius={radius} padding={padding}>
+                <TileThumbImg radius={radius} src={src} alt={alt} />
+                <TileThumbHoverDiv>
+                    <Link style={LinkStyle} to={to} >
+                        <TileThumbHoverDivItem>
+                            <div>{name}</div>
+                            <div>{product}</div>
+                            <div>{period}</div>
+                        </TileThumbHoverDivItem>
+                    </Link>
+                </TileThumbHoverDiv>
+            </TileThumbDiv>
+            <TileThumbItemDiv>{footname}</TileThumbItemDiv>
+        </TileItemLi>
+    );
+};
+
+const CompListItem = ({src, desc}) => {
     return (
         src ? (
             /* jshint ignore:start */
@@ -214,7 +234,7 @@ const CompListItem = (src, desc) => {
     );
 };
 
-function CompLayout({ compInfo }) {
+function CompItemLayout({ compInfo }) {
     const { title, image, sublist } = compInfo;
     const { main_src, main_alt } = image.main;
     const { date, type, role, skills, tools, url, contents } = sublist;
@@ -234,12 +254,12 @@ function CompLayout({ compInfo }) {
                         <TileThumbImg src={main_src} alt={main_alt} />
                     </CompItemImgDiv>
                     <CompItemDetailDiv>
-                        { CompListItem(type, 'Type') }
-                        { CompListItem(role, 'Role') }
-                        { CompListItem(skills, 'Skills') }
-                        { CompListItem(tools, 'Tools') }
+                        <CompListItem src={type} desc={'Type'} />
+                        <CompListItem src={role} desc={'Role'} />
+                        <CompListItem src={skills} desc={'Skills'} />
+                        <CompListItem src={tools} desc={'Tools'} />
                         <DimensionDiv width={'100%'}>
-                            { CompListItem('\u00A0', 'Contents') }
+                            <CompListItem src={'\u00A0'} desc={'Contents'} />
                             <CompItemDetailDetailContentDiv>
                                 {( content1 != null ? <div> - {content1}</div> : null )}
                                 {( content2 != null ? <div> - {content2}</div> : null )}
@@ -255,5 +275,5 @@ function CompLayout({ compInfo }) {
     );
 }
 
-export default CompLayout;
+export default CompItemLayout;
 

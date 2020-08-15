@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
-import { DeviceDirectWidth, DirectHeightSizeStyle, DirectWidthSizeStyle, ListItemCircleImg } from '../../Utils/CommonStyle';
+import { DeviceDirectWidth, DirectHeightSizeStyle, DirectWidthSizeStyle, ListItemCircleImg } from '../utils/CommonStyle';
 
 export const CardItemLi = styled.li`
     display: flex;
@@ -432,13 +432,13 @@ const CardListFooterItem = ({ src, marginRight }) => {
 
 let oldTranslate;
 
-function AppsItemLayout({ expInfo }) {
+function ExperienceItemLayout({ expInfo }) {
     const [reveal, setReveal] = useState({
         translate: oldTranslate === undefined ? '0px' : oldTranslate,
         isshow: expInfo.oldIsShow });
 
     const { translate, isshow } = reveal;
-    const OnRevealClick = () => setReveal({
+    const onRevealClick = () => setReveal({
         translate: translate === '0px' ? '-100%' : '0px',
         isshow: isshow === true ? false : true
     });
@@ -479,26 +479,26 @@ function AppsItemLayout({ expInfo }) {
     ];
 
     const cardFooterList = [
-        { src: {url: online_url, tooltip: online_tooltip, imgsrc: onlineimg_src, imgalt: onlineimg_alt}, marginRight: '20px' },
-        { src: {url: source_url, tooltip: source_tooltip, imgsrc: sourceimg_src, imgalt: sourceimg_alt } },
-        { src: {url: patents_url, tooltip: patents_tooltip, imgsrc: patentsimg_src, imgalt: patentsimg_alt} }
+        { src: { url: online_url, tooltip: online_tooltip, imgsrc: onlineimg_src, imgalt: onlineimg_alt}, marginRight: '20px' },
+        { src: { url: source_url, tooltip: source_tooltip, imgsrc: sourceimg_src, imgalt: sourceimg_alt } },
+        { src: { url: patents_url, tooltip: patents_tooltip, imgsrc: patentsimg_src, imgalt: patentsimg_alt} }
     ];
 
     return (
         <CardItemLi>
             <CardItemDiv>
-                <CardItemTopImg src={top_src} alt={top_alt} onClick={OnRevealClick} />
+                <CardItemTopImg src={top_src} alt={top_alt} onClick={onRevealClick} />
                 <CardItemBottomDiv>
                     <CardItemTitleDiv>
-                        <CardItemBottomTitleSpan onClick={OnRevealClick} >{bottitle}</CardItemBottomTitleSpan>
-                        <CardItemBottomTitleImg src={titlemore_src} alt={titlemore_alt} onClick={OnRevealClick}></CardItemBottomTitleImg>
+                        <CardItemBottomTitleSpan onClick={onRevealClick} >{bottitle}</CardItemBottomTitleSpan>
+                        <CardItemBottomTitleImg src={titlemore_src} alt={titlemore_alt} onClick={onRevealClick}></CardItemBottomTitleImg>
                     </CardItemTitleDiv>
                     <CardItemBottomDescDiv>{itemDesc}</CardItemBottomDescDiv>
                 </CardItemBottomDiv>
                 <CardItemRevealDiv translate={translate} isshow={isshow}>
                     <CardItemTitleDiv>
-                        <CardItemRevealTitleSpan onClick={OnRevealClick}>{revealtitle}</CardItemRevealTitleSpan>
-                        <CardItemRevealExitSpan onClick={OnRevealClick}>X</CardItemRevealExitSpan>
+                        <CardItemRevealTitleSpan onClick={onRevealClick}>{revealtitle}</CardItemRevealTitleSpan>
+                        <CardItemRevealExitSpan onClick={onRevealClick}>X</CardItemRevealExitSpan>
                     </CardItemTitleDiv>
                     <CardItemContentDiv>
                         { 
@@ -516,5 +516,5 @@ function AppsItemLayout({ expInfo }) {
     );
 }
 
-export default AppsItemLayout;
+export default ExperienceItemLayout;
 

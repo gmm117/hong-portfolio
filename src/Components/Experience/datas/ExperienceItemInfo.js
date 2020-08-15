@@ -20,7 +20,7 @@ import denoImg from '../../../../imgs/deno.svg';
 
 import patentsTopImg from '../../../../imgs/patents.jpg';
 
-export const GetExpInfo = (name) => {
+export const getExpInfo = (name) => {
     let cpInfo = DefaultInfos;
     
     switch(name) {

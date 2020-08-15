@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { FeatureTitle, DeviceWidth, DeviceDirectWidth, DirectSizeStyle, AutoLayoutStyle, AutoLayoutDiv } from './Utils/CommonStyle';
+import { FeatureTitle, DeviceWidth, DeviceDirectWidth, DirectSizeStyle, AutoLayoutStyle, AutoLayoutDiv } from './utils/CommonStyle';
 
 import Profile from '../../imgs/profile.jpg';
 import html5Img from '../../imgs/html5.png';
@@ -241,7 +241,7 @@ const AboutCurFocusDiv = styled.div`
     }
 `;
 
-const SkillListDatas = [
+const skillListDatas = [
     { title: 'HTML', items: [
         { img: html5Img, alt: "HTML5 IMAGE", desc: "HTML5"},
         { img: reactImg, alt: "JSX IMAGE", desc: "JSX"}
@@ -325,7 +325,7 @@ function About({ location, onLocationChange }) {
                 <AboutTitleDiv>SKILLS</AboutTitleDiv>
                 <SkillDiv>
                     {
-                        SkillListDatas.map(({ title, items }, index) => <SkillListItem key={index} title={title} items={items} /> )
+                        skillListDatas.map(({ title, items }, index) => <SkillListItem key={index} title={title} items={items} /> )
                     }
                 </SkillDiv>
             </AboutSkillDiv>

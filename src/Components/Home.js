@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 import HomeImg from '../../imgs/bg-home.jpg';
-import { DeviceDirectWidth } from './Utils/CommonStyle';
+import { DeviceDirectWidth } from './utils/CommonStyle';
 
 const HomeBody = styled.div`
     display: flex;
@@ -42,7 +42,6 @@ const HomeBody = styled.div`
 `;
 
 function Home({ location, onLocationChange }) {
-    
     useEffect(() => {
         onLocationChange(location);
     }, []);

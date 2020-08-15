@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { BaseURL } from '../Utils/Define';
-import { LinkStyle, DeviceDirectWidth, DirectSizeStyle, DeviceDirectHeight } from '../Utils/CommonStyle';
+import { baseURL } from '../utils/define';
+import { LinkStyle, DeviceDirectWidth, DirectSizeStyle, DeviceDirectHeight } from '../utils/CommonStyle';
 import homeImg from '../../../imgs/home.svg';
 import cubeImg from '../../../imgs/cube.svg';
 import userImg from '../../../imgs/user.svg';
@@ -86,11 +86,11 @@ const SideBarComponentItem = ({ url, title, src, alt }) => {
 };
 
 const sideBarItem = [
-    { url:`${BaseURL}/`, title: 'Home', src: homeImg, alt: 'Home' },
-    { url:`${BaseURL}/About`, title: 'About', src: userImg, alt: 'About' },
-    { url:`${BaseURL}/Company`, title: 'Company', src: cubeImg, alt: 'Company Projects' },
-    { url:`${BaseURL}/Experience`, title: 'Experience', src: experienceImg, alt: 'Experience' },
-    { url:`${BaseURL}/Contact`, title: 'Contact', src: voiceMailImg, alt: 'Contact' }
+    { url:`${baseURL}/`, title: 'Home', src: homeImg, alt: 'Home' },
+    { url:`${baseURL}/About`, title: 'About', src: userImg, alt: 'About' },
+    { url:`${baseURL}/Company`, title: 'Company', src: cubeImg, alt: 'Company Projects' },
+    { url:`${baseURL}/Experience`, title: 'Experience', src: experienceImg, alt: 'Experience' },
+    { url:`${baseURL}/Contact`, title: 'Contact', src: voiceMailImg, alt: 'Contact' }
 ];
 
 class SidebarMenu extends Component {

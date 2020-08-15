@@ -2,13 +2,13 @@ import React, { useCallback, useReducer, createContext } from 'react';
 import styled from 'styled-components';
 import '../assets/index.scss';
 
-import { GetLinkName } from './Components/Utils/Utils';
-import { BaseURL } from './Components/Utils/Define';
+import { getLinkName } from './Components/utils/utils';
+import { baseURL } from './Components/utils/define';
 
 import Header from './Components/Header';
 import SideBar from './Components/Menu/SideBar';
 import Content from './Components/Content';
-import { AutoLayoutStyle } from './Components/Utils/CommonStyle';
+import { AutoLayoutStyle } from './Components/utils/CommonStyle';
 
 const ContainerDiv = styled.div`
     ${AutoLayoutStyle};
@@ -53,8 +53,8 @@ function App() {
   const {navName, isSidebarOpen} = appState;
 
   const onLocationChange = useCallback((location) => {
-    let name = GetLinkName(location.pathname);
-    name = name.replace(BaseURL, "");
+    let name = getLinkName(location.pathname);
+    name = name.replace(baseURL, "");
     dispatch({
       type: "CHANGE_NAVIGATOR_NAME",
       navName: name

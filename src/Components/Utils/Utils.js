@@ -1,7 +1,7 @@
-import {BaseURL} from './Define';
+import {baseURL} from './define';
 
-export const GetLinkName = (pathname) => {
-    const newpathname = pathname.replace(BaseURL, "");
+export const getLinkName = (pathname) => {
+    const newpathname = pathname.replace(baseURL, "");
     const arrLink = newpathname.substr(1).split(/[\/-]/);
     if (arrLink.length === 0) {
         return "Home";
