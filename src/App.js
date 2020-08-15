@@ -2,13 +2,13 @@ import React, { useCallback, useReducer, createContext } from 'react';
 import styled from 'styled-components';
 import '../assets/index.scss';
 
-import { getLinkName } from './Components/utils/utils';
-import { baseURL } from './Components/utils/define';
+import { getLinkName } from './datas/utils/utils';
+import { baseURL } from './datas/utils/define';
 
-import Header from './Components/Header';
-import SideBar from './Components/Menu/SideBar';
-import Content from './Components/Content';
-import { AutoLayoutStyle } from './Components/utils/CommonStyle';
+import Header from './components/Header';
+import SideBar from './components/Menu/SideBar';
+import Content from './components/Content';
+import { AutoLayoutStyle } from './components/styles/CommonStyle';
 
 const ContainerDiv = styled.div`
     ${AutoLayoutStyle};

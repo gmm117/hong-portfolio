@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import SidebarMenu from './SidebarMenu';
-import { baseURL } from '../utils/define';
+import { baseURL } from '../../datas/utils/define';
 
 import avatar_profile from '../../../imgs/avatar_profile.png';
 import github from '../../../imgs/github.svg';
 import blog from '../../../imgs/blog.svg';
-import { DeviceDirectWidth, AutoLayoutStyle } from '../utils/CommonStyle';
+import { DeviceDirectWidth, AutoLayoutStyle } from '../styles/CommonStyle';
 
 const SideBarDiv = styled.div`
     ${AutoLayoutStyle};

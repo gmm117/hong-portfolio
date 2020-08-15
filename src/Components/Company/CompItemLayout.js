@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import { DimensionDiv, TileThumbImg, DeviceDirectWidth, DirectSizeStyle, ListItemCircleImg } from '../utils/CommonStyle';
+import { DimensionDiv, TileThumbImg, DeviceDirectWidth, DirectSizeStyle, ListItemCircleImg } from '../styles/CommonStyle';
 
 const CompLi = styled.li`
     width: 100%;

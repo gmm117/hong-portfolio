@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import menu from '../../imgs/menu.png';
 
 import { DispatchContext } from '../App';
-import { AutoLayoutStyle } from './utils/CommonStyle';
+import { AutoLayoutStyle } from './styles/CommonStyle';
 
 const HeaderDiv = styled.div`
     display: flex;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
-import { DeviceDirectWidth, DirectHeightSizeStyle, DirectWidthSizeStyle, ListItemCircleImg } from '../utils/CommonStyle';
+import { DeviceDirectWidth, DirectHeightSizeStyle, DirectWidthSizeStyle, ListItemCircleImg } from '../styles/CommonStyle';
 
 export const CardItemLi = styled.li`
     display: flex;

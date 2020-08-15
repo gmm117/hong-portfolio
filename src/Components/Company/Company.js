@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { TileDiv, TileUl, TileItemComponentItem } from '../utils/CommonStyle';
-import { baseURL } from '../utils/define';
+import { TileDiv, TileUl, TileItemComponentItem } from '../styles/CommonStyle';
+import { baseURL } from '../../datas/utils/define';
 
 import bluebirdlogo from '../../../imgs/bluebirdsoft_logo.png';
 import hancom_logo from '../../../imgs/hancom_logo.png';

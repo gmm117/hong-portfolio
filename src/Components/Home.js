@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 import HomeImg from '../../imgs/bg-home.jpg';
-import { DeviceDirectWidth } from './utils/CommonStyle';
+import { DeviceDirectWidth } from './styles/CommonStyle';
 
 const HomeBody = styled.div`
     display: flex;

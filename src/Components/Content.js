@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { baseURL } from './utils/define';
+import { baseURL } from '../datas/utils/define';
 
 import Home from './Home';
 import About from './About';

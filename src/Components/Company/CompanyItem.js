@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
 import CompItemLayout from './CompItemLayout';
-import { ItemUl } from '../utils/CommonStyle';
+import { ItemUl } from '../styles/CommonStyle';
 
-import { getCompInfo } from './datas/compInfo';
-import { baseURL } from '../utils/define';
+import company from '../../datas/company';
+import { baseURL } from '../../datas/utils/define';
 
 function CompanyItem({ location, onLocationChange }) {
+    const { getCompInfo } = company;
     let newpathname = location.pathname.replace(baseURL, "");
     const [compInfos, setCompInfos] = useState(getCompInfo(newpathname.substr(1)));
     

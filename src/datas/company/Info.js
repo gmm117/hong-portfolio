@@ -1,15 +1,15 @@
-import webhwp_main from '../../../../imgs/webhwp_main.png';
-import webhwpctrl_main from '../../../../imgs/webhwpctrl_main.png';
-import elecchart_1 from '../../../../imgs/elecchart_1.png';
-import insurechart_1 from '../../../../imgs/insurechart_1.png';
-import oldinsurechart_1 from '../../../../imgs/oldinsurechart_1.png';
-import oldinsurepay_1 from '../../../../imgs/oldinsurepay_1.png';
-import modemdevelop_1 from '../../../../imgs/modemdevelop_1.png';
-import modemdevelop_2 from '../../../../imgs/modemdevelop_2.png';
-import windowsce_device_1 from '../../../../imgs/windowsce_device_1.png';
-import windowsmobile_device_1 from '../../../../imgs/windowsmobile_device_1.png';
+import webhwp_main from '../../../imgs/webhwp_main.png';
+import webhwpctrl_main from '../../../imgs/webhwpctrl_main.png';
+import elecchart_1 from '../../../imgs/elecchart_1.png';
+import insurechart_1 from '../../../imgs/insurechart_1.png';
+import oldinsurechart_1 from '../../../imgs/oldinsurechart_1.png';
+import oldinsurepay_1 from '../../../imgs/oldinsurepay_1.png';
+import modemdevelop_1 from '../../../imgs/modemdevelop_1.png';
+import modemdevelop_2 from '../../../imgs/modemdevelop_2.png';
+import windowsce_device_1 from '../../../imgs/windowsce_device_1.png';
+import windowsmobile_device_1 from '../../../imgs/windowsmobile_device_1.png';
 
-export const getCompInfo = (name) => {
+const getCompInfo = (name) => {
     let cpInfo = defaultCompInfos;
     
     switch(name) {
@@ -239,3 +239,6 @@ const bluebirdSoftInfos =
     }
 ];
 
+export default {
+    getCompInfo
+};

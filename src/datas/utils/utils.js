@@ -1,4 +1,4 @@
-import {baseURL} from './define';
+import { baseURL } from './define';
 
 export const getLinkName = (pathname) => {
     const newpathname = pathname.replace(baseURL, "");

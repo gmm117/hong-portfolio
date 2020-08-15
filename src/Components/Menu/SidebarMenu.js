@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { baseURL } from '../utils/define';
-import { LinkStyle, DeviceDirectWidth, DirectSizeStyle, DeviceDirectHeight } from '../utils/CommonStyle';
+import { baseURL } from '../../datas/utils/define';
+import { LinkStyle, DeviceDirectWidth, DirectSizeStyle, DeviceDirectHeight } from '../styles/CommonStyle';
 import homeImg from '../../../imgs/home.svg';
 import cubeImg from '../../../imgs/cube.svg';
 import userImg from '../../../imgs/user.svg';

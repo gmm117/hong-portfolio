@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { FeatureTitle, DeviceWidth, DeviceDirectWidth, DirectSizeStyle, AutoLayoutStyle, AutoLayoutDiv } from './utils/CommonStyle';
+import { FeatureTitle, DeviceWidth, DeviceDirectWidth, DirectSizeStyle, AutoLayoutStyle, AutoLayoutDiv } from './styles/CommonStyle';
 
 import Profile from '../../imgs/profile.jpg';
 import html5Img from '../../imgs/html5.png';

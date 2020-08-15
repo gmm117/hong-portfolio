@@ -1,44 +1,44 @@
-import portfolio from '../../../../imgs/portfolio.png';
-import more from '../../../../imgs/more.svg';
-import github from '../../../../imgs/github.svg';
-import link from '../../../../imgs/link.svg';
-import patents from '../../../../imgs/patents.svg';
+import portfolio from '../../../imgs/portfolio.png';
+import more from '../../../imgs/more.svg';
+import github from '../../../imgs/github.svg';
+import link from '../../../imgs/link.svg';
+import patents from '../../../imgs/patents.svg';
 
-import blog from '../../../../imgs/blog.png';
-import lightmarkdown_electron from '../../../../imgs/lightmarkdown_electron.png';
-import waple from '../../../../imgs/waple.png';
+import blog from '../../../imgs/blog.png';
+import lightmarkdown_electron from '../../../imgs/lightmarkdown_electron.png';
+import waple from '../../../imgs/waple.png';
 
-import typescriptImg from '../../../../imgs/typescript.png';
-import webpackImg from '../../../../imgs/webpack.png';
-import reactImg from '../../../../imgs/react.png';
-import react_typescriptImg from '../../../../imgs/react_typescript.png';
-import reduxImg from '../../../../imgs/redux.png';
-import mobxImg from '../../../../imgs/mobx.png';
-import svelteImg from '../../../../imgs/svelte.png';
-import denoImg from '../../../../imgs/deno.svg';
+import typescriptImg from '../../../imgs/typescript.png';
+import webpackImg from '../../../imgs/webpack.png';
+import reactImg from '../../../imgs/react.png';
+import react_typescriptImg from '../../../imgs/react_typescript.png';
+import reduxImg from '../../../imgs/redux.png';
+import mobxImg from '../../../imgs/mobx.png';
+import svelteImg from '../../../imgs/svelte.png';
+import denoImg from '../../../imgs/deno.svg';
 
 
-import patentsTopImg from '../../../../imgs/patents.jpg';
+import patentsTopImg from '../../../imgs/patents.jpg';
 
-export const getExpInfo = (name) => {
-    let cpInfo = DefaultInfos;
+const getExpInfo = (name) => {
+    let cpInfo = defaultInfos;
     
     switch(name) {
         case "Experience-Apps":
-            cpInfo = AppsInfos;
+            cpInfo = appsInfos;
             break;
         case "Experience-Study":
-            cpInfo = StudyInfos;
+            cpInfo = studyInfos;
             break;
         case "Experience-Work":
-            cpInfo = WorksInfos;
+            cpInfo = worksInfos;
             break;
     }
 
     return cpInfo;
 };
 
-const DefaultInfos = 
+const defaultInfos = 
 [
     {
         itemTitles: {
@@ -57,7 +57,7 @@ const DefaultInfos =
     }
 ];
 
-const AppsInfos = 
+const appsInfos = 
 [
     {
         itemTitles: {
@@ -228,7 +228,7 @@ const AppsInfos =
     }
 ];
 
-const StudyInfos = 
+const studyInfos = 
 [
     {
         itemTitles: {
@@ -528,7 +528,7 @@ const StudyInfos =
     }
 ];
 
-const WorksInfos = 
+const worksInfos = 
 [
     {
         itemTitles: {
@@ -566,3 +566,7 @@ const WorksInfos =
         oldIsShow: false
     }
 ];
+
+export default {
+    getExpInfo
+};

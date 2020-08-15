@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
 import ExperienceItemLayout from './ExperienceItemLayout';
-import { TileDiv, TileUl } from '../utils/CommonStyle';
+import { TileDiv, TileUl } from '../styles/CommonStyle';
 
-import { getExpInfo } from './datas/ExperienceItemInfo';
-import { baseURL } from '../utils/define';
+import experience from '../../datas/experience';
+import { baseURL } from '../../datas/utils/define';
 
 function ExperienceItem({ location, onLocationChange }) {
+    const { getExpInfo } = experience;
     let newpathname = location.pathname.replace(baseURL, "");
     const [expInfos, setExpInfos] = useState(getExpInfo(newpathname.substr(1)));
 

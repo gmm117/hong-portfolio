@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { TileDiv, TileUl, TileItemComponentItem } from '../utils/CommonStyle';
-import { baseURL } from '../utils/define';
+import { TileDiv, TileUl, TileItemComponentItem } from '../styles/CommonStyle';
+import { baseURL } from '../../datas/utils/define';
 
 import apps_logo from '../../../imgs/apps.png';
 import study_logo from '../../../imgs/study.png';
