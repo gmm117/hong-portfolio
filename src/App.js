@@ -6,7 +6,7 @@ import { getLinkName } from './datas/utils/utils';
 import { baseURL } from './datas/utils/define';
 
 import Header from './components/Header';
-import SideBar from './components/Menu/SideBar';
+import SideBar from './components/menu/SideBar';
 import Content from './components/Content';
 import { AutoLayoutStyle } from './components/styles/CommonStyle';
 

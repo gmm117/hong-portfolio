@@ -8,11 +8,11 @@ import Home from './Home';
 import About from './About';
 import Contact from './Contact';
 
-import Company from './Company/Company';
-import CompanyItem from './Company/CompanyItem';
+import Company from './company/Company';
+import CompanyItem from './company/CompanyItem';
 
-import Experience from './Experience/Experience';
-import ExperienceItem from './Experience/ExperienceItem';
+import Experience from './experience/Experience';
+import ExperienceItem from './experience/ExperienceItem';
 
 const ContentDiv = styled.div`
     width: 100%;
