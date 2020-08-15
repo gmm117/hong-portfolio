@@ -15,45 +15,45 @@ const SideBarMenuList = styled.li`
     display: flex;
     align-items: center;
     color: #8493A5;
-    padding : 1.0rem 1.5rem 1.0rem 0;
-    cursor : pointer;
-    height : 25px;
+    padding:1.0rem 1.5rem 1.0rem 0;
+    cursor:pointer;
+    height:25px;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { max : '767px' })} {
-        padding : 1.0rem 0 1.0rem 0;
+    @media ${DeviceDirectWidth( { max:'767px' })} {
+        padding:1.0rem 0 1.0rem 0;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectHeight( { max : '480px' })} {
-        padding : 0.3rem 0 0.3rem 0;
+    @media ${DeviceDirectHeight( { max:'480px' })} {
+        padding:0.3rem 0 0.3rem 0;
     }
 `;
 
 const LinkImgDiv = styled.div`
-    ${DirectSizeStyle({ width : '20px', height: '20px'})};
+    ${DirectSizeStyle({ width:'20px', height: '20px'})};
     margin-right: 0.5rem;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { max : '767px' })} {
-        ${DirectSizeStyle({ width : '30px', height: '30px'})};
+    @media ${DeviceDirectWidth( { max:'767px' })} {
+        ${DirectSizeStyle({ width:'30px', height: '30px'})};
         margin-right: 0;
     }
 `;
 
 const LinkImg = styled.img`
--    ${DirectSizeStyle({ width : '100%', height: '100%'})};
+-    ${DirectSizeStyle({ width:'100%', height: '100%'})};
 `;
 
 const LinkDesDiv = styled.span`
     color: #8493A5;
     font-size: 18px;
     &:hover {
-        color : white;
+        color:white;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { max : '767px' })} {
+    @media ${DeviceDirectWidth( { max:'767px' })} {
         display: none;
     }
 `;
@@ -61,11 +61,11 @@ const LinkDesDiv = styled.span`
 const LinkSubDiv = styled.div`
     display: flex;
     align-items: center;
-    ${DirectSizeStyle({ width : '100%', height: '100%'})};
+    ${DirectSizeStyle({ width:'100%', height: '100%'})};
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { max : '767px' })} {
-        justify-content : center;
+    @media ${DeviceDirectWidth( { max:'767px' })} {
+        justify-content:center;
     }
 `;
 
@@ -86,11 +86,11 @@ const SideBarComponentItem = ({ url, title, src, alt }) => {
 };
 
 const sideBarItem = [
-    { url : `${BaseURL}/`, title: 'Home', src: homeImg, alt: 'Home' },
-    { url : `${BaseURL}/About`, title: 'About', src: userImg, alt: 'About' },
-    { url : `${BaseURL}/Company`, title: 'Company', src: cubeImg, alt: 'Company Projects' },
-    { url : `${BaseURL}/Experience`, title: 'Experience', src: experienceImg, alt: 'Experience' },
-    { url : `${BaseURL}/Contact`, title: 'Contact', src: voiceMailImg, alt: 'Contact' }
+    { url:`${BaseURL}/`, title: 'Home', src: homeImg, alt: 'Home' },
+    { url:`${BaseURL}/About`, title: 'About', src: userImg, alt: 'About' },
+    { url:`${BaseURL}/Company`, title: 'Company', src: cubeImg, alt: 'Company Projects' },
+    { url:`${BaseURL}/Experience`, title: 'Experience', src: experienceImg, alt: 'Experience' },
+    { url:`${BaseURL}/Contact`, title: 'Contact', src: voiceMailImg, alt: 'Contact' }
 ];
 
 class SidebarMenu extends Component {

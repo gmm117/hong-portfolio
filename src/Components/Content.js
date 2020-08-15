@@ -43,6 +43,7 @@ function Content( { onLocationChange }) {
     }, [cheight]); 
 
     return(
+        /* jshint ignore:start */
         <ContentDiv cheight={cheight}>
             <Route exact path={`${BaseURL}/About`} component={( {location, match, history} ) => <About onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
             <Route exact path={`${BaseURL}/Contact`} component={( {location, match, history} ) => <Contact onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
@@ -56,6 +57,7 @@ function Content( { onLocationChange }) {
             </Switch>
             <Route exact path={`${BaseURL}/`} component={( {location, match, history} ) => <Home onLocationChange={onLocationChange} location={location} match={match} history={history} />} />
         </ContentDiv>
+        /* jshint ignore:end */
     );
 }
 

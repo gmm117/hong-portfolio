@@ -182,58 +182,58 @@ const OsstemImplantInfos =
 const BluebirdSoftInfos = 
 [
     {
-        title : "단말기 모뎀 디바이스 개발/이동통신사 품질보증",
-        sublist : {
-            date : "Aug 2010 - Apr 2012", 
-            type : "Wince/WindowsMobile System App",
-            role : "Embedded System Developer", 
-            skills : "C, C++, API, MFC", 
-            tools : "VS2015, PlatformBuilder, CVS",
-            url : {
-                href : "http://www.digitaltoday.co.kr/news/articleView.html?idxno=23131",
-                value : "BPL-10"
+        title: "단말기 모뎀 디바이스 개발/이동통신사 품질보증",
+        sublist: {
+            date: "Aug 2010 - Apr 2012", 
+            type: "Wince/WindowsMobile System App",
+            role: "Embedded System Developer", 
+            skills: "C, C++, API, MFC", 
+            tools: "VS2015, PlatformBuilder, CVS",
+            url: {
+                href: "http://www.digitaltoday.co.kr/news/articleView.html?idxno=23131",
+                value: "BPL-10"
             }, 
-            contents : {
-                content1 : "WindowsCE 5.0 단말기(BPL-10)에 내장된 모뎀디바이스 개발 및 품질보증 업무 담당(SKT,KT)", 
-                content2 : "WindowsCE 5.0, Windows Mobile 6.5 단말기(BIP-7000lite, BM-170) 모뎀디바이스 개발"
+            contents: {
+                content1: "WindowsCE 5.0 단말기(BPL-10)에 내장된 모뎀디바이스 개발 및 품질보증 업무 담당(SKT,KT)", 
+                content2: "WindowsCE 5.0, Windows Mobile 6.5 단말기(BIP-7000lite, BM-170) 모뎀디바이스 개발"
             }
         },
-        image : {
-            main : {
-                main_src : modemdevelop_1, 
-                main_alt : "BPL-10 모뎀디바이스 개발 및 품질보증 단말기 메인화면"
+        image: {
+            main: {
+                main_src: modemdevelop_1, 
+                main_alt: "BPL-10 모뎀디바이스 개발 및 품질보증 단말기 메인화면"
             },
-            thumnail1 : {
-                thumnail1_src : modemdevelop_2, 
-                thumnail1_alt : "WinCE, WindowsMobile 모뎀디바이스 개발 단말기 메인화면"
+            thumnail1: {
+                thumnail1_src: modemdevelop_2, 
+                thumnail1_alt: "WinCE, WindowsMobile 모뎀디바이스 개발 단말기 메인화면"
             }
         }
     },
     {
-        title : "Wince, WindowsMobile 단말기 개발",
-        sublist : {
-            date : "Jun 2010 - Apr 2012", 
-            type : "Wince/WindowsMobile System App",
-            role : "Embedded System Developer", 
-            skills : "C, C++, API, MFC", 
-            tools : "VS2015, PlatformBuilder, CVS",
-            url : {
-                href : "http://bluebirdcorp.com/products/Mobile-Computers/Handheld-Computers/BIP7000",
-                value : "BPL-10"
+        title: "Wince, WindowsMobile 단말기 개발",
+        sublist: {
+            date: "Jun 2010 - Apr 2012", 
+            type: "Wince/WindowsMobile System App",
+            role: "Embedded System Developer", 
+            skills: "C, C++, API, MFC", 
+            tools: "VS2015, PlatformBuilder, CVS",
+            url: {
+                href: "http://bluebirdcorp.com/products/Mobile-Computers/Handheld-Computers/BIP7000",
+                value: "BPL-10"
             }, 
-            contents : {
-                content1 : "WindowsCE 5.0 단말기(BPL-10)를 이용한 현장 결제 기능 개발 및 단말기 유지보수", 
-                content2 : "Windows Mobile 5.1/6.1/65060/6530 버전의 단말기 개발"
+            contents: {
+                content1: "WindowsCE 5.0 단말기(BPL-10)를 이용한 현장 결제 기능 개발 및 단말기 유지보수", 
+                content2: "Windows Mobile 5.1/6.1/65060/6530 버전의 단말기 개발"
             }
         },
-        image : {
-            main : {
-                main_src : windowsce_device_1, 
-                main_alt : "WinCE 5.0 단말기 메인화면"
+        image: {
+            main: {
+                main_src: windowsce_device_1, 
+                main_alt: "WinCE 5.0 단말기 메인화면"
             },
-            thumnail1 : {
-                thumnail1_src : windowsmobile_device_1, 
-                thumnail1_alt : "Windows Mobile 5.1/6.1/65060/6530 단말기 메인화면"
+            thumnail1: {
+                thumnail1_src: windowsmobile_device_1, 
+                thumnail1_alt: "Windows Mobile 5.1/6.1/65060/6530 단말기 메인화면"
             }
         }
     }

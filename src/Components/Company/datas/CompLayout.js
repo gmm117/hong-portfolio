@@ -4,9 +4,9 @@ import styled, { css } from 'styled-components';
 import { DimensionDiv, TileThumbImg, DeviceDirectWidth, DirectSizeStyle, ListItemCircleImg } from '../../Utils/CommonStyle';
 
 const CompLi = styled.li`
-    width : 100%;
-    margin : 0 40px;
-    display : flex;
+    width: 100%;
+    margin: 0 40px;
+    display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
@@ -14,22 +14,22 @@ const CompLi = styled.li`
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min : '0', max : '320px' })} {
+    @media ${DeviceDirectWidth( { min: '0', max: '320px' })} {
         min-height: 200px;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min : '321px', max : '767px' })} {
+    @media ${DeviceDirectWidth( { min: '321px', max: '767px' })} {
         min-height: 250px;
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
+    @media ${DeviceDirectWidth( { min: '768px', max: '991px' })} {
         min-height: 300px;
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min : '992px' })} {
+    @media ${DeviceDirectWidth( { min: '992px' })} {
         min-height: 350px;
     }
 `;
@@ -37,26 +37,26 @@ const CompLi = styled.li`
 const CompItemDiv = styled.div`
     width: 100%;
     box-sizing : border-box;
-    padding : 20px;
+    padding: 20px;
 `;
 
 const CompItemContentDiv = styled.div`
-    width : 100%;
-    height : 30px;
-    box-sizing : border-box;
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
 `;
 
 const CompItemContentTitleDiv = styled.div`
-    display : flex;
-    color : #008073;
+    display: flex;
+    color: #008073;
     font-size: 20px;
-    font-weight : 600;
+    font-weight: 600;
 
     ${css`
         >span {
-            cursor : pointer;
-            height : 12px;
-            padding-bottom : 10px;
+            cursor: pointer;
+            height: 12px;
+            padding-bottom: 10px;
             &:hover {
                 border-bottom : 2px solid #008073;
             }
@@ -65,25 +65,25 @@ const CompItemContentTitleDiv = styled.div`
 `;
 
 const CompItemContentHr = styled.hr`
-    height : 1px;
-    width : 100%;
-    border : none;
+    height: 1px;
+    width: 100%;
+    border: none;
     background: rgba(0, 0, 0, .1);
-    margin : 10px 0;
+    margin: 10px 0;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { max : '767px' })} {
-        margin : 5px 0;
+    @media ${DeviceDirectWidth( { max: '767px' })} {
+        margin: 5px 0;
     }
 `;
 
 const CompItemBottomDiv = styled.div`
-    width : 100%;
-    padding-top : 20px;
+    width: 100%;
+    padding-top: 20px;
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min : '768px' })} {
-        display : flex;
+    @media ${DeviceDirectWidth( { min: '768px' })} {
+        display: flex;
     }
 `;
 
@@ -102,7 +102,7 @@ const CompItemImgScale = (scale) => css`
 `;
 
 const CompItemImgDiv = styled.div`
-    cursor:pointer;
+    cursor: pointer;
     box-shadow: 0 1px 10px rgba(0,21,41,0.08);
 
     &:hover {
@@ -110,7 +110,7 @@ const CompItemImgDiv = styled.div`
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min : '375px', max : '520px' })} {
+    @media ${DeviceDirectWidth( { min: '375px', max: '520px' })} {
         ${DirectSizeStyle({width: '200px', height: '200px'})}; 
 
         &:hover {
@@ -119,7 +119,7 @@ const CompItemImgDiv = styled.div`
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min : '521px', max : '767px' })} {
+    @media ${DeviceDirectWidth( { min: '521px', max: '767px' })} {
         ${DirectSizeStyle({width: '250px', height: '250px'})}; 
 
         &:hover {
@@ -128,15 +128,15 @@ const CompItemImgDiv = styled.div`
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
+    @media ${DeviceDirectWidth( { min: '768px', max: '991px' })} {
         ${DirectSizeStyle({width: '300px', height: '300px'})}; 
-        margin-right : 35px;
+        margin-right: 35px;
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min : '992px' })} {
+    @media ${DeviceDirectWidth( { min: '992px' })} {
         ${DirectSizeStyle({width: '350px', height: '350px'})}; 
-        margin-right : 40px;
+        margin-right: 40px;
     }
 `;
 
@@ -144,70 +144,72 @@ const CompItemDetailDiv = styled.div`
     width : 100%;
  
     div + div {
-        margin-top : 10px;
+        margin-top: 10px;
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min : '992px' })} {
-        font-size : 16px;
-        justify-content : center;
+    @media ${DeviceDirectWidth( { min: '992px' })} {
+        font-size: 16px;
+        justify-content: center;
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
-        font-size : 14px;
-        justify-content : center;
+    @media ${DeviceDirectWidth( { min: '768px', max: '991px' })} {
+        font-size: 14px;
+        justify-content: center;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min : '320px', max : '767px' })} {
-        font-size : 12px;
-        margin-top : 15px;
-        justify-content : flex-start;
+    @media ${DeviceDirectWidth( { min: '320px', max: '767px' })} {
+        font-size: 12px;
+        margin-top: 15px;
+        justify-content: flex-start;
     }
 `;
 
 const CompItemDetailDetailDiv = styled.div`
-    display : flex;
-    align-items : center;
-    font-weight : 600;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
 `;
 
 const CompItemDetailDetailContentDiv = styled.div`
-    padding-left : 20px;
-    font-weight : 600;
+    padding-left: 20px;
+    font-weight: 600;
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min : '992px' })} {
-        font-size : 16px;
+    @media ${DeviceDirectWidth( { min: '992px' })} {
+        font-size: 16px;
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min : '768px', max : '991px' })} {
-        font-size : 14px;
+    @media ${DeviceDirectWidth( { min: '768px', max: '991px' })} {
+        font-size: 14px;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min : '320px', max : '767px' })} {
-        font-size : 12px;
+    @media ${DeviceDirectWidth( { min: '320px', max: '767px' })} {
+        font-size: 12px;
     }
 `;
 
 const CompItemActionDiv = styled.div`
     background: rgba(0, 0, 0, 0.05);
     padding: 20px;
-    font-weight : 600;
-    width : 100%;
+    font-weight: 600;
+    width: 100%;
     box-sizing: border-box;
 `;
 
 const CompListItem = (src, desc) => {
     return (
         src ? (
+            /* jshint ignore:start */
             <CompItemDetailDetailDiv>
                 <ListItemCircleImg />
                 { desc + ': ' + src }
             </CompItemDetailDetailDiv>
+            /* jshint ignore:end */
         ) : null
     );
 };

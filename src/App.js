@@ -14,12 +14,12 @@ const ContainerDiv = styled.div`
     ${AutoLayoutStyle};
     display: flex;  
     color: rgba(100, 100, 100, 0.75);
-    overflow : hidden;
+    overflow: hidden;
 `;
 
 const ContentDiv = styled.div`
     ${AutoLayoutStyle};
-    overflow : auto;
+    overflow: auto;
     position: relative;
 `;
 
@@ -30,7 +30,7 @@ function reducer(state, action) {
         ...state,
         isSidebarOpen: !state.isSidebarOpen };
       case "CHANGE_NAVIGATOR_NAME":
-        if(action.navName === state.navName)
+        if (action.navName === state.navName)
           return state;
 
         return {
@@ -45,8 +45,8 @@ export const DispatchContext = createContext(null);
 
 function App() {
   const [appState, dispatch] = useReducer(reducer, {
-    navName : "Home", 
-    isSidebarOpen : true,
+    navName: "Home", 
+    isSidebarOpen: true,
   });
 
   const {navName, isSidebarOpen} = appState;
@@ -55,12 +55,13 @@ function App() {
     var name = GetLinkName(location.pathname);
     name = name.replace(BaseURL, "");
     dispatch({
-      type : "CHANGE_NAVIGATOR_NAME",
-      navName : name
+      type: "CHANGE_NAVIGATOR_NAME",
+      navName: name
     });
   }, [navName]);
 
   return (
+    /* jshint ignore:start */
     <ContainerDiv>
       <SideBar 
         isSidebarOpen={isSidebarOpen}
@@ -74,7 +75,8 @@ function App() {
         <Content onLocationChange={onLocationChange}/>
       </ContentDiv>
     </ContainerDiv>
+    /* jshint ignore:end */
   );
-};
+}
 
 export default App;

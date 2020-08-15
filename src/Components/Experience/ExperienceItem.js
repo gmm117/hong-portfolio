@@ -14,6 +14,7 @@ function ExperienceItem( { location, onLocationChange } ) {
     
 
     return(
+        /* jshint ignore:start */
         <TileDiv>
             <TileUl>
                 {
@@ -21,7 +22,8 @@ function ExperienceItem( { location, onLocationChange } ) {
                 }
             </TileUl>
         </TileDiv>
+        /* jshint ignore:end */
     );
-};
+}
 
 export default ExperienceItem;

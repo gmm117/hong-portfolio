@@ -18,6 +18,7 @@ function Experience({ location, onLocationChange }) {
     }, []);
 
     return (
+        /* jshint ignore:start */
         <TileDiv>
             <TileUl>
                 {
@@ -27,6 +28,7 @@ function Experience({ location, onLocationChange }) {
                 }
             </TileUl>
         </TileDiv>
+        /* jshint ignore:end */
     );
 }
 

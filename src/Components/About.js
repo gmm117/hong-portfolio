@@ -29,9 +29,9 @@ const AboutBody = styled.div`
     font-size: 14px; 
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif;
     
-    font-weight : 600;
-    line-height : 1.0;
-    padding : 30px;
+    font-weight: 600;
+    line-height: 1.0;
+    padding: 30px;
 `;
 
 const IntroduceDiv = styled.div`
@@ -39,18 +39,18 @@ const IntroduceDiv = styled.div`
 
     /* Tablet Device */
     @media ${DeviceDirectWidth( { max: '991px' })} {
-        display : flex;
+        display: flex;
         flex-direction: column;
-        align-items : center;
+        align-items: center;
 
         font-size: 17px; 
-        line-height : 1.3;
+        line-height: 1.3;
     }
 
     /* Desktop Device */
     @media ${DeviceDirectWidth( { min: '992px' })} {
         font-size: 20px; 
-        line-height : 1.3;
+        line-height: 1.3;
     }
 `;
 
@@ -70,7 +70,7 @@ const ProfileImage = styled.img.attrs({
   })`
        
     ${DirectSizeStyle({ width: '300px', height: '300px' })};
-    border-radius : 10%;
+    border-radius: 10%;
 
     /* Mobile Device */    
     @media ${DeviceDirectWidth( { max: '320px' })} {
@@ -79,7 +79,7 @@ const ProfileImage = styled.img.attrs({
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min : '321px', max: '767px' })} {
+    @media ${DeviceDirectWidth( { min: '321px', max: '767px' })} {
         ${DirectSizeStyle({ width: '250px', height: '250px' })};
         margin: 0px 0px 15px 0px; 
     }
@@ -92,11 +92,11 @@ const ProfileImage = styled.img.attrs({
 `;
 
 const AboutTitleDiv = styled.div`
-    width : 100%;
-    margin : 30px auto;
-    font-weight : 600px;
-    position : relative;
-    text-align : center;
+    width: 100%;
+    margin: 30px auto;
+    font-weight: 600px;
+    position: relative;
+    text-align: center;
 
     ${FeatureTitle('30%')};
 
@@ -126,26 +126,26 @@ const AboutTitleDiv = styled.div`
 `;
 
 const AboutSkillDiv = styled.div`
-    width : 100%;
-    margin : 130px 0 0 0;
+    width: 100%;
+    margin: 130px 0 0 0;
 `;
 
 const SkillDiv = styled.div`
-    display : flex;
+    display: flex;
     flex: 1;
-    margin : 0 auto;
-    width : 100%;
+    margin: 0 auto;
+    width: 100%;
     flex-direction: column;
 `;
 
 const SkillItemDiv = styled.div`
-    width : 100%;
-    display : flex;
+    width: 100%;
+    display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
     margin: 0 auto 60px 0;
-    box-sizing : border-box;
+    box-sizing: border-box;
     color: #333;
     font-family: Noto Sans Medium,AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;
 `;
@@ -176,49 +176,49 @@ const SkillItemTitle = styled.div`
 `;
 
 const SkillItemListDiv = styled.div`
-    display : flex;
-    align-item : center;
-    flex-wrap : wrap;
+    display: flex;
+    align-item: center;
+    flex-wrap: wrap;
 `;
 
 const SkillItemListDetailDiv = styled.div`
-    display : flex;
-    align-items : center;
-    flex-direction : column;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     box-sizing: border-box;
-    text-align : center;
+    text-align: center;
 
     /* Mobile Device */
    
-    @media ${DeviceDirectWidth( { min : '0px', max: '320px' })} {
-        margin : 10px 20px 0 0;
+    @media ${DeviceDirectWidth( { min: '0px', max: '320px' })} {
+        margin: 10px 20px 0 0;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min : '321px', max: '767px' })} {
-        margin : 10px 25px 0 0;
+    @media ${DeviceDirectWidth( { min: '321px', max: '767px' })} {
+        margin: 10px 25px 0 0;
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min : '768px', max: '991px' })} {
-        margin : 10px 35px 0 0;
+    @media ${DeviceDirectWidth( { min: '768px', max: '991px' })} {
+        margin: 10px 35px 0 0;
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min : '992px'})} {
-        margin : 10px 45px 0 0;
+    @media ${DeviceDirectWidth( { min: '992px'})} {
+        margin: 10px 45px 0 0;
     }
 `;
 
 const SkillItemListDetailImg = styled.img`
-    max-width : 100px;
+    max-width: 100px;
     min-height: 100px;  
     max-height: 100px;
-    padding-bottom : 8px;
+    padding-bottom: 8px;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { max : '767px'})} {
-        max-width : 70px;
+    @media ${DeviceDirectWidth( { max: '767px'})} {
+        max-width: 70px;
         min-height: 70px;  
         max-height: 70px;
     }
@@ -226,7 +226,7 @@ const SkillItemListDetailImg = styled.img`
 
 const AboutCurFocusDiv = styled.div`
     display: flex;
-    line-height : 1.3;
+    line-height: 1.3;
     color: black;
     margin-top: 15px;
 
@@ -242,28 +242,28 @@ const AboutCurFocusDiv = styled.div`
 `;
 
 const SkillListDatas = [
-    { title: 'HTML', items : [ 
+    { title: 'HTML', items: [ 
         { img: html5Img, alt: "HTML5 IMAGE", desc: "HTML5"},
         { img: reactImg, alt: "JSX IMAGE", desc: "JSX"}
     ]},
-    { title: 'STYLE', items : [ 
+    { title: 'STYLE', items: [ 
         { img: css3Img, alt: "CSS3 IMAGE", desc: "CSS3"},
         { img: sassImg, alt: "SCSS IMAGE", desc: "SCSS"},
         { img: styleComponentsImg, alt: "STYLE_COMPONENTS IMAGE", desc: "Style Components"}
     ]},
-    { title: 'JAVSCRIPT', items : [ 
+    { title: 'JAVSCRIPT', items: [ 
         { img: reactImg, alt: "REACT IMAGE", desc: "REACT"},
         { img: javascriptImg, alt: "JAVASCRIPT IMAGE", desc: "JAVASCRIPT"},
         { img: typescriptImg, alt: "TYPESCRIPT IMAGE", desc: "TYPESCRIPT"},
         { img: nodejsImg, alt: "NODEJS IMAGE", desc: "NodeJS"}
     ]},
-    { title: 'WINDOWS', items : [ 
+    { title: 'WINDOWS', items: [ 
         { img: cImg, alt: "C IMAGE", desc: "C"},
         { img: cplusplusImg, alt: "C++ IMAGE", desc: "C++"},
         { img: csharpImg, alt: "C# IMAGE", desc: "C#"},
         { img: wpfImg, alt: "WPF IMAGE", desc: "WPF"}
     ]},
-    { title: 'OTHERS', items : [ 
+    { title: 'OTHERS', items: [ 
         { img: electronImg, alt: "ELECTRON IMAGE", desc: "ELECTRON"},
         { img: webpackImg, alt: "WEBPACK IMAGE", desc: "WEBPACK"},
         { img: parcelImg, alt: "PARCEL IMAGE", desc: "PARCEL"},
@@ -275,6 +275,7 @@ const SkillListDatas = [
 
 const SkillListItem = ({ title, items }) => {
     return (
+        /* jshint ignore:start */
         <SkillItemDiv>
             <SkillItemContentDiv>
                 <SkillItemTitle>{title}</SkillItemTitle>
@@ -285,11 +286,12 @@ const SkillListItem = ({ title, items }) => {
                                 <SkillItemListDetailImg src={item.img} alt={item.alt}></SkillItemListDetailImg>
                                 {item.desc}
                             </SkillItemListDetailDiv>
-                        )): null
+                        )) : null
                     }
                 </SkillItemListDiv>
             </SkillItemContentDiv>
         </SkillItemDiv>
+        /* jshint ignore:end */
     );
 };
 
@@ -299,6 +301,7 @@ function About({ location, onLocationChange }) {
     }, [location, onLocationChange]);
 
     return (
+        /* jshint ignore:start */
         <AboutBody>
             <IntroduceDiv className="clearfix">
                 <AboutTitleDiv>INTRODUCE</AboutTitleDiv>
@@ -327,6 +330,7 @@ function About({ location, onLocationChange }) {
                 </SkillDiv>
             </AboutSkillDiv>
         </AboutBody>
+        /* jshint ignore:end */
     );
 }
 

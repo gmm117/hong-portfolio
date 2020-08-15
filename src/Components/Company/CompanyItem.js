@@ -14,11 +14,13 @@ function CompanyItem( {location, onLocationChange} ) {
     }, []);
 
     return(
+        /* jshint ignore:start */
         <ItemUl>
             {
                 compInfos.map((compInfo, index) => <CompLayout key={index} compInfo={compInfo} /> )
             }
         </ItemUl>
+        /* jshint ignore:end */
     );
 };
 

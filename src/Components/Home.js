@@ -5,39 +5,39 @@ import HomeImg from '../../imgs/bg-home.jpg';
 import { DeviceDirectWidth } from './Utils/CommonStyle';
 
 const HomeBody = styled.div`
-    display : flex;
-    justify-content : center;
-    align-items : center;
-    font-weight : 600;
-    font-size : 50px;
-    color : #008073;
-    height : 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 50px;
+    color: #008073;
+    height: 100%;
     background: url(${HomeImg}) no-repeat center center;
-    background-size : cover;
+    background-size: cover;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min : '320px', max : '399px'})} {
-        font-size : 20px;
+    @media ${DeviceDirectWidth( { min: '320px', max: '399px'})} {
+        font-size: 20px;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min : '400px', max : '520px'})} {
-        font-size : 30px;
+    @media ${DeviceDirectWidth( { min: '400px', max: '520px'})} {
+        font-size: 30px;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min : '521px', max : '767px'})} {
-        font-size : 40px;
+    @media ${DeviceDirectWidth( { min: '521px', max: '767px'})} {
+        font-size: 40px;
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min : '768px', max : '991px'})} {
-        font-size : 50px;
+    @media ${DeviceDirectWidth( { min: '768px', max: '991px'})} {
+        font-size: 50px;
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min : '992px'})} {
-        font-size : 60px;
+    @media ${DeviceDirectWidth( { min: '992px'})} {
+        font-size: 60px;
     }
 `;
 
@@ -48,9 +48,11 @@ function Home( { location, onLocationChange } ) {
     }, []);
 
     return (
+        /* jshint ignore:start */
         <HomeBody>
             Challenge, Effort, Share
         </HomeBody>
+        /* jshint ignore:end */
     );
 }
 

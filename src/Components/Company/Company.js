@@ -22,6 +22,7 @@ class Company extends Component {
 
     render() {
         return (
+            /* jshint ignore:start */
             <TileDiv>
                 <TileUl>
                     {
@@ -31,8 +32,9 @@ class Company extends Component {
                     }
                 </TileUl>
             </TileDiv>
+            /* jshint ignore:end */
         );
     }
-};
+}
 
 export default Company;

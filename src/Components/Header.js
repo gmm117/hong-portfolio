@@ -21,16 +21,16 @@ const NavDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width : 20px;
-    min-width : 20px;
-    height : 20px;
-    min-height : 20px;
-    cursor : pointer;
-    margin : 0 15px 0 5px;
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    min-height: 20px;
+    cursor: pointer;
+    margin: 0 15px 0 5px;
 `;
 
 const NavTitle = styled.span`
-    color : #97A8BE;
+    color: #97A8BE;
     font: 14px;
 `;
 
@@ -43,17 +43,19 @@ function Header( { navName } ) {
 
     const onSideClick = useCallback(() => {
         dispatch({
-            type : "OPEN_SIDEBAR"
+            type: "OPEN_SIDEBAR"
         });
     }, [dispatch]);
 
     return (
+        /* jshint ignore:start */
         <HeaderDiv>
             <NavDiv onClick={onSideClick}>
                 <NavImg src={menu} alt="Navigator" />
             </NavDiv>
             <NavTitle>{navName}</NavTitle>
         </HeaderDiv>
+        /* jshint ignore:end */
     );
 }
 
