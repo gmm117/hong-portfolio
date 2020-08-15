@@ -52,22 +52,22 @@ const ContactItemImg = styled.img`
     cursor: pointer;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { max: '425px'})} {
+    @media ${DeviceDirectWidth({ max: '425px'})} {
         ${DirectSizeStyle({ width: '25px', height: '25px' })};        
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '426px', max: '768px'})} {
+    @media ${DeviceDirectWidth({ min: '426px', max: '768px'})} {
         ${DirectSizeStyle({ width: '30px', height: '30px' })};
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min: '769px', max: '991px'})} {
+    @media ${DeviceDirectWidth({ min: '769px', max: '991px'})} {
         ${DirectSizeStyle({ width: '35px', height: '35px' })};
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px'})} {
+    @media ${DeviceDirectWidth({ min: '992px'})} {
         ${DirectSizeStyle({ width: '40px', height: '40px' })};
     }
 `;
@@ -82,22 +82,22 @@ const ContactItemDiv = styled.div`
     padding-left: 5px;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { max: '425px'})} {
+    @media ${DeviceDirectWidth({ max: '425px'})} {
         font-size: 10px;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '426px', max: '768px'})} {
+    @media ${DeviceDirectWidth({ min: '426px', max: '768px'})} {
         font-size: 15px;
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min: '769px', max: '991px'})} {
+    @media ${DeviceDirectWidth({ min: '769px', max: '991px'})} {
         font-size: 20px;
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px'})} {
+    @media ${DeviceDirectWidth({ min: '992px'})} {
         font-size: 25px;
     }
 `;
@@ -127,7 +127,7 @@ const ContactItemSubDiv = styled.div`
 `;
 
 
-function Contact( {location, onLocationChange}) {
+function Contact({location, onLocationChange}) {
     useEffect(() => {
         onLocationChange(location);
     }, [location, onLocationChange]);

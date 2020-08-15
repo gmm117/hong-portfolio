@@ -30,8 +30,9 @@ function reducer(state, action) {
         ...state,
         isSidebarOpen: !state.isSidebarOpen };
       case "CHANGE_NAVIGATOR_NAME":
-        if (action.navName === state.navName)
+        if (action.navName === state.navName) {
           return state;
+        }
 
         return {
           ...state,
@@ -52,7 +53,7 @@ function App() {
   const {navName, isSidebarOpen} = appState;
 
   const onLocationChange = useCallback((location) => {
-    var name = GetLinkName(location.pathname);
+    let name = GetLinkName(location.pathname);
     name = name.replace(BaseURL, "");
     dispatch({
       type: "CHANGE_NAVIGATOR_NAME",

@@ -124,12 +124,12 @@ export const TileDiv = styled.div`
     margin: 0 auto;
     max-width: 1550px;
 
-    @media ${DeviceDirectWidth( { max: '991px' })} {
+    @media ${DeviceDirectWidth({ max: '991px' })} {
         width: 90%;
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px' })} {
+    @media ${DeviceDirectWidth({ min: '992px' })} {
         width: 95%;
     }
 `;
@@ -145,15 +145,15 @@ export const TileUl = styled.ul`
     color: #333;
     font-family: Noto Sans Medium,AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;
 
-    @media ${DeviceDirectWidth( { max: '320px' })} {
+    @media ${DeviceDirectWidth({ max: '320px' })} {
         padding: 0px 5px;
     }
 
-    @media ${DeviceDirectWidth( { min: '321px', max: '375px' })} {
+    @media ${DeviceDirectWidth({ min: '321px', max: '375px' })} {
         padding: 0px 10px;
     }
 
-    @media ${DeviceDirectWidth( { min: '376px' })} {
+    @media ${DeviceDirectWidth({ min: '376px' })} {
         padding: 0px 25px;
     }
 `;
@@ -172,29 +172,29 @@ const TileItemLi = styled.li`
     margin: 0 auto;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '0', max: '320px' })} {
+    @media ${DeviceDirectWidth({ min: '0', max: '320px' })} {
         padding: 76px 0 0;
         ${DirectSizeStyle({ width: '200px', height: '200px' })}; 
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '321px', max: '500px' })} {
+    @media ${DeviceDirectWidth({ min: '321px', max: '500px' })} {
         padding: 76px 0 0;
         ${DirectSizeStyle({ width: '250px', height: '250px' })}; 
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '501px', max: '767px' })} {
+    @media ${DeviceDirectWidth({ min: '501px', max: '767px' })} {
         ${DirectSizeStyle({ width: '300px', height: '300px' })}; 
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min: '768px', max: '991px' })} {
+    @media ${DeviceDirectWidth({ min: '768px', max: '991px' })} {
         ${DirectSizeStyle({ width: '350px', height: '350px' })}; 
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px' })} {
+    @media ${DeviceDirectWidth({ min: '992px' })} {
         ${DirectSizeStyle({ width: '400px', height: '400px' })}; 
     }
 `;
@@ -210,27 +210,27 @@ const TileThumbDiv = styled.div`
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '0', max: '320px' })} {
+    @media ${DeviceDirectWidth({ min: '0', max: '320px' })} {
         ${DirectHeightSizeStyle('200px')};
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '321px', max: '500px' })} {
+    @media ${DeviceDirectWidth({ min: '321px', max: '500px' })} {
         ${DirectHeightSizeStyle('250px')};
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '501px', max: '767px' })} {
+    @media ${DeviceDirectWidth({ min: '501px', max: '767px' })} {
         ${DirectHeightSizeStyle('300px')};
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min: '768px', max: '991px' })} {
+    @media ${DeviceDirectWidth({ min: '768px', max: '991px' })} {
         ${DirectHeightSizeStyle('350px')};
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px' })} {
+    @media ${DeviceDirectWidth({ min: '992px' })} {
         ${DirectHeightSizeStyle('400px')};
     }
 `;
@@ -321,17 +321,17 @@ export const ListItemCircleImg = styled.img.attrs({
     margin-right: 5px;
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px' })} {
+    @media ${DeviceDirectWidth({ min: '992px' })} {
         ${DirectSizeStyle({width: '5px', height: '5px'})}; 
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min: '768px', max: '991px' })} {
+    @media ${DeviceDirectWidth({ min: '768px', max: '991px' })} {
         ${DirectSizeStyle({width: '3px', height: '3px'})}; 
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { max: '767px' })} {
+    @media ${DeviceDirectWidth({ max: '767px' })} {
         ${DirectSizeStyle({width: '2px', height: '2px'})}; 
     }
 `;

@@ -20,12 +20,12 @@ const SideBarMenuList = styled.li`
     height:25px;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { max:'767px' })} {
+    @media ${DeviceDirectWidth({ max:'767px' })} {
         padding:1.0rem 0 1.0rem 0;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectHeight( { max:'480px' })} {
+    @media ${DeviceDirectHeight({ max:'480px' })} {
         padding:0.3rem 0 0.3rem 0;
     }
 `;
@@ -35,7 +35,7 @@ const LinkImgDiv = styled.div`
     margin-right: 0.5rem;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { max:'767px' })} {
+    @media ${DeviceDirectWidth({ max:'767px' })} {
         ${DirectSizeStyle({ width:'30px', height: '30px'})};
         margin-right: 0;
     }
@@ -53,7 +53,7 @@ const LinkDesDiv = styled.span`
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { max:'767px' })} {
+    @media ${DeviceDirectWidth({ max:'767px' })} {
         display: none;
     }
 `;
@@ -64,7 +64,7 @@ const LinkSubDiv = styled.div`
     ${DirectSizeStyle({ width:'100%', height: '100%'})};
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { max:'767px' })} {
+    @media ${DeviceDirectWidth({ max:'767px' })} {
         justify-content:center;
     }
 `;

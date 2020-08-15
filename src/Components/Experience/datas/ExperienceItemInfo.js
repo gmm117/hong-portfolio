@@ -46,9 +46,7 @@ const DefaultInfos =
             revealtitle: "준비중입니다."
         },
         itemDesc: "",
-        itemContents: {
-            
-        },
+        itemContents: {},
         itemFooters: {
             
         },

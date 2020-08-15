@@ -5,7 +5,7 @@ import { GetCompInfo } from './datas/CompInfo';
 import CompLayout from './datas/CompLayout';
 import { ItemUl } from '../Utils/CommonStyle';
 
-function CompanyItem( {location, onLocationChange} ) {
+function CompanyItem({ location, onLocationChange }) {
     let newpathname = location.pathname.replace(BaseURL, "");
     const [compInfos, setCompInfos] = useState(GetCompInfo(newpathname.substr(1)));
     

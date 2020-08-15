@@ -38,7 +38,7 @@ const IntroduceDiv = styled.div`
     ${AutoLayoutStyle};
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { max: '991px' })} {
+    @media ${DeviceDirectWidth({ max: '991px' })} {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -48,7 +48,7 @@ const IntroduceDiv = styled.div`
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px' })} {
+    @media ${DeviceDirectWidth({ min: '992px' })} {
         font-size: 20px; 
         line-height: 1.3;
     }
@@ -56,7 +56,7 @@ const IntroduceDiv = styled.div`
 
 const ProfileDiv = styled.div`
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { max: '767px' })} {
+    @media ${DeviceDirectWidth({ max: '767px' })} {
         width: 100%;
         display: flex;
         align-items: center;
@@ -73,19 +73,19 @@ const ProfileImage = styled.img.attrs({
     border-radius: 10%;
 
     /* Mobile Device */    
-    @media ${DeviceDirectWidth( { max: '320px' })} {
+    @media ${DeviceDirectWidth({ max: '320px' })} {
         ${DirectSizeStyle({ width: '100%', height: '200px' })};
         margin: 0px 0px 15px 0px; 
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '321px', max: '767px' })} {
+    @media ${DeviceDirectWidth({ min: '321px', max: '767px' })} {
         ${DirectSizeStyle({ width: '250px', height: '250px' })};
         margin: 0px 0px 15px 0px; 
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '768px' })} {
+    @media ${DeviceDirectWidth({ min: '768px' })} {
         float: left; 
         margin: 0px 15px 5px 0px;
     }
@@ -190,22 +190,22 @@ const SkillItemListDetailDiv = styled.div`
 
     /* Mobile Device */
    
-    @media ${DeviceDirectWidth( { min: '0px', max: '320px' })} {
+    @media ${DeviceDirectWidth({ min: '0px', max: '320px' })} {
         margin: 10px 20px 0 0;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '321px', max: '767px' })} {
+    @media ${DeviceDirectWidth({ min: '321px', max: '767px' })} {
         margin: 10px 25px 0 0;
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min: '768px', max: '991px' })} {
+    @media ${DeviceDirectWidth({ min: '768px', max: '991px' })} {
         margin: 10px 35px 0 0;
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px'})} {
+    @media ${DeviceDirectWidth({ min: '992px'})} {
         margin: 10px 45px 0 0;
     }
 `;
@@ -217,7 +217,7 @@ const SkillItemListDetailImg = styled.img`
     padding-bottom: 8px;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { max: '767px'})} {
+    @media ${DeviceDirectWidth({ max: '767px'})} {
         max-width: 70px;
         min-height: 70px;  
         max-height: 70px;
@@ -231,39 +231,39 @@ const AboutCurFocusDiv = styled.div`
     margin-top: 15px;
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { max: '991px' })} {
+    @media ${DeviceDirectWidth({ max: '991px' })} {
         font-size: 23px; 
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px' })} {
+    @media ${DeviceDirectWidth({ min: '992px' })} {
         font-size: 25px; 
     }
 `;
 
 const SkillListDatas = [
-    { title: 'HTML', items: [ 
+    { title: 'HTML', items: [
         { img: html5Img, alt: "HTML5 IMAGE", desc: "HTML5"},
         { img: reactImg, alt: "JSX IMAGE", desc: "JSX"}
     ]},
-    { title: 'STYLE', items: [ 
+    { title: 'STYLE', items: [
         { img: css3Img, alt: "CSS3 IMAGE", desc: "CSS3"},
         { img: sassImg, alt: "SCSS IMAGE", desc: "SCSS"},
         { img: styleComponentsImg, alt: "STYLE_COMPONENTS IMAGE", desc: "Style Components"}
     ]},
-    { title: 'JAVSCRIPT', items: [ 
+    { title: 'JAVSCRIPT', items: [
         { img: reactImg, alt: "REACT IMAGE", desc: "REACT"},
         { img: javascriptImg, alt: "JAVASCRIPT IMAGE", desc: "JAVASCRIPT"},
         { img: typescriptImg, alt: "TYPESCRIPT IMAGE", desc: "TYPESCRIPT"},
         { img: nodejsImg, alt: "NODEJS IMAGE", desc: "NodeJS"}
     ]},
-    { title: 'WINDOWS', items: [ 
+    { title: 'WINDOWS', items: [
         { img: cImg, alt: "C IMAGE", desc: "C"},
         { img: cplusplusImg, alt: "C++ IMAGE", desc: "C++"},
         { img: csharpImg, alt: "C# IMAGE", desc: "C#"},
         { img: wpfImg, alt: "WPF IMAGE", desc: "WPF"}
     ]},
-    { title: 'OTHERS', items: [ 
+    { title: 'OTHERS', items: [
         { img: electronImg, alt: "ELECTRON IMAGE", desc: "ELECTRON"},
         { img: webpackImg, alt: "WEBPACK IMAGE", desc: "WEBPACK"},
         { img: parcelImg, alt: "PARCEL IMAGE", desc: "PARCEL"},

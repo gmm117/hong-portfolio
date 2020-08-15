@@ -8,32 +8,32 @@ export const CardItemLi = styled.li`
     padding: 76px 40px 0;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '0', max: '320px'})} {
+    @media ${DeviceDirectWidth({ min: '0', max: '320px'})} {
         ${DirectWidthSizeStyle('150px')};
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '321px', max: '375px'})} {
+    @media ${DeviceDirectWidth({ min: '321px', max: '375px'})} {
         ${DirectWidthSizeStyle('180px')};
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '376px', max: '500px'})} {
+    @media ${DeviceDirectWidth({ min: '376px', max: '500px'})} {
         ${DirectWidthSizeStyle('200px')};
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '501px', max: '767px'})} {
+    @media ${DeviceDirectWidth({ min: '501px', max: '767px'})} {
         ${DirectWidthSizeStyle('250px')};
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min: '768px', max: '991px'})} {
+    @media ${DeviceDirectWidth({ min: '768px', max: '991px'})} {
         ${DirectWidthSizeStyle('300px')};
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px'})} {
+    @media ${DeviceDirectWidth({ min: '992px'})} {
         ${DirectWidthSizeStyle('350px')};
     }
 `;
@@ -51,27 +51,27 @@ const CardItemDiv = styled.div`
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '0', max: '320px' })} {
+    @media ${DeviceDirectWidth({ min: '0', max: '320px' })} {
         ${DirectHeightSizeStyle('300px')};
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '321px', max: '500px' })} {
+    @media ${DeviceDirectWidth({ min: '321px', max: '500px' })} {
         ${DirectHeightSizeStyle('350px')};
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '501px', max: '767px' })} {
+    @media ${DeviceDirectWidth({ min: '501px', max: '767px' })} {
         ${DirectHeightSizeStyle('400px')};
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min: '768px', max: '991px' })} {
+    @media ${DeviceDirectWidth({ min: '768px', max: '991px' })} {
         ${DirectHeightSizeStyle('450px')};
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px' })} {
+    @media ${DeviceDirectWidth({ min: '992px' })} {
         ${DirectHeightSizeStyle('500px')};
     }
 `;
@@ -82,42 +82,42 @@ const CardItemTopImg = styled.img`
     cursor: pointer;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '0', max: '320px' })} {
+    @media ${DeviceDirectWidth({ min: '0', max: '320px' })} {
         min-width: 150px;
         height: 150px;
         min-height: 150px;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '321px', max: '375px' })} {
+    @media ${DeviceDirectWidth({ min: '321px', max: '375px' })} {
         min-width: 180px;
         height: 180px;
         min-height: 180px;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '376px', max: '500px' })} {
+    @media ${DeviceDirectWidth({ min: '376px', max: '500px' })} {
         min-width: 200px;
         height: 200px;
         min-height: 200px;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '501px', max: '767px' })} {
+    @media ${DeviceDirectWidth({ min: '501px', max: '767px' })} {
         min-width: 250px;
         height: 250px;
         min-height: 250px;
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min: '768px', max: '991px' })} {
+    @media ${DeviceDirectWidth({ min: '768px', max: '991px' })} {
         min-width: 300px;
         height: 300px;
         min-height: 300px;
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px' })} {
+    @media ${DeviceDirectWidth({ min: '992px' })} {
         min-width: 350px;
         height: 350px;
         min-height: 350px;
@@ -130,22 +130,22 @@ const CardItemBottomDiv = styled.div`
     box-sizing: border-box;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '0', max: '500px'})} {
+    @media ${DeviceDirectWidth({ min: '0', max: '500px'})} {
         ${DirectHeightSizeStyle('100px')};
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '501px', max: '767px'})} {
+    @media ${DeviceDirectWidth({ min: '501px', max: '767px'})} {
         ${DirectHeightSizeStyle('110px')};
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min: '768px', max: '991px'})} {
+    @media ${DeviceDirectWidth({ min: '768px', max: '991px'})} {
         ${DirectHeightSizeStyle('130px')};
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px'})} {
+    @media ${DeviceDirectWidth({ min: '992px'})} {
         ${DirectHeightSizeStyle('150px')};
     }
 `;
@@ -163,31 +163,31 @@ const CardItemBottomTitleSpan = styled.span`
     color: #008073;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '0', max: '320px'})} {
+    @media ${DeviceDirectWidth({ min: '0', max: '320px'})} {
         font-size: 13px;
         line-height: 1.5rem;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '321px', max: '500px'})} {
+    @media ${DeviceDirectWidth({ min: '321px', max: '500px'})} {
         font-size: 16px;
         line-height: 1.5rem;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '501px', max: '767px'})} {
+    @media ${DeviceDirectWidth({ min: '501px', max: '767px'})} {
         font-size: 18px;
         line-height: 2.0rem;
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min: '768px', max: '991px'})} {
+    @media ${DeviceDirectWidth({ min: '768px', max: '991px'})} {
         font-size: 20px;
         line-height: 2.0rem;
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px'})} {
+    @media ${DeviceDirectWidth({ min: '992px'})} {
         font-size: 22px;
         line-height: 2.5rem;
     }
@@ -197,27 +197,27 @@ const CardItemBottomTitleImg = styled.img`
     cursor: pointer;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '0', max: '320px'})} {
+    @media ${DeviceDirectWidth({ min: '0', max: '320px'})} {
         height: 13px;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '321px', max: '500px'})} {
+    @media ${DeviceDirectWidth({ min: '321px', max: '500px'})} {
         height: 17px;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '501px', max: '767px'})} {
+    @media ${DeviceDirectWidth({ min: '501px', max: '767px'})} {
         height: 20px;
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min: '768px', max: '991px'})} {
+    @media ${DeviceDirectWidth({ min: '768px', max: '991px'})} {
         height: 22px;
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px'})} {
+    @media ${DeviceDirectWidth({ min: '992px'})} {
         height: 24px;
     }
 `;
@@ -228,27 +228,27 @@ const CardItemBottomDescDiv = styled.div`
     font-weight: 600;
     
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '0', max: '320px'})} {
+    @media ${DeviceDirectWidth({ min: '0', max: '320px'})} {
         font-size: 10px;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '321px', max: '500px'})} {
+    @media ${DeviceDirectWidth({ min: '321px', max: '500px'})} {
         font-size: 12px;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '501px', max: '767px'})} {
+    @media ${DeviceDirectWidth({ min: '501px', max: '767px'})} {
         font-size: 14px;
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min: '768px', max: '991px'})} {
+    @media ${DeviceDirectWidth({ min: '768px', max: '991px'})} {
         font-size: 16px;
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px'})} {
+    @media ${DeviceDirectWidth({ min: '992px'})} {
         font-size: 18px;
     }
 `;
@@ -270,27 +270,27 @@ const CardItemRevealDiv = styled.div`
     transition: transform 0.5s ease;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '0', max: '320px'})} {
+    @media ${DeviceDirectWidth({ min: '0', max: '320px'})} {
         ${DirectHeightSizeStyle('300px')};
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '321px', max: '500px'})} {
+    @media ${DeviceDirectWidth({ min: '321px', max: '500px'})} {
         ${DirectHeightSizeStyle('350px')};
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '501px', max: '767px'})} {
+    @media ${DeviceDirectWidth({ min: '501px', max: '767px'})} {
         ${DirectHeightSizeStyle('400px')};
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min: '768px', max: '991px'})} {
+    @media ${DeviceDirectWidth({ min: '768px', max: '991px'})} {
         ${DirectHeightSizeStyle('450px')};
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px'})} {
+    @media ${DeviceDirectWidth({ min: '992px'})} {
         ${DirectHeightSizeStyle('500px')};
     }
 `;
@@ -301,31 +301,31 @@ const CartItemRevealDeviceStyle = (fontWeight) => css`
     font-weight: ${fontWeight};
     align-items: center;
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '0', max: '320px'})} {
+    @media ${DeviceDirectWidth({ min: '0', max: '320px'})} {
         height: 8px;
         font-size: 8px;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '321px', max: '500px'})} {
+    @media ${DeviceDirectWidth({ min: '321px', max: '500px'})} {
         height: 13px;
         font-size: 13px;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '501px', max: '767px'})} {
+    @media ${DeviceDirectWidth({ min: '501px', max: '767px'})} {
         height: 18px;
         font-size: 18px;
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min: '768px', max: '991px'})} {
+    @media ${DeviceDirectWidth({ min: '768px', max: '991px'})} {
         height: 20px;
         font-size: 20px;
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px'})} {
+    @media ${DeviceDirectWidth({ min: '992px'})} {
         height: 22px;
         font-size: 22px;
     }
@@ -351,31 +351,31 @@ const CardItemContentDetailDiv = styled.div`
     font-weight: 600;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '0', max: '320px' })} {
+    @media ${DeviceDirectWidth({ min: '0', max: '320px' })} {
         font-size: 8px;
         line-height: 1.0rem;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '321px', max: '500px' })} {
+    @media ${DeviceDirectWidth({ min: '321px', max: '500px' })} {
         font-size: 10px;
         line-height: 1.4rem;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '501px', max: '767px' })} {
+    @media ${DeviceDirectWidth({ min: '501px', max: '767px' })} {
         font-size: 10px;
         line-height: 1.6rem;
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min: '768px', max: '991px' })} {
+    @media ${DeviceDirectWidth({ min: '768px', max: '991px' })} {
         font-size: 12px;
         line-height: 1.8rem;
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px' })} {
+    @media ${DeviceDirectWidth({ min: '992px' })} {
         font-size: 14px;
         line-height: 2.0rem;
     }
@@ -432,7 +432,7 @@ const CardListFooterItem = ({ src, marginRight }) => {
 
 let oldTranslate;
 
-function AppsItemLayout( { expInfo } ) {
+function AppsItemLayout({ expInfo }) {
     const [reveal, setReveal] = useState({
         translate: oldTranslate === undefined ? '0px' : oldTranslate,
         isshow: expInfo.oldIsShow });

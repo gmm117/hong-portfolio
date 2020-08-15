@@ -4,7 +4,7 @@ import { GetExpInfo } from './datas/ExperienceItemInfo';
 import ExperienceItemLayout from './datas/ExperienceItemLayout';
 import { BaseURL } from '../Utils/Define';
 
-function ExperienceItem( { location, onLocationChange } ) {
+function ExperienceItem({ location, onLocationChange }) {
     let newpathname = location.pathname.replace(BaseURL, "");
     const [expInfos, setExpInfos] = useState(GetExpInfo(newpathname.substr(1)));
 

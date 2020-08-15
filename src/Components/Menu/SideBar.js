@@ -58,7 +58,7 @@ const AvatarContentDiv = styled.div`
     margin: 10px 0 20px 0;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { max: '767px' })} {
+    @media ${DeviceDirectWidth({ max: '767px' })} {
         display: none;
     }
 `; 
@@ -88,7 +88,7 @@ const SideBarLink = styled.div`
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '320px' })} {
+    @media ${DeviceDirectWidth({ min: '320px' })} {
         position: absolute;
         bottom: 13px;
     }
@@ -118,7 +118,7 @@ const SideBarSubDiv = styled.div`
     flex-direction: column;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { max: '767px' })} {
+    @media ${DeviceDirectWidth({ max: '767px' })} {
         justify-content: center;
         align-items: center;
     }
@@ -128,7 +128,7 @@ const SideBarSectionLinkDiv = styled.div`
     display: flex;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { max: '767px' })} {
+    @media ${DeviceDirectWidth({ max: '767px' })} {
         display: block;
 
         div + div {
@@ -141,7 +141,7 @@ const SideBarSectionLinkDiv = styled.div`
     }
 `;
 
-function SideBar( { isSidebarOpen } ) {
+function SideBar({ isSidebarOpen } ) {
 
     return (
         <SideBarDiv isSidebarOpen={isSidebarOpen} >

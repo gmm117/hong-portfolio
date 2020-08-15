@@ -12,8 +12,8 @@ export const GetLinkName = (pathname) => {
     return arrLink.join(' > ');
 };
 
-export function checkBroswer() {
-    var agent = navigator.userAgent.toLowerCase(),
+export const checkBroswer =() => {
+    let agent = navigator.userAgent.toLowerCase(),
         name = navigator.appName,
         browser = '';
  

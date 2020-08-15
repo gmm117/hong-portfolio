@@ -16,32 +16,32 @@ const HomeBody = styled.div`
     background-size: cover;
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '320px', max: '399px'})} {
+    @media ${DeviceDirectWidth({ min: '320px', max: '399px'})} {
         font-size: 20px;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '400px', max: '520px'})} {
+    @media ${DeviceDirectWidth({ min: '400px', max: '520px'})} {
         font-size: 30px;
     }
 
     /* Mobile Device */
-    @media ${DeviceDirectWidth( { min: '521px', max: '767px'})} {
+    @media ${DeviceDirectWidth({ min: '521px', max: '767px'})} {
         font-size: 40px;
     }
 
     /* Tablet Device */
-    @media ${DeviceDirectWidth( { min: '768px', max: '991px'})} {
+    @media ${DeviceDirectWidth({ min: '768px', max: '991px'})} {
         font-size: 50px;
     }
 
     /* Desktop Device */
-    @media ${DeviceDirectWidth( { min: '992px'})} {
+    @media ${DeviceDirectWidth({ min: '992px'})} {
         font-size: 60px;
     }
 `;
 
-function Home( { location, onLocationChange } ) {
+function Home({ location, onLocationChange }) {
     
     useEffect(() => {
         onLocationChange(location);

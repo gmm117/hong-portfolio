@@ -38,7 +38,7 @@ const NavImg = styled.img`
     ${AutoLayoutStyle};
 `;
 
-function Header( { navName } ) {
+function Header({ navName }) {
     const dispatch = useContext(DispatchContext);
 
     const onSideClick = useCallback(() => {
